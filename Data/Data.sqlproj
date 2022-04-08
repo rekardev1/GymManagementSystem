@@ -64,4 +64,7 @@
     <Build Include="Tables\MembershipType.sql" />
     <Build Include="Tables\Membership.sql" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Data.publish.xml" />
+  </ItemGroup>
 </Project>
