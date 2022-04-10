@@ -35,17 +35,17 @@ partial class HomeForm {
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(92, 51);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(580, 65);
+            this.label1.Size = new System.Drawing.Size(778, 86);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gym Management System";
             // 
             // MembersButton
             // 
             this.MembersButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MembersButton.Location = new System.Drawing.Point(77, 217);
+            this.MembersButton.Location = new System.Drawing.Point(83, 182);
             this.MembersButton.Name = "MembersButton";
             this.MembersButton.Size = new System.Drawing.Size(201, 107);
             this.MembersButton.TabIndex = 1;
@@ -56,7 +56,7 @@ partial class HomeForm {
             // EmployeesButton
             // 
             this.EmployeesButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.EmployeesButton.Location = new System.Drawing.Point(284, 217);
+            this.EmployeesButton.Location = new System.Drawing.Point(290, 182);
             this.EmployeesButton.Name = "EmployeesButton";
             this.EmployeesButton.Size = new System.Drawing.Size(201, 107);
             this.EmployeesButton.TabIndex = 2;
@@ -66,7 +66,7 @@ partial class HomeForm {
             // MembershipsButton
             // 
             this.MembershipsButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MembershipsButton.Location = new System.Drawing.Point(491, 217);
+            this.MembershipsButton.Location = new System.Drawing.Point(497, 182);
             this.MembershipsButton.Name = "MembershipsButton";
             this.MembershipsButton.Size = new System.Drawing.Size(201, 107);
             this.MembershipsButton.TabIndex = 3;
@@ -80,16 +80,16 @@ partial class HomeForm {
             this.panel1.Controls.Add(this.MembershipsButton);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.MembersButton);
-            this.panel1.Location = new System.Drawing.Point(163, 260);
+            this.panel1.Location = new System.Drawing.Point(176, 22);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(783, 367);
+            this.panel1.Size = new System.Drawing.Size(783, 488);
             this.panel1.TabIndex = 4;
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1146, 769);
+            this.ClientSize = new System.Drawing.Size(1146, 749);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
