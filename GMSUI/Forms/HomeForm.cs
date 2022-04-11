@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GMSDataAccess.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,25 @@ using System.Windows.Forms;
 
 namespace GMSUI.Forms;
 public partial class HomeForm : Form {
+
+    UserModel LoggedInUser;
+
     public HomeForm() {
         InitializeComponent();
+
+
+    }
+
+    override protected void OnLoad(EventArgs e) {
+
+        Hide();
+
+        LoginForm frm = new LoginForm(this);
+        frm.ShowDialog();
+
     }
 
     private void MembersButton_Click(object sender, EventArgs e) {
-        
+
     }
 }

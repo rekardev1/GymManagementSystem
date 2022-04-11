@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GMSDataAccess.DataAccess;
+using GMSDataAccess.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,8 +12,31 @@ using System.Windows.Forms;
 
 namespace GMSUI.Forms;
 public partial class LoginForm : Form {
+    
+    private readonly HomeForm _home;
+    SqlConnector _sqlConnector = new SqlConnector();
+
     public LoginForm(HomeForm home) {
+
         InitializeComponent();
-        //this.FormBorderStyle = FormBorderStyle.None;
+        
+        _home=home;
+        
+    }
+
+    private async void LogInButton_Click(object sender, EventArgs e) {
+        
+        bool success = await _sqlConnector.LogIn(UserNameTextBox.Text, PasswordTextBox.Text);
+
+        if (success) {
+
+            this.Hide();
+            _home.Show();
+
+        } else {
+            
+            PasswordTextBox.Text = "";
+        }
+
     }
 }
