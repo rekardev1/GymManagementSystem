@@ -10,7 +10,8 @@ using System.Windows.Forms;
 
 namespace GMSUI.Forms;
 public partial class LoginForm : Form {
-    public LoginForm() {
+    public LoginForm(HomeForm home) {
         InitializeComponent();
+        //this.FormBorderStyle = FormBorderStyle.None;
     }
 }
