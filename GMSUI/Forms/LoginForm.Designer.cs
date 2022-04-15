@@ -25,7 +25,7 @@ partial class LoginForm {
     /// </summary>
     private void InitializeComponent() {
             this.UserNameLabel = new System.Windows.Forms.Label();
-            this.UserNameTextBox = new System.Windows.Forms.TextBox();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.LogInButton = new System.Windows.Forms.Button();
@@ -42,13 +42,13 @@ partial class LoginForm {
             this.UserNameLabel.TabIndex = 0;
             this.UserNameLabel.Text = "User Name";
             // 
-            // UserNameTextBox
+            // NameTextBox
             // 
-            this.UserNameTextBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UserNameTextBox.Location = new System.Drawing.Point(114, 249);
-            this.UserNameTextBox.Name = "UserNameTextBox";
-            this.UserNameTextBox.Size = new System.Drawing.Size(218, 34);
-            this.UserNameTextBox.TabIndex = 1;
+            this.NameTextBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NameTextBox.Location = new System.Drawing.Point(114, 249);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(218, 34);
+            this.NameTextBox.TabIndex = 1;
             // 
             // PasswordTextBox
             // 
@@ -91,6 +91,7 @@ partial class LoginForm {
             // 
             // LoginForm
             // 
+            this.AcceptButton = this.LogInButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
@@ -99,7 +100,7 @@ partial class LoginForm {
             this.Controls.Add(this.LogInButton);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.UserNameTextBox);
+            this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.UserNameLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
@@ -113,7 +114,7 @@ partial class LoginForm {
     #endregion
 
     private Label UserNameLabel;
-    private TextBox UserNameTextBox;
+    private TextBox NameTextBox;
     private TextBox PasswordTextBox;
     private Label label1;
     private Button LogInButton;

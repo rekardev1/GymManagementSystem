@@ -65,6 +65,11 @@
     <Build Include="Tables\MembershipType.sql" />
     <Build Include="Tables\Membership.sql" />
     <Build Include="StoredProcedures\spEmployee_LogIn.sql" />
+    <Build Include="StoredProcedures\spEmployee_Add.sql" />
+    <Build Include="Tables\User.sql" />
+    <Build Include="StoredProcedures\spEmployee_Get.sql" />
+    <Build Include="StoredProcedures\spEmployee_Update.sql" />
+    <Build Include="StoredProcedures\spEmployee_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data.publish.xml" />

@@ -1,6 +1,8 @@
 ﻿using Dapper;
+using GMSDataAccess.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,16 +17,16 @@ public class SqlConnector {
         return ConfigurationManager.ConnectionStrings["Default"].ConnectionString;
     }
 
-    public async Task<bool> LogIn(string username, string password) {
+    public async Task<bool> LogIn(string name, string password) {
 
         bool output = false;
         int r;
 
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
-            
+
             var result = await connection.QueryAsync<int>(
                 "spEmployee_LogIn",
-                new { Username = username, Password = password },
+                new { Name = name, Password = password },
                 commandType: CommandType.StoredProcedure);
 
             r = result.FirstOrDefault();
@@ -37,6 +39,51 @@ public class SqlConnector {
         return output;
 
 
+    }
+
+    public async Task<List<EmployeeModel>> GetEmployees() {
+
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            var result = await connection.QueryAsync<EmployeeModel>("spEmployee_Get", new { }, commandType: CommandType.StoredProcedure);
+
+            return result.ToList();
+        }
+    }
+
+    public async Task AddEmployee(EmployeeModel model) {
+
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            await connection.ExecuteAsync(
+                "spEmployee_Add",
+                new {
+                    Name = model.Name,
+                    Address = model.Address,
+                    Salary = model.Salary,
+                    JobType = model.JobType,
+                    PhoneNumber1 = model.PhoneNumber1,
+                    PhoneNumber2 = model.PhoneNumber2,
+                },
+                commandType: CommandType.StoredProcedure);
+
+        }
+    }
+
+    public async Task UpdateEmployee(EmployeeModel model) {
+
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            await connection.ExecuteAsync("spEmployee_Update", model, commandType: CommandType.StoredProcedure);
+        }
+    }
+
+    public async Task DeleteEmployee(int id) {
+
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            await connection.ExecuteAsync("spEmployee_Delete", new { Id = id }, commandType: CommandType.StoredProcedure);
+        }
     }
 }
 

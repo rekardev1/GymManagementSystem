@@ -1,11 +1,12 @@
 ﻿CREATE PROCEDURE [dbo].[spEmployee_LogIn]
-	@Username varchar(250),
+	@Name varchar(250),
 	@Password varchar(250)
 AS
 begin
 
 	select 1 
-	from dbo.Employee 
-	where Username = @Username and [Password] = @Password;
+	from Employee as e
+	inner join [User] as u on e.Id = e.Id
+	where e.[Name] = @Name and u.Password = @Password;
 
 end

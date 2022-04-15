@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace GMSUI.Forms;
 public partial class HomeForm : Form {
 
-    UserModel LoggedInUser;
+    EmployeeModel LoggedInUser;
 
     public HomeForm() {
         InitializeComponent();
@@ -30,6 +30,13 @@ public partial class HomeForm : Form {
     }
 
     private void MembersButton_Click(object sender, EventArgs e) {
+
+    }
+
+    private void EmployeesButton_Click(object sender, EventArgs e) {
+        
+        EmployeeForm employeeForm = new EmployeeForm(this);
+        employeeForm.Show();
 
     }
 }

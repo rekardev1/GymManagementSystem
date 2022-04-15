@@ -62,6 +62,7 @@ partial class HomeForm {
             this.EmployeesButton.TabIndex = 2;
             this.EmployeesButton.Text = "Employees";
             this.EmployeesButton.UseVisualStyleBackColor = true;
+            this.EmployeesButton.Click += new System.EventHandler(this.EmployeesButton_Click);
             // 
             // MembershipsButton
             // 

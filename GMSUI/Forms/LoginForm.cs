@@ -26,7 +26,7 @@ public partial class LoginForm : Form {
 
     private async void LogInButton_Click(object sender, EventArgs e) {
         
-        bool success = await _sqlConnector.LogIn(UserNameTextBox.Text, PasswordTextBox.Text);
+        bool success = await _sqlConnector.LogIn(NameTextBox.Text, PasswordTextBox.Text);
 
         if (success) {
 
