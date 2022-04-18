@@ -64,12 +64,18 @@
     <Build Include="Tables\Employee.sql" />
     <Build Include="Tables\MembershipType.sql" />
     <Build Include="Tables\Membership.sql" />
-    <Build Include="StoredProcedures\spEmployee_LogIn.sql" />
     <Build Include="StoredProcedures\spEmployee_Add.sql" />
     <Build Include="Tables\User.sql" />
-    <Build Include="StoredProcedures\spEmployee_Get.sql" />
+    <Build Include="StoredProcedures\spEmployee_GetAll.sql" />
     <Build Include="StoredProcedures\spEmployee_Update.sql" />
     <Build Include="StoredProcedures\spEmployee_Delete.sql" />
+    <Build Include="StoredProcedures\spUser_LogIn.sql" />
+    <Build Include="StoredProcedures\spUser_Add.sql" />
+    <Build Include="StoredProcedures\spUser_Delete.sql" />
+    <Build Include="StoredProcedures\spUser_Update.sql" />
+    <Build Include="StoredProcedures\spUser_GetByName.sql" />
+    <Build Include="StoredProcedures\spUser_GetAll.sql" />
+    <Build Include="StoredProcedures\spUser_UpdatePassword.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data.publish.xml" />

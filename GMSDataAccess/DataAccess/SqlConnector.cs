@@ -25,7 +25,7 @@ public class SqlConnector {
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
             var result = await connection.QueryAsync<int>(
-                "spEmployee_LogIn",
+                "spUser_LogIn",
                 new { Name = name, Password = password },
                 commandType: CommandType.StoredProcedure);
 
@@ -41,11 +41,50 @@ public class SqlConnector {
 
     }
 
+    public async Task<List<UserModel>> GetUsers() {
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            var result = await connection.QueryAsync<UserModel>("spUser_GetAll", new { }, commandType: CommandType.StoredProcedure);
+
+            return result.ToList();
+        }
+    }
+
+    public async Task AddUser(UserModel model, string password) {
+        
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            await connection.ExecuteAsync(
+                "spUser_Add",
+                new {
+                    Name = model.Name,
+                    Address = model.Address,
+                    Salary = model.Salary,
+                    PhoneNumber1 = model.PhoneNumber1,
+                    PhoneNumber2 = model.PhoneNumber2,
+                    Password = password,
+                    RoleLevel = model.RoleLevel
+                },
+                commandType: CommandType.StoredProcedure);
+
+        }
+    }
+
+    public async Task<UserModel> GetUserByName(string name) {
+        
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            var result = await connection.QueryAsync<UserModel>("spUser_GetByName", new { Name = name}, commandType: CommandType.StoredProcedure);
+
+            return result.ToList().First();
+        }
+    }
+
     public async Task<List<EmployeeModel>> GetEmployees() {
 
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
-            var result = await connection.QueryAsync<EmployeeModel>("spEmployee_Get", new { }, commandType: CommandType.StoredProcedure);
+            var result = await connection.QueryAsync<EmployeeModel>("spEmployee_GetAll", new { }, commandType: CommandType.StoredProcedure);
 
             return result.ToList();
         }
@@ -63,10 +102,17 @@ public class SqlConnector {
                     Salary = model.Salary,
                     JobType = model.JobType,
                     PhoneNumber1 = model.PhoneNumber1,
-                    PhoneNumber2 = model.PhoneNumber2,
+                    PhoneNumber2 = model.PhoneNumber2
                 },
                 commandType: CommandType.StoredProcedure);
 
+        }
+    }
+
+    public async Task UpdateUser(UserModel model) {
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            await connection.ExecuteAsync("spUser_Update", model, commandType: CommandType.StoredProcedure);
         }
     }
 
@@ -75,6 +121,21 @@ public class SqlConnector {
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
             await connection.ExecuteAsync("spEmployee_Update", model, commandType: CommandType.StoredProcedure);
+        }
+    }
+
+    public async Task UpdateUserPassword(int id, string password) {
+        
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            await connection.ExecuteAsync("spUser_UpdatePassword", new { Id = id, Password = password }, commandType: CommandType.StoredProcedure);
+        }
+    }
+
+    public async Task DeleteUser(int id) {
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            await connection.ExecuteAsync("spUser_Delete", new { Id = id }, commandType: CommandType.StoredProcedure);
         }
     }
 

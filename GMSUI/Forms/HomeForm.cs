@@ -12,11 +12,10 @@ using System.Windows.Forms;
 namespace GMSUI.Forms;
 public partial class HomeForm : Form {
 
-    EmployeeModel LoggedInUser;
+    public UserModel LoggedInUser { get; set; }
 
     public HomeForm() {
         InitializeComponent();
-
 
     }
 
@@ -25,7 +24,19 @@ public partial class HomeForm : Form {
         Hide();
 
         LoginForm frm = new LoginForm(this);
+        frm.LoggedIn += Frm_LoggedIn;
         frm.ShowDialog();
+
+    }
+
+    private void Frm_LoggedIn(object? sender, EventArgs e) {
+
+
+        if (LoggedInUser.RoleLevel == 1) {
+
+            UsersButton.Visible = true;
+
+        }
 
     }
 
@@ -34,9 +45,14 @@ public partial class HomeForm : Form {
     }
 
     private void EmployeesButton_Click(object sender, EventArgs e) {
-        
+
         EmployeeForm employeeForm = new EmployeeForm(this);
         employeeForm.Show();
 
+    }
+
+    private void UsersButton_Click(object sender, EventArgs e) {
+        UserForm employeeForm = new UserForm(this);
+        employeeForm.Show();
     }
 }

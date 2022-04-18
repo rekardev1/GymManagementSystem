@@ -13,6 +13,8 @@ using System.Windows.Forms;
 namespace GMSUI.Forms;
 public partial class LoginForm : Form {
     
+    public event EventHandler LoggedIn;
+
     private readonly HomeForm _home;
     SqlConnector _sqlConnector = new SqlConnector();
 
@@ -29,6 +31,12 @@ public partial class LoginForm : Form {
         bool success = await _sqlConnector.LogIn(NameTextBox.Text, PasswordTextBox.Text);
 
         if (success) {
+
+            UserModel user = await _sqlConnector.GetUserByName(NameTextBox.Text);
+
+            _home.LoggedInUser = user;
+
+            LoggedIn?.Invoke(this, EventArgs.Empty);
 
             this.Hide();
             _home.Show();
