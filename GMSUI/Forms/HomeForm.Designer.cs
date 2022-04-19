@@ -74,6 +74,7 @@ partial class HomeForm {
             this.MembershipsButton.TabIndex = 3;
             this.MembershipsButton.Text = "Memberships";
             this.MembershipsButton.UseVisualStyleBackColor = true;
+            this.MembershipsButton.Click += new System.EventHandler(this.MembershipsButton_Click);
             // 
             // panel1
             // 
@@ -91,7 +92,7 @@ partial class HomeForm {
             // UsersButton
             // 
             this.UsersButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UsersButton.Location = new System.Drawing.Point(580, 277);
+            this.UsersButton.Location = new System.Drawing.Point(166, 277);
             this.UsersButton.Name = "UsersButton";
             this.UsersButton.Size = new System.Drawing.Size(201, 107);
             this.UsersButton.TabIndex = 4;

@@ -76,6 +76,10 @@
     <Build Include="StoredProcedures\spUser_GetByName.sql" />
     <Build Include="StoredProcedures\spUser_GetAll.sql" />
     <Build Include="StoredProcedures\spUser_UpdatePassword.sql" />
+    <Build Include="StoredProcedures\spMembershipType_GetAll.sql" />
+    <Build Include="StoredProcedures\spMembershipType_Add.sql" />
+    <Build Include="StoredProcedures\spMembershipType_Delete.sql" />
+    <Build Include="StoredProcedures\spMembershipType_Update.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data.publish.xml" />

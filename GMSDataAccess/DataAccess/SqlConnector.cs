@@ -41,12 +41,45 @@ public class SqlConnector {
 
     }
 
+    public async Task AddMembershipType(MembershipTypeModel model) {
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            await connection.ExecuteAsync(
+                "spMembershipType_Add",
+                new {
+                    Name = model.Name,
+                    Start = model.Start,
+                    End = model.End,
+                    Fee = model.Fee
+                },
+                commandType: CommandType.StoredProcedure);
+
+        }
+    }
+
     public async Task<List<UserModel>> GetUsers() {
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
             var result = await connection.QueryAsync<UserModel>("spUser_GetAll", new { }, commandType: CommandType.StoredProcedure);
 
             return result.ToList();
+        }
+    }
+
+    public async Task<List<MembershipTypeModel>> GetMembershipTypes() {
+        
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            var result = await connection.QueryAsync<MembershipTypeModel>("spMembershipType_GetAll", new { }, commandType: CommandType.StoredProcedure);
+
+            return result.ToList();
+        }
+    }
+
+    public async Task UpdateMembershipType(MembershipTypeModel model) {
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            await connection.ExecuteAsync("spMembershipType_Update", model, commandType: CommandType.StoredProcedure);
         }
     }
 
@@ -106,6 +139,14 @@ public class SqlConnector {
                 },
                 commandType: CommandType.StoredProcedure);
 
+        }
+    }
+
+    public async Task DeleteMembershipType(int id) {
+        
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            await connection.ExecuteAsync("spMembershipType_Delete", new { Id = id }, commandType: CommandType.StoredProcedure);
         }
     }
 

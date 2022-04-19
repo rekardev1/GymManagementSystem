@@ -55,4 +55,9 @@ public partial class HomeForm : Form {
         UserForm employeeForm = new UserForm(this);
         employeeForm.Show();
     }
+
+    private void MembershipsButton_Click(object sender, EventArgs e) {
+        MembershipForm membershipForm = new MembershipForm(this);
+        membershipForm.Show();
+    }
 }

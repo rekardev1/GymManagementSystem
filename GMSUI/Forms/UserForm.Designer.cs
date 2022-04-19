@@ -45,6 +45,7 @@ partial class UserForm {
             this.UpdatePasswordButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.RoleLevelComboBox = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -53,9 +54,9 @@ partial class UserForm {
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel2.Controls.Add(this.UsersDataGridView);
-            this.panel2.Location = new System.Drawing.Point(21, 238);
+            this.panel2.Location = new System.Drawing.Point(21, 300);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(924, 458);
+            this.panel2.Size = new System.Drawing.Size(924, 396);
             this.panel2.TabIndex = 33;
             // 
             // UsersDataGridView
@@ -70,13 +71,13 @@ partial class UserForm {
             this.UsersDataGridView.ReadOnly = true;
             this.UsersDataGridView.RowTemplate.Height = 25;
             this.UsersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.UsersDataGridView.Size = new System.Drawing.Size(924, 458);
+            this.UsersDataGridView.Size = new System.Drawing.Size(924, 396);
             this.UsersDataGridView.TabIndex = 0;
             this.UsersDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersDataGridView_CellClick);
             // 
             // UpdateInfoButton
             // 
-            this.UpdateInfoButton.Location = new System.Drawing.Point(21, 170);
+            this.UpdateInfoButton.Location = new System.Drawing.Point(21, 227);
             this.UpdateInfoButton.Name = "UpdateInfoButton";
             this.UpdateInfoButton.Size = new System.Drawing.Size(159, 50);
             this.UpdateInfoButton.TabIndex = 9;
@@ -86,7 +87,7 @@ partial class UserForm {
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(186, 170);
+            this.DeleteButton.Location = new System.Drawing.Point(186, 227);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(159, 50);
             this.DeleteButton.TabIndex = 10;
@@ -96,7 +97,7 @@ partial class UserForm {
             // 
             // AddUserButton
             // 
-            this.AddUserButton.Location = new System.Drawing.Point(786, 171);
+            this.AddUserButton.Location = new System.Drawing.Point(786, 228);
             this.AddUserButton.Name = "AddUserButton";
             this.AddUserButton.Size = new System.Drawing.Size(159, 48);
             this.AddUserButton.TabIndex = 11;
@@ -117,7 +118,7 @@ partial class UserForm {
             // PhoneNumber2TextBox
             // 
             this.PhoneNumber2TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PhoneNumber2TextBox.Location = new System.Drawing.Point(186, 111);
+            this.PhoneNumber2TextBox.Location = new System.Drawing.Point(186, 168);
             this.PhoneNumber2TextBox.Name = "PhoneNumber2TextBox";
             this.PhoneNumber2TextBox.Size = new System.Drawing.Size(159, 29);
             this.PhoneNumber2TextBox.TabIndex = 6;
@@ -127,7 +128,7 @@ partial class UserForm {
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(21, 13);
+            this.label1.Location = new System.Drawing.Point(21, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 21);
             this.label1.TabIndex = 19;
@@ -137,7 +138,7 @@ partial class UserForm {
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(186, 87);
+            this.label6.Location = new System.Drawing.Point(186, 144);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 21);
             this.label6.TabIndex = 29;
@@ -146,7 +147,7 @@ partial class UserForm {
             // NameTextBox
             // 
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NameTextBox.Location = new System.Drawing.Point(21, 37);
+            this.NameTextBox.Location = new System.Drawing.Point(21, 94);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(159, 29);
             this.NameTextBox.TabIndex = 1;
@@ -154,7 +155,7 @@ partial class UserForm {
             // PhoneNumber1TextBox
             // 
             this.PhoneNumber1TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PhoneNumber1TextBox.Location = new System.Drawing.Point(21, 111);
+            this.PhoneNumber1TextBox.Location = new System.Drawing.Point(21, 168);
             this.PhoneNumber1TextBox.Name = "PhoneNumber1TextBox";
             this.PhoneNumber1TextBox.Size = new System.Drawing.Size(159, 29);
             this.PhoneNumber1TextBox.TabIndex = 5;
@@ -164,7 +165,7 @@ partial class UserForm {
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(351, 13);
+            this.label2.Location = new System.Drawing.Point(351, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 21);
             this.label2.TabIndex = 21;
@@ -174,7 +175,7 @@ partial class UserForm {
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(21, 87);
+            this.label5.Location = new System.Drawing.Point(21, 144);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 21);
             this.label5.TabIndex = 28;
@@ -183,7 +184,7 @@ partial class UserForm {
             // AddressTextBox
             // 
             this.AddressTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AddressTextBox.Location = new System.Drawing.Point(351, 37);
+            this.AddressTextBox.Location = new System.Drawing.Point(351, 94);
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(159, 29);
             this.AddressTextBox.TabIndex = 3;
@@ -192,7 +193,7 @@ partial class UserForm {
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(516, 13);
+            this.label3.Location = new System.Drawing.Point(516, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 21);
             this.label3.TabIndex = 24;
@@ -201,7 +202,7 @@ partial class UserForm {
             // SalaryTextBox
             // 
             this.SalaryTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SalaryTextBox.Location = new System.Drawing.Point(516, 37);
+            this.SalaryTextBox.Location = new System.Drawing.Point(516, 94);
             this.SalaryTextBox.Name = "SalaryTextBox";
             this.SalaryTextBox.Size = new System.Drawing.Size(159, 29);
             this.SalaryTextBox.TabIndex = 4;
@@ -210,7 +211,7 @@ partial class UserForm {
             // PasswordTextBox
             // 
             this.PasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PasswordTextBox.Location = new System.Drawing.Point(351, 111);
+            this.PasswordTextBox.Location = new System.Drawing.Point(351, 168);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(159, 29);
             this.PasswordTextBox.TabIndex = 7;
@@ -219,7 +220,7 @@ partial class UserForm {
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(351, 87);
+            this.label4.Location = new System.Drawing.Point(351, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 21);
             this.label4.TabIndex = 35;
@@ -227,7 +228,7 @@ partial class UserForm {
             // 
             // UpdatePasswordButton
             // 
-            this.UpdatePasswordButton.Location = new System.Drawing.Point(516, 111);
+            this.UpdatePasswordButton.Location = new System.Drawing.Point(516, 168);
             this.UpdatePasswordButton.Name = "UpdatePasswordButton";
             this.UpdatePasswordButton.Size = new System.Drawing.Size(159, 29);
             this.UpdatePasswordButton.TabIndex = 8;
@@ -239,7 +240,7 @@ partial class UserForm {
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(186, 13);
+            this.label7.Location = new System.Drawing.Point(186, 70);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(81, 21);
             this.label7.TabIndex = 37;
@@ -252,16 +253,27 @@ partial class UserForm {
             this.RoleLevelComboBox.Items.AddRange(new object[] {
             "1",
             "2"});
-            this.RoleLevelComboBox.Location = new System.Drawing.Point(186, 38);
+            this.RoleLevelComboBox.Location = new System.Drawing.Point(186, 95);
             this.RoleLevelComboBox.Name = "RoleLevelComboBox";
             this.RoleLevelComboBox.Size = new System.Drawing.Size(159, 28);
             this.RoleLevelComboBox.TabIndex = 38;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(21, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(76, 32);
+            this.label8.TabIndex = 39;
+            this.label8.Text = "Users";
             // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 708);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.RoleLevelComboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.UpdatePasswordButton);
@@ -314,4 +326,5 @@ partial class UserForm {
     private Button UpdatePasswordButton;
     private Label label7;
     private ComboBox RoleLevelComboBox;
+    private Label label8;
 }
