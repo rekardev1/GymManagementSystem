@@ -56,9 +56,31 @@ public partial class UserForm : Form {
 
         UsersDataGridView.DataSource = _Users;
     }
-    private void AddUserButton_Click(object sender, EventArgs e) {
-        AddUserForm frm = new AddUserForm(this);
-        frm.ShowDialog();
+    private async void AddUserButton_Click(object sender, EventArgs e) {
+        
+        if (ValidateForm() && !string.IsNullOrEmpty(PasswordTextBox.Text)) {
+
+            UserModel model = new UserModel();
+
+            model.Name = NameTextBox.Text;
+            model.RoleLevel = int.Parse(RoleLevelComboBox.SelectedItem.ToString());
+            model.Address = AddressTextBox.Text;
+            model.Salary = int.Parse(SalaryTextBox.Text);
+            model.PhoneNumber1 = PhoneNumber1TextBox.Text;
+            model.PhoneNumber2 = PhoneNumber2TextBox.Text;
+
+            try {
+                await _sqlConnector.AddUser(model, PasswordTextBox.Text);
+                
+                await ResetForm();
+
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        } else {
+            MessageBox.Show("Please enter all required information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 
     private bool ValidateForm() {
@@ -76,7 +98,7 @@ public partial class UserForm : Form {
         } else if (string.IsNullOrEmpty(PhoneNumber1TextBox.Text)) {
             output = false;
 
-        }
+        } 
 
         return output;
     }
@@ -99,7 +121,7 @@ public partial class UserForm : Form {
         model.Name = NameTextBox.Text;
         model.RoleLevel = int.Parse(RoleLevelComboBox.SelectedItem.ToString());
         model.Address = AddressTextBox.Text;
-        model.Salary = decimal.Parse(SalaryTextBox.Text);
+        model.Salary = int.Parse(SalaryTextBox.Text);
         model.PhoneNumber1 = PhoneNumber1TextBox.Text;
         model.PhoneNumber2 = PhoneNumber2TextBox.Text;
 
@@ -122,7 +144,7 @@ public partial class UserForm : Form {
         }
 
         if (string.IsNullOrEmpty(PasswordTextBox.Text)) {
-            MessageBox.Show("Please a password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Please enter a password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
         
@@ -165,6 +187,8 @@ public partial class UserForm : Form {
         PhoneNumber1TextBox.Text = "";
         PhoneNumber2TextBox.Text = "";
         PasswordTextBox.Text = "";
+
+        _selectedRow = null;
 
         await LoadUsers();
     }

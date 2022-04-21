@@ -41,7 +41,8 @@ public partial class HomeForm : Form {
     }
 
     private void MembersButton_Click(object sender, EventArgs e) {
-
+        MemberForm memberForm = new MemberForm();
+        memberForm.Show();
     }
 
     private void EmployeesButton_Click(object sender, EventArgs e) {

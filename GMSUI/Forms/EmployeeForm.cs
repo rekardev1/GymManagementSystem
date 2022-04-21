@@ -42,8 +42,29 @@ namespace GMSUI.Forms {
 
         private async void AddButton_Click(object sender, EventArgs e) {
 
-            AddEmployeeForm frm = new AddEmployeeForm(_home, this);
-            frm.ShowDialog();
+            if (ValidateForm()) {
+
+                EmployeeModel model = new EmployeeModel();
+
+                model.Name = NameTextBox.Text;
+                model.Address = AddressTextBox.Text;
+                model.Salary = int.Parse(SalaryTextBox.Text);
+                model.JobType = JobTypeTextBox.Text;
+                model.PhoneNumber1 = PhoneNumber1TextBox.Text;
+                model.PhoneNumber2 = PhoneNumber2TextBox.Text;
+
+                try {
+                    await _sqlConnector.AddEmployee(model);
+
+                    await ResetForm();
+
+                } catch (Exception ex) {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            } else {
+                MessageBox.Show("Please enter all required information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -87,7 +108,7 @@ namespace GMSUI.Forms {
             model.Id = int.Parse(_selectedRow.Cells[0].Value.ToString());
             model.Name = NameTextBox.Text;
             model.Address = AddressTextBox.Text;
-            model.Salary = decimal.Parse(SalaryTextBox.Text);
+            model.Salary = int.Parse(SalaryTextBox.Text);
             model.JobType = JobTypeTextBox.Text;
             model.PhoneNumber1 = PhoneNumber1TextBox.Text;
             model.PhoneNumber2 = PhoneNumber2TextBox.Text;
@@ -129,8 +150,11 @@ namespace GMSUI.Forms {
             JobTypeTextBox.Text = "";
             PhoneNumber1TextBox.Text = "";
             PhoneNumber2TextBox.Text = "";
+            
+            _selectedRow = null;
 
             await LoadEmployees();
+
         }
 
         private void SalaryTextBox_KeyPress(object sender, KeyPressEventArgs e) {

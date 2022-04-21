@@ -104,6 +104,7 @@
             this.EmployeesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.EmployeesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeesDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.EmployeesDataGridView.MultiSelect = false;
             this.EmployeesDataGridView.Name = "EmployeesDataGridView";
             this.EmployeesDataGridView.ReadOnly = true;
             this.EmployeesDataGridView.RowTemplate.Height = 25;
@@ -114,9 +115,9 @@
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(3, 225);
+            this.UpdateButton.Location = new System.Drawing.Point(168, 225);
             this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(159, 50);
+            this.UpdateButton.Size = new System.Drawing.Size(159, 48);
             this.UpdateButton.TabIndex = 7;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
@@ -124,9 +125,9 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(168, 225);
+            this.DeleteButton.Location = new System.Drawing.Point(336, 225);
             this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(159, 50);
+            this.DeleteButton.Size = new System.Drawing.Size(159, 48);
             this.DeleteButton.TabIndex = 8;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
@@ -134,7 +135,7 @@
             // 
             // AddEmployeeButton
             // 
-            this.AddEmployeeButton.Location = new System.Drawing.Point(661, 225);
+            this.AddEmployeeButton.Location = new System.Drawing.Point(3, 225);
             this.AddEmployeeButton.Name = "AddEmployeeButton";
             this.AddEmployeeButton.Size = new System.Drawing.Size(159, 48);
             this.AddEmployeeButton.TabIndex = 9;

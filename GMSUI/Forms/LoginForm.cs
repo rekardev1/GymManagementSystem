@@ -22,7 +22,7 @@ public partial class LoginForm : Form {
 
         InitializeComponent();
         
-        _home=home;
+        _home = home;
         
     }
 
@@ -57,5 +57,9 @@ public partial class LoginForm : Form {
             PasswordTextBox.PasswordChar = '*';
             PasswordTextBox.Focus();
         }
+    }
+
+    private void LoginForm_FormClosed(object sender, FormClosedEventArgs e) {
+        _home.Close();
     }
 }

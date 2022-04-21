@@ -80,6 +80,14 @@
     <Build Include="StoredProcedures\spMembershipType_Add.sql" />
     <Build Include="StoredProcedures\spMembershipType_Delete.sql" />
     <Build Include="StoredProcedures\spMembershipType_Update.sql" />
+    <Build Include="Tables\MembershipTrainers.sql" />
+    <Build Include="StoredProcedures\spTrainer_GetByMembershipId.sql" />
+    <Build Include="StoredProcedures\spEmployee_GetTrainers.sql" />
+    <Build Include="StoredProcedures\spMembership_GetAll.sql" />
+    <Build Include="StoredProcedures\spMember_GetAll.sql" />
+    <Build Include="StoredProcedures\spMember_Add.sql" />
+    <Build Include="StoredProcedures\spMember_Update.sql" />
+    <Build Include="StoredProcedures\spMember_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data.publish.xml" />

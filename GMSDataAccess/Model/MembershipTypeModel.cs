@@ -10,5 +10,5 @@ public class MembershipTypeModel {
     public string Name { get; set; }
     public DateTime Start { get; set; }
     public DateTime End { get; set; }
-    public decimal Fee { get; set; }
+    public int Fee { get; set; }
 }

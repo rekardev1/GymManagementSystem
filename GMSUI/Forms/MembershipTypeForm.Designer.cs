@@ -157,6 +157,7 @@ partial class MembershipTypeForm {
             this.MembershipsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MembershipsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MembershipsDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.MembershipsDataGridView.MultiSelect = false;
             this.MembershipsDataGridView.Name = "MembershipsDataGridView";
             this.MembershipsDataGridView.ReadOnly = true;
             this.MembershipsDataGridView.RowTemplate.Height = 25;
@@ -212,6 +213,7 @@ partial class MembershipTypeForm {
             this.ClientSize = new System.Drawing.Size(865, 540);
             this.Controls.Add(this.panel2);
             this.Name = "MembershipTypeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MembershipForm";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MembershipsDataGridView)).EndInit();

@@ -21,4 +21,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Severity " />
   </Operation>
+  <Operation Name="Rename Refactor" Key="45775116-b87e-4519-b8e0-0de922081e67" ChangeDateTime="04/20/2022 16:43:58">
+    <Property Name="ElementName" Value="[dbo].[Membership].[SignedByManagerId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Membership]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SignedByUserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1d708b4b-6f78-4414-b905-8c60fe741411" ChangeDateTime="04/20/2022 16:44:08">
+    <Property Name="ElementName" Value="[dbo].[Membership].[SignedByUserId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Membership]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UserId" />
+  </Operation>
 </Operations>
