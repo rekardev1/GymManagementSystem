@@ -1,6 +1,6 @@
 ﻿namespace GMSUI.Forms;
 
-partial class MembershipForm {
+partial class MembershipTypeForm {
     /// <summary>
     /// Required designer variable.
     /// </summary>
@@ -38,23 +38,25 @@ partial class MembershipForm {
             this.MembershipsDataGridView = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.FeeTextBox = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembershipsDataGridView)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // MembershipLabel
             // 
             this.MembershipLabel.AutoSize = true;
             this.MembershipLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MembershipLabel.Location = new System.Drawing.Point(12, 9);
+            this.MembershipLabel.Location = new System.Drawing.Point(3, 0);
             this.MembershipLabel.Name = "MembershipLabel";
-            this.MembershipLabel.Size = new System.Drawing.Size(168, 32);
+            this.MembershipLabel.Size = new System.Drawing.Size(240, 32);
             this.MembershipLabel.TabIndex = 1;
-            this.MembershipLabel.Text = "Memberships";
+            this.MembershipLabel.Text = "Memberships Types";
             // 
             // AddMembershipTypeButton
             // 
-            this.AddMembershipTypeButton.Location = new System.Drawing.Point(694, 163);
+            this.AddMembershipTypeButton.Location = new System.Drawing.Point(3, 151);
             this.AddMembershipTypeButton.Name = "AddMembershipTypeButton";
             this.AddMembershipTypeButton.Size = new System.Drawing.Size(159, 48);
             this.AddMembershipTypeButton.TabIndex = 7;
@@ -64,7 +66,7 @@ partial class MembershipForm {
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(12, 163);
+            this.UpdateButton.Location = new System.Drawing.Point(168, 151);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(159, 48);
             this.UpdateButton.TabIndex = 5;
@@ -76,7 +78,7 @@ partial class MembershipForm {
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 78);
+            this.label1.Location = new System.Drawing.Point(3, 69);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 21);
             this.label1.TabIndex = 46;
@@ -85,7 +87,7 @@ partial class MembershipForm {
             // NameTextBox
             // 
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NameTextBox.Location = new System.Drawing.Point(12, 102);
+            this.NameTextBox.Location = new System.Drawing.Point(3, 93);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(159, 29);
             this.NameTextBox.TabIndex = 1;
@@ -94,7 +96,7 @@ partial class MembershipForm {
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(177, 76);
+            this.label2.Location = new System.Drawing.Point(168, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 21);
             this.label2.TabIndex = 47;
@@ -104,7 +106,7 @@ partial class MembershipForm {
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(378, 76);
+            this.label3.Location = new System.Drawing.Point(355, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 21);
             this.label3.TabIndex = 48;
@@ -113,7 +115,7 @@ partial class MembershipForm {
             // StartTimePicker
             // 
             this.StartTimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.StartTimePicker.Location = new System.Drawing.Point(177, 102);
+            this.StartTimePicker.Location = new System.Drawing.Point(168, 93);
             this.StartTimePicker.Name = "StartTimePicker";
             this.StartTimePicker.Size = new System.Drawing.Size(181, 29);
             this.StartTimePicker.TabIndex = 2;
@@ -122,7 +124,7 @@ partial class MembershipForm {
             // EndTimePicker
             // 
             this.EndTimePicker.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.EndTimePicker.Location = new System.Drawing.Point(378, 102);
+            this.EndTimePicker.Location = new System.Drawing.Point(355, 93);
             this.EndTimePicker.Name = "EndTimePicker";
             this.EndTimePicker.Size = new System.Drawing.Size(157, 29);
             this.EndTimePicker.TabIndex = 3;
@@ -130,7 +132,7 @@ partial class MembershipForm {
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(177, 163);
+            this.DeleteButton.Location = new System.Drawing.Point(333, 151);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(159, 48);
             this.DeleteButton.TabIndex = 6;
@@ -140,10 +142,11 @@ partial class MembershipForm {
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel1.Controls.Add(this.MembershipsDataGridView);
-            this.panel1.Location = new System.Drawing.Point(12, 230);
+            this.panel1.Location = new System.Drawing.Point(3, 205);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(841, 298);
+            this.panel1.Size = new System.Drawing.Size(835, 308);
             this.panel1.TabIndex = 49;
             // 
             // MembershipsDataGridView
@@ -158,7 +161,7 @@ partial class MembershipForm {
             this.MembershipsDataGridView.ReadOnly = true;
             this.MembershipsDataGridView.RowTemplate.Height = 25;
             this.MembershipsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MembershipsDataGridView.Size = new System.Drawing.Size(841, 298);
+            this.MembershipsDataGridView.Size = new System.Drawing.Size(835, 308);
             this.MembershipsDataGridView.TabIndex = 0;
             this.MembershipsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MembershipsDataGridView_CellClick);
             // 
@@ -166,7 +169,7 @@ partial class MembershipForm {
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(541, 78);
+            this.label4.Location = new System.Drawing.Point(518, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 21);
             this.label4.TabIndex = 51;
@@ -175,36 +178,46 @@ partial class MembershipForm {
             // FeeTextBox
             // 
             this.FeeTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.FeeTextBox.Location = new System.Drawing.Point(541, 102);
+            this.FeeTextBox.Location = new System.Drawing.Point(518, 93);
             this.FeeTextBox.Name = "FeeTextBox";
             this.FeeTextBox.Size = new System.Drawing.Size(159, 29);
             this.FeeTextBox.TabIndex = 4;
             this.FeeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FeeTextBox_KeyPress);
             // 
-            // MembershipForm
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel2.Controls.Add(this.MembershipLabel);
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.AddMembershipTypeButton);
+            this.panel2.Controls.Add(this.FeeTextBox);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.panel1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.DeleteButton);
+            this.panel2.Controls.Add(this.NameTextBox);
+            this.panel2.Controls.Add(this.EndTimePicker);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.StartTimePicker);
+            this.panel2.Controls.Add(this.UpdateButton);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(841, 516);
+            this.panel2.TabIndex = 52;
+            // 
+            // MembershipTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(865, 540);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.FeeTextBox);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.DeleteButton);
-            this.Controls.Add(this.EndTimePicker);
-            this.Controls.Add(this.StartTimePicker);
-            this.Controls.Add(this.UpdateButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.NameTextBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.AddMembershipTypeButton);
-            this.Controls.Add(this.MembershipLabel);
-            this.Name = "MembershipForm";
+            this.Controls.Add(this.panel2);
+            this.Name = "MembershipTypeForm";
             this.Text = "MembershipForm";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MembershipsDataGridView)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
     }
 
@@ -224,4 +237,5 @@ partial class MembershipForm {
     private Label label4;
     private TextBox FeeTextBox;
     private DataGridView MembershipsDataGridView;
+    private Panel panel2;
 }

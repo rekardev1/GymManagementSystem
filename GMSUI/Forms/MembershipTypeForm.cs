@@ -11,14 +11,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GMSUI.Forms;
-public partial class MembershipForm : Form {
+public partial class MembershipTypeForm : Form {
 
     private readonly HomeForm _home;
     private SqlConnector _sqlConnector = new SqlConnector();
     private BindingList<MembershipTypeModel> _membershipTypes;
     private DataGridViewRow _selectedRow;
 
-    public MembershipForm(HomeForm homeForm) {
+    public MembershipTypeForm(HomeForm homeForm) {
         InitializeComponent();
 
         StartTimePicker.Format = DateTimePickerFormat.Time;
@@ -73,7 +73,7 @@ public partial class MembershipForm : Form {
         model.Name = NameTextBox.Text;
         model.Start = StartTimePicker.Value;
         model.End = EndTimePicker.Value;
-        model.Fee = decimal.Parse(FeeTextBox.Text);
+        model.Fee = int.Parse(FeeTextBox.Text);
 
         try {
             await _sqlConnector.UpdateMembershipType(model);
@@ -89,6 +89,8 @@ public partial class MembershipForm : Form {
 
         NameTextBox.Text = "";
         FeeTextBox.Text = "";
+
+        _selectedRow = null;
 
         await LoadMembershipTypes();
     }
@@ -111,9 +113,29 @@ public partial class MembershipForm : Form {
 
     }
 
-    private void AddMembershipTypeButton_Click(object sender, EventArgs e) {
-        AddMembershipTypeForm frm = new AddMembershipTypeForm(this);
-        frm.ShowDialog();
+    private async void AddMembershipTypeButton_Click(object sender, EventArgs e) {
+        if (ValidateForm()) {
+
+            MembershipTypeModel model = new MembershipTypeModel();
+
+            model.Name = NameTextBox.Text;
+            model.Start = StartTimePicker.Value;
+            model.End = EndTimePicker.Value;
+            model.Fee = int.Parse(FeeTextBox.Text);
+
+
+            try {
+                await _sqlConnector.AddMembershipType(model);
+                await ResetForm();
+                
+
+            } catch (Exception ex) {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        } else {
+            MessageBox.Show("Please enter all required information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
     private bool ValidateForm() {
         bool output = true;
