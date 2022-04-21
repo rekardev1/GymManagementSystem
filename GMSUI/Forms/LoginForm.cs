@@ -47,4 +47,15 @@ public partial class LoginForm : Form {
         }
 
     }
+
+    private void ShowPasswordCheckBox_CheckedChanged(object sender, EventArgs e) {
+        
+        if (ShowPasswordCheckBox.Checked) {
+            PasswordTextBox.PasswordChar = '\0';
+            PasswordTextBox.Focus();
+        } else {
+            PasswordTextBox.PasswordChar = '*';
+            PasswordTextBox.Focus();
+        }
+    }
 }

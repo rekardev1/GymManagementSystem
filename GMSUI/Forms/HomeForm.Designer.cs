@@ -72,7 +72,7 @@ partial class HomeForm {
             this.MembershipsButton.Name = "MembershipsButton";
             this.MembershipsButton.Size = new System.Drawing.Size(201, 107);
             this.MembershipsButton.TabIndex = 3;
-            this.MembershipsButton.Text = "Memberships";
+            this.MembershipsButton.Text = "Memberships Types";
             this.MembershipsButton.UseVisualStyleBackColor = true;
             this.MembershipsButton.Click += new System.EventHandler(this.MembershipsButton_Click);
             // 
