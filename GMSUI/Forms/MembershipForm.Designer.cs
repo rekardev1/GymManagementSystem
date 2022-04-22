@@ -54,7 +54,9 @@ partial class MembershipForm {
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.TrainersCheckedListBox);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
@@ -76,9 +78,9 @@ partial class MembershipForm {
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.GenderTextBox);
-            this.panel2.Location = new System.Drawing.Point(10, 12);
+            this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1098, 671);
+            this.panel2.Size = new System.Drawing.Size(1098, 668);
             this.panel2.TabIndex = 70;
             // 
             // TrainersCheckedListBox
@@ -88,7 +90,7 @@ partial class MembershipForm {
             this.TrainersCheckedListBox.FormattingEnabled = true;
             this.TrainersCheckedListBox.Location = new System.Drawing.Point(677, 83);
             this.TrainersCheckedListBox.Name = "TrainersCheckedListBox";
-            this.TrainersCheckedListBox.Size = new System.Drawing.Size(293, 172);
+            this.TrainersCheckedListBox.Size = new System.Drawing.Size(245, 172);
             this.TrainersCheckedListBox.TabIndex = 73;
             // 
             // label10
@@ -124,7 +126,7 @@ partial class MembershipForm {
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label8.Location = new System.Drawing.Point(0, 0);
+            this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(168, 32);
             this.label8.TabIndex = 55;
@@ -132,11 +134,13 @@ partial class MembershipForm {
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.MembersDataGridView);
             this.panel1.Location = new System.Drawing.Point(3, 263);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1092, 405);
+            this.panel1.Size = new System.Drawing.Size(1092, 402);
             this.panel1.TabIndex = 68;
             // 
             // MembersDataGridView
@@ -150,7 +154,7 @@ partial class MembershipForm {
             this.MembersDataGridView.Name = "MembersDataGridView";
             this.MembersDataGridView.ReadOnly = true;
             this.MembersDataGridView.RowTemplate.Height = 25;
-            this.MembersDataGridView.Size = new System.Drawing.Size(1092, 405);
+            this.MembersDataGridView.Size = new System.Drawing.Size(1092, 402);
             this.MembersDataGridView.TabIndex = 0;
             // 
             // FirstNameTextBox
@@ -292,7 +296,7 @@ partial class MembershipForm {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1188, 786);
+            this.ClientSize = new System.Drawing.Size(1128, 692);
             this.Controls.Add(this.panel2);
             this.Name = "MembershipForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
