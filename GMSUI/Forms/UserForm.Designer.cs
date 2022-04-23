@@ -253,6 +253,7 @@ partial class UserForm {
             // 
             // RoleLevelComboBox
             // 
+            this.RoleLevelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RoleLevelComboBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RoleLevelComboBox.FormattingEnabled = true;
             this.RoleLevelComboBox.Items.AddRange(new object[] {

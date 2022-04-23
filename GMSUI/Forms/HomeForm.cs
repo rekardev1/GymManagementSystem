@@ -58,7 +58,12 @@ public partial class HomeForm : Form {
     }
 
     private void MembershipsButton_Click(object sender, EventArgs e) {
-        MembershipTypeForm membershipForm = new MembershipTypeForm(this);
-        membershipForm.Show();
+        MembershipTypeForm membershipTypeForm = new MembershipTypeForm(this);
+        membershipTypeForm.Show();
+    }
+
+    private void MembershipsButton_Click_1(object sender, EventArgs e) {
+        MembershipForm membership = new MembershipForm(this);
+        membership.Show();
     }
 }

@@ -28,6 +28,7 @@ namespace GMSUI.Forms {
         protected async override void OnLoad(EventArgs e) {
 
             await LoadEmployees();
+            
 
         }
 
@@ -38,6 +39,8 @@ namespace GMSUI.Forms {
             _employees = new BindingList<EmployeeModel>(em);
 
             EmployeesDataGridView.DataSource = _employees;
+            
+            EmployeesDataGridView.ClearSelection();
         }
 
         private async void AddButton_Click(object sender, EventArgs e) {

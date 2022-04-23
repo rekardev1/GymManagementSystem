@@ -55,6 +55,7 @@ public partial class UserForm : Form {
         _Users = new BindingList<UserModel>(u);
 
         UsersDataGridView.DataSource = _Users;
+        UsersDataGridView.ClearSelection();
     }
     private async void AddUserButton_Click(object sender, EventArgs e) {
         
