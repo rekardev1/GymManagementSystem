@@ -22,6 +22,7 @@ public partial class MemberForm : Form {
 
         BirthDatePicker.Format = DateTimePickerFormat.Custom;
         BirthDatePicker.CustomFormat = "dd/MM/yyyy";
+        BirthDatePicker.Value = DateTime.Today;
 
     }
 
@@ -36,6 +37,7 @@ public partial class MemberForm : Form {
         _members = await _sqlConnector.GetMembers();
 
         MembersDataGridView.DataSource = _members;
+        MembersDataGridView.ClearSelection();
     }
 
     private async void AddButton_Click(object sender, EventArgs e) {
@@ -72,7 +74,7 @@ public partial class MemberForm : Form {
         LastNameTextBox.Text = "";
         AddressTextBox.Text = "";
         GenderTextBox.Text = "";
-        BirthDatePicker.Value = DateTime.Now;
+        BirthDatePicker.Value = DateTime.Today;
         PhoneNumber1TextBox.Text = "";
         PhoneNumber2TextBox.Text = "";
 

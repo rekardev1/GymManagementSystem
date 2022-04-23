@@ -11,4 +11,9 @@ public class MembershipTypeModel {
     public DateTime Start { get; set; }
     public DateTime End { get; set; }
     public int Fee { get; set; }
+
+    public string Display {
+        get { return $"{Name}({Fee})"; }
+    }
+
 }

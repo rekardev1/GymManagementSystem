@@ -8,5 +8,5 @@
     [UserId] INT NOT NULL, 
     CONSTRAINT [FK_Membership_Member] FOREIGN KEY (MemberId) REFERENCES Member(Id),
     CONSTRAINT [FK_Membership_User] FOREIGN KEY ([UserId]) REFERENCES [User](Id),
-    CONSTRAINT [FK_Membership_MembershipType] FOREIGN KEY (MembershipTypeId) REFERENCES MembershipType(Id)
+    CONSTRAINT [FK_Membership_MembershipType] FOREIGN KEY (MembershipTypeId) REFERENCES MembershipType(Id), 
 )

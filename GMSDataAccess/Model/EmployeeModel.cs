@@ -17,6 +17,4 @@ public class EmployeeModel {
     public string Display {
         get { return $"{Id}. {Name}"; }
     }
-
-
 }

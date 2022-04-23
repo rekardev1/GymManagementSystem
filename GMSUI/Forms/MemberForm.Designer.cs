@@ -25,6 +25,7 @@ partial class MemberForm {
     /// </summary>
     private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +44,10 @@ partial class MemberForm {
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MembersDataGridView = new System.Windows.Forms.DataGridView();
+            this.memberModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.UpdateButton = new System.Windows.Forms.Button();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,10 +56,6 @@ partial class MemberForm {
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumber1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumber2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memberModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.DeleteButton = new System.Windows.Forms.Button();
-            this.UpdateButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberModelBindingSource)).BeginInit();
@@ -246,62 +247,6 @@ partial class MemberForm {
             this.MembersDataGridView.TabIndex = 0;
             this.MembersDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MembersDataGridView_CellClick);
             // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // birthDateDataGridViewTextBoxColumn
-            // 
-            this.birthDateDataGridViewTextBoxColumn.DataPropertyName = "BirthDate";
-            this.birthDateDataGridViewTextBoxColumn.HeaderText = "BirthDate";
-            this.birthDateDataGridViewTextBoxColumn.Name = "birthDateDataGridViewTextBoxColumn";
-            this.birthDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // genderDataGridViewTextBoxColumn
-            // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneNumber1DataGridViewTextBoxColumn
-            // 
-            this.phoneNumber1DataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber1";
-            this.phoneNumber1DataGridViewTextBoxColumn.HeaderText = "PhoneNumber1";
-            this.phoneNumber1DataGridViewTextBoxColumn.Name = "phoneNumber1DataGridViewTextBoxColumn";
-            this.phoneNumber1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneNumber2DataGridViewTextBoxColumn
-            // 
-            this.phoneNumber2DataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber2";
-            this.phoneNumber2DataGridViewTextBoxColumn.HeaderText = "PhoneNumber2";
-            this.phoneNumber2DataGridViewTextBoxColumn.Name = "phoneNumber2DataGridViewTextBoxColumn";
-            this.phoneNumber2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // memberModelBindingSource
             // 
             this.memberModelBindingSource.DataSource = typeof(GMSDataAccess.Model.MemberModel);
@@ -355,6 +300,65 @@ partial class MemberForm {
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // birthDateDataGridViewTextBoxColumn
+            // 
+            this.birthDateDataGridViewTextBoxColumn.DataPropertyName = "BirthDate";
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.birthDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.birthDateDataGridViewTextBoxColumn.HeaderText = "BirthDate";
+            this.birthDateDataGridViewTextBoxColumn.Name = "birthDateDataGridViewTextBoxColumn";
+            this.birthDateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneNumber1DataGridViewTextBoxColumn
+            // 
+            this.phoneNumber1DataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber1";
+            this.phoneNumber1DataGridViewTextBoxColumn.HeaderText = "PhoneNumber1";
+            this.phoneNumber1DataGridViewTextBoxColumn.Name = "phoneNumber1DataGridViewTextBoxColumn";
+            this.phoneNumber1DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneNumber2DataGridViewTextBoxColumn
+            // 
+            this.phoneNumber2DataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber2";
+            this.phoneNumber2DataGridViewTextBoxColumn.HeaderText = "PhoneNumber2";
+            this.phoneNumber2DataGridViewTextBoxColumn.Name = "phoneNumber2DataGridViewTextBoxColumn";
+            this.phoneNumber2DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // MemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -394,6 +398,9 @@ partial class MemberForm {
     private Panel panel1;
     private DataGridView MembersDataGridView;
     private Panel panel2;
+    private BindingSource memberModelBindingSource;
+    private Button UpdateButton;
+    private Button DeleteButton;
     private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
     private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
     private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
@@ -402,7 +409,4 @@ partial class MemberForm {
     private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
     private DataGridViewTextBoxColumn phoneNumber1DataGridViewTextBoxColumn;
     private DataGridViewTextBoxColumn phoneNumber2DataGridViewTextBoxColumn;
-    private BindingSource memberModelBindingSource;
-    private Button UpdateButton;
-    private Button DeleteButton;
 }

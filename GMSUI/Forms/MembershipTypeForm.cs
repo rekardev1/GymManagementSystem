@@ -45,6 +45,7 @@ public partial class MembershipTypeForm : Form {
         _membershipTypes = new BindingList<MembershipTypeModel>(m);
 
         MembershipsDataGridView.DataSource = _membershipTypes;
+        MembershipsDataGridView.ClearSelection();
 
         if (_membershipTypes.Count > 0) {
 
