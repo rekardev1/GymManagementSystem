@@ -14,15 +14,15 @@ using System.Windows.Forms;
 namespace GMSUI.Forms;
 public partial class UserForm : Form {
 
-    private readonly HomeForm _home;
+    private readonly ShellForm _shell;
     private SqlConnector _sqlConnector = new SqlConnector();
     private BindingList<UserModel> _Users;
     private DataGridViewRow _selectedRow;
 
-    public UserForm(HomeForm home) {
+    public UserForm(ShellForm shell) {
         InitializeComponent();
-        
-        _home = home;
+
+        _shell = shell;
 
         ComboBoxItem<int> item1 = new ComboBoxItem<int>();
         item1.Label = "Admin";
@@ -220,5 +220,9 @@ public partial class UserForm : Form {
         SalaryTextBox.Text = _selectedRow.Cells[4].Value.ToString();
         PhoneNumber1TextBox.Text = _selectedRow.Cells[5].Value.ToString();
         PhoneNumber2TextBox.Text = _selectedRow.Cells[6].Value.ToString();
+    }
+
+    private void HomeButton_Click(object sender, EventArgs e) {
+        _shell.OpenHomeForm();
     }
 }

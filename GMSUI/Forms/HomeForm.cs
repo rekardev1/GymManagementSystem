@@ -11,59 +11,50 @@ using System.Windows.Forms;
 
 namespace GMSUI.Forms;
 public partial class HomeForm : Form {
+    private readonly ShellForm _shell;
 
-    public UserModel LoggedInUser { get; set; }
+    public HomeForm(ShellForm shell) {
 
-    public HomeForm() {
         InitializeComponent();
-
+        _shell = shell;
     }
 
     override protected void OnLoad(EventArgs e) {
 
-        Hide();
-
-        LoginForm frm = new LoginForm(this);
-        frm.LoggedIn += Frm_LoggedIn;
-        frm.ShowDialog();
-
-    }
-
-    private void Frm_LoggedIn(object? sender, EventArgs e) {
-
-
-        if (LoggedInUser.RoleLevel == 1) {
+        if (_shell.LoggedInUser.RoleLevel == 1) {
 
             UsersButton.Visible = true;
-
         }
-
     }
 
     private void MembersButton_Click(object sender, EventArgs e) {
-        MemberForm memberForm = new MemberForm();
-        memberForm.Show();
+        
+        MemberForm memberForm = new MemberForm(_shell);
+        _shell.OpenChildForm(memberForm, "Members");
     }
 
     private void EmployeesButton_Click(object sender, EventArgs e) {
 
-        EmployeeForm employeeForm = new EmployeeForm(this);
-        employeeForm.Show();
-
+        EmployeeForm employeeForm = new EmployeeForm(_shell);
+        _shell.OpenChildForm(employeeForm, "Employees");
     }
 
     private void UsersButton_Click(object sender, EventArgs e) {
-        UserForm employeeForm = new UserForm(this);
-        employeeForm.Show();
+
+        UserForm userForm = new UserForm(_shell);
+        _shell.OpenChildForm(userForm, "Users");
+        
+    }
+
+    private void MembershipTypesButton_Click(object sender, EventArgs e) {
+
+        MembershipTypeForm membershipTypeForm = new MembershipTypeForm(_shell);
+        _shell.OpenChildForm(membershipTypeForm, "Membership Types");
     }
 
     private void MembershipsButton_Click(object sender, EventArgs e) {
-        MembershipTypeForm membershipTypeForm = new MembershipTypeForm(this);
-        membershipTypeForm.Show();
-    }
 
-    private void MembershipsButton_Click_1(object sender, EventArgs e) {
-        MembershipForm membership = new MembershipForm(this);
-        membership.Show();
+        MembershipForm membership = new MembershipForm(_shell);
+        _shell.OpenChildForm(membership, "Memberships");
     }
 }

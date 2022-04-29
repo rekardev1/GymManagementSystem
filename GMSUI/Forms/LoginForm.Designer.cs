@@ -39,7 +39,7 @@ partial class LoginForm {
             // 
             this.UserNameLabel.AutoSize = true;
             this.UserNameLabel.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.UserNameLabel.Location = new System.Drawing.Point(34, 145);
+            this.UserNameLabel.Location = new System.Drawing.Point(77, 140);
             this.UserNameLabel.Name = "UserNameLabel";
             this.UserNameLabel.Size = new System.Drawing.Size(108, 28);
             this.UserNameLabel.TabIndex = 0;
@@ -48,7 +48,7 @@ partial class LoginForm {
             // NameTextBox
             // 
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NameTextBox.Location = new System.Drawing.Point(34, 176);
+            this.NameTextBox.Location = new System.Drawing.Point(77, 171);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(267, 34);
             this.NameTextBox.TabIndex = 1;
@@ -56,7 +56,7 @@ partial class LoginForm {
             // PasswordTextBox
             // 
             this.PasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PasswordTextBox.Location = new System.Drawing.Point(34, 244);
+            this.PasswordTextBox.Location = new System.Drawing.Point(77, 239);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(267, 34);
@@ -66,7 +66,7 @@ partial class LoginForm {
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(34, 213);
+            this.label1.Location = new System.Drawing.Point(77, 208);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 28);
             this.label1.TabIndex = 2;
@@ -79,7 +79,7 @@ partial class LoginForm {
             this.LogInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LogInButton.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LogInButton.ForeColor = System.Drawing.Color.White;
-            this.LogInButton.Location = new System.Drawing.Point(34, 335);
+            this.LogInButton.Location = new System.Drawing.Point(77, 330);
             this.LogInButton.Name = "LogInButton";
             this.LogInButton.Size = new System.Drawing.Size(267, 39);
             this.LogInButton.TabIndex = 4;
@@ -91,7 +91,7 @@ partial class LoginForm {
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(110, 41);
+            this.label2.Location = new System.Drawing.Point(153, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 47);
             this.label2.TabIndex = 5;
@@ -102,7 +102,7 @@ partial class LoginForm {
             this.ShowPasswordCheckBox.AutoSize = true;
             this.ShowPasswordCheckBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ShowPasswordCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
-            this.ShowPasswordCheckBox.Location = new System.Drawing.Point(34, 284);
+            this.ShowPasswordCheckBox.Location = new System.Drawing.Point(77, 279);
             this.ShowPasswordCheckBox.Name = "ShowPasswordCheckBox";
             this.ShowPasswordCheckBox.Size = new System.Drawing.Size(165, 32);
             this.ShowPasswordCheckBox.TabIndex = 6;
@@ -114,15 +114,15 @@ partial class LoginForm {
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.ShowPasswordCheckBox);
-            this.panel1.Controls.Add(this.UserNameLabel);
             this.panel1.Controls.Add(this.NameTextBox);
             this.panel1.Controls.Add(this.LogInButton);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.PasswordTextBox);
-            this.panel1.Location = new System.Drawing.Point(51, 43);
+            this.panel1.Controls.Add(this.UserNameLabel);
+            this.panel1.Location = new System.Drawing.Point(289, 43);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(342, 481);
+            this.panel1.Size = new System.Drawing.Size(442, 443);
             this.panel1.TabIndex = 7;
             // 
             // LoginForm
@@ -130,13 +130,12 @@ partial class LoginForm {
             this.AcceptButton = this.LogInButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(462, 572);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1019, 579);
             this.Controls.Add(this.panel1);
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

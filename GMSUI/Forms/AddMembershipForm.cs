@@ -12,16 +12,16 @@ using System.Windows.Forms;
 
 namespace GMSUI.Forms;
 public partial class AddMembershipForm : Form {
-    private readonly HomeForm _home;
+    private readonly ShellForm _shell;
     private List<MemberModel> _members = new List<MemberModel>();
     private List<MembershipTypeModel> _membershipTypes = new List<MembershipTypeModel>();
     private List<EmployeeModel> _trainers = new List<EmployeeModel>();
     private SqlConnector _sqlConnector = new SqlConnector();
 
 
-    public AddMembershipForm(HomeForm home) {
+    public AddMembershipForm(ShellForm shell) {
         InitializeComponent();
-        _home = home;
+        _shell = shell;
 
         StartingDatePicker.Format = DateTimePickerFormat.Custom;
         StartingDatePicker.CustomFormat = "dd/MM/yyyy";
@@ -85,7 +85,7 @@ public partial class AddMembershipForm : Form {
                 
                 model.StartingDate = StartingDatePicker.Value;
                 model.ExpirationDate = ExpirationDatePicker.Value;
-                model.UserId = _home.LoggedInUser.Id;
+                model.UserId = _shell.LoggedInUser.Id;
 
 
                 await _sqlConnector.AddMembership(model);

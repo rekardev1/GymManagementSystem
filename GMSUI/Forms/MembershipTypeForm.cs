@@ -13,12 +13,12 @@ using System.Windows.Forms;
 namespace GMSUI.Forms;
 public partial class MembershipTypeForm : Form {
 
-    private readonly HomeForm _home;
+    private readonly ShellForm _shell;
     private SqlConnector _sqlConnector = new SqlConnector();
     private BindingList<MembershipTypeModel> _membershipTypes;
     private DataGridViewRow _selectedRow;
 
-    public MembershipTypeForm(HomeForm homeForm) {
+    public MembershipTypeForm(ShellForm shell) {
         InitializeComponent();
 
         StartTimePicker.Format = DateTimePickerFormat.Time;
@@ -28,7 +28,7 @@ public partial class MembershipTypeForm : Form {
         EndTimePicker.ShowUpDown = true;
 
 
-        _home = homeForm;
+        _shell = shell;
     }
 
     protected async override void OnLoad(EventArgs e) {
@@ -169,5 +169,9 @@ public partial class MembershipTypeForm : Form {
         }
 
         await ResetForm();
+    }
+
+    private void HomeButton_Click(object sender, EventArgs e) {
+        _shell.OpenHomeForm();
     }
 }

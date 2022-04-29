@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.EmployeeLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.EmployeesDataGridView = new System.Windows.Forms.DataGridView();
             this.UpdateButton = new System.Windows.Forms.Button();
@@ -47,7 +46,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SalaryTextBox = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
+            this.HomeButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -56,45 +55,21 @@
             // 
             this.EmployeeLabel.AutoSize = true;
             this.EmployeeLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.EmployeeLabel.Location = new System.Drawing.Point(3, 0);
+            this.EmployeeLabel.Location = new System.Drawing.Point(81, 22);
             this.EmployeeLabel.Name = "EmployeeLabel";
             this.EmployeeLabel.Size = new System.Drawing.Size(136, 32);
             this.EmployeeLabel.TabIndex = 0;
             this.EmployeeLabel.Text = "Employees";
             // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.UpdateButton);
-            this.panel1.Controls.Add(this.DeleteButton);
-            this.panel1.Controls.Add(this.AddEmployeeButton);
-            this.panel1.Controls.Add(this.EmployeeLabel);
-            this.panel1.Controls.Add(this.PhoneNumber2TextBox);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.NameTextBox);
-            this.panel1.Controls.Add(this.PhoneNumber1TextBox);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.AddressTextBox);
-            this.panel1.Controls.Add(this.JobTypeTextBox);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.SalaryTextBox);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(832, 632);
-            this.panel1.TabIndex = 13;
-            // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.EmployeesDataGridView);
-            this.panel2.Location = new System.Drawing.Point(3, 296);
+            this.panel2.Location = new System.Drawing.Point(12, 316);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(826, 319);
+            this.panel2.Size = new System.Drawing.Size(1011, 348);
             this.panel2.TabIndex = 16;
             // 
             // EmployeesDataGridView
@@ -109,13 +84,13 @@
             this.EmployeesDataGridView.ReadOnly = true;
             this.EmployeesDataGridView.RowTemplate.Height = 25;
             this.EmployeesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EmployeesDataGridView.Size = new System.Drawing.Size(826, 319);
+            this.EmployeesDataGridView.Size = new System.Drawing.Size(1011, 348);
             this.EmployeesDataGridView.TabIndex = 0;
             this.EmployeesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeesGridView_CellClick);
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(168, 225);
+            this.UpdateButton.Location = new System.Drawing.Point(246, 237);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(159, 48);
             this.UpdateButton.TabIndex = 7;
@@ -125,7 +100,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(336, 225);
+            this.DeleteButton.Location = new System.Drawing.Point(414, 237);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(159, 48);
             this.DeleteButton.TabIndex = 8;
@@ -135,7 +110,7 @@
             // 
             // AddEmployeeButton
             // 
-            this.AddEmployeeButton.Location = new System.Drawing.Point(3, 225);
+            this.AddEmployeeButton.Location = new System.Drawing.Point(81, 237);
             this.AddEmployeeButton.Name = "AddEmployeeButton";
             this.AddEmployeeButton.Size = new System.Drawing.Size(159, 48);
             this.AddEmployeeButton.TabIndex = 9;
@@ -146,7 +121,7 @@
             // PhoneNumber2TextBox
             // 
             this.PhoneNumber2TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PhoneNumber2TextBox.Location = new System.Drawing.Point(336, 166);
+            this.PhoneNumber2TextBox.Location = new System.Drawing.Point(414, 178);
             this.PhoneNumber2TextBox.Name = "PhoneNumber2TextBox";
             this.PhoneNumber2TextBox.Size = new System.Drawing.Size(159, 29);
             this.PhoneNumber2TextBox.TabIndex = 7;
@@ -156,7 +131,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(3, 68);
+            this.label1.Location = new System.Drawing.Point(81, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 21);
             this.label1.TabIndex = 1;
@@ -166,7 +141,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(336, 142);
+            this.label6.Location = new System.Drawing.Point(414, 154);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 21);
             this.label6.TabIndex = 11;
@@ -175,7 +150,7 @@
             // NameTextBox
             // 
             this.NameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.NameTextBox.Location = new System.Drawing.Point(3, 92);
+            this.NameTextBox.Location = new System.Drawing.Point(81, 104);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(159, 29);
             this.NameTextBox.TabIndex = 1;
@@ -183,7 +158,7 @@
             // PhoneNumber1TextBox
             // 
             this.PhoneNumber1TextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.PhoneNumber1TextBox.Location = new System.Drawing.Point(171, 166);
+            this.PhoneNumber1TextBox.Location = new System.Drawing.Point(249, 178);
             this.PhoneNumber1TextBox.Name = "PhoneNumber1TextBox";
             this.PhoneNumber1TextBox.Size = new System.Drawing.Size(159, 29);
             this.PhoneNumber1TextBox.TabIndex = 6;
@@ -193,7 +168,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(168, 68);
+            this.label2.Location = new System.Drawing.Point(246, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 21);
             this.label2.TabIndex = 3;
@@ -203,7 +178,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(171, 142);
+            this.label5.Location = new System.Drawing.Point(249, 154);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(129, 21);
             this.label5.TabIndex = 9;
@@ -212,7 +187,7 @@
             // AddressTextBox
             // 
             this.AddressTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AddressTextBox.Location = new System.Drawing.Point(168, 92);
+            this.AddressTextBox.Location = new System.Drawing.Point(246, 104);
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(159, 29);
             this.AddressTextBox.TabIndex = 2;
@@ -220,7 +195,7 @@
             // JobTypeTextBox
             // 
             this.JobTypeTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.JobTypeTextBox.Location = new System.Drawing.Point(3, 166);
+            this.JobTypeTextBox.Location = new System.Drawing.Point(81, 178);
             this.JobTypeTextBox.Name = "JobTypeTextBox";
             this.JobTypeTextBox.Size = new System.Drawing.Size(159, 29);
             this.JobTypeTextBox.TabIndex = 4;
@@ -229,7 +204,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(333, 68);
+            this.label3.Location = new System.Drawing.Point(411, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 21);
             this.label3.TabIndex = 5;
@@ -239,7 +214,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(3, 142);
+            this.label4.Location = new System.Drawing.Point(81, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(70, 21);
             this.label4.TabIndex = 7;
@@ -248,33 +223,60 @@
             // SalaryTextBox
             // 
             this.SalaryTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SalaryTextBox.Location = new System.Drawing.Point(333, 92);
+            this.SalaryTextBox.Location = new System.Drawing.Point(411, 104);
             this.SalaryTextBox.Name = "SalaryTextBox";
             this.SalaryTextBox.Size = new System.Drawing.Size(159, 29);
             this.SalaryTextBox.TabIndex = 3;
             this.SalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SalaryTextBox_KeyPress);
             // 
+            // HomeButton
+            // 
+            this.HomeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HomeButton.Image = global::GMSUI.Properties.Resources.home_60x60;
+            this.HomeButton.Location = new System.Drawing.Point(12, 11);
+            this.HomeButton.Name = "HomeButton";
+            this.HomeButton.Size = new System.Drawing.Size(63, 58);
+            this.HomeButton.TabIndex = 17;
+            this.HomeButton.UseVisualStyleBackColor = true;
+            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 666);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1035, 676);
+            this.Controls.Add(this.HomeButton);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.UpdateButton);
+            this.Controls.Add(this.EmployeeLabel);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.SalaryTextBox);
+            this.Controls.Add(this.AddEmployeeButton);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.PhoneNumber2TextBox);
+            this.Controls.Add(this.JobTypeTextBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.AddressTextBox);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.NameTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.PhoneNumber1TextBox);
             this.Name = "EmployeeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EmployeeForm";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Text = "Employee";
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private Label EmployeeLabel;
-        private Panel panel1;
         private Button UpdateButton;
         private Button DeleteButton;
         private Button AddEmployeeButton;
@@ -292,5 +294,6 @@
         private Label label3;
         private Label label4;
         private TextBox SalaryTextBox;
+        private Button HomeButton;
     }
 }

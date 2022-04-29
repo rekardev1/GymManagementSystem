@@ -16,14 +16,15 @@ public partial class MemberForm : Form {
     private SqlConnector _sqlConnector = new SqlConnector();
     private List<MemberModel> _members = new List<MemberModel>();
     private DataGridViewRow _selectedRow;
+    private readonly ShellForm _shell;
 
-    public MemberForm() {
+    public MemberForm(ShellForm shell) {
         InitializeComponent();
 
         BirthDatePicker.Format = DateTimePickerFormat.Custom;
         BirthDatePicker.CustomFormat = "dd/MM/yyyy";
         BirthDatePicker.Value = DateTime.Today;
-
+        _shell = shell;
     }
 
     override async protected void OnLoad(EventArgs e) {
@@ -176,5 +177,9 @@ public partial class MemberForm : Form {
         }
 
         await ResetForm();
+    }
+
+    private void HomeButton_Click(object sender, EventArgs e) {
+        _shell.OpenHomeForm();
     }
 }

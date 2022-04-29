@@ -28,9 +28,9 @@ partial class HomeForm {
             this.MembersButton = new System.Windows.Forms.Button();
             this.EmployeesButton = new System.Windows.Forms.Button();
             this.MembershipTypesButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.UsersButton = new System.Windows.Forms.Button();
             this.MembershipsButton = new System.Windows.Forms.Button();
+            this.UsersButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,7 +38,7 @@ partial class HomeForm {
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(28, 0);
+            this.label1.Location = new System.Drawing.Point(103, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(778, 86);
             this.label1.TabIndex = 0;
@@ -47,7 +47,7 @@ partial class HomeForm {
             // MembersButton
             // 
             this.MembersButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MembersButton.Location = new System.Drawing.Point(111, 164);
+            this.MembersButton.Location = new System.Drawing.Point(186, 174);
             this.MembersButton.Name = "MembersButton";
             this.MembersButton.Size = new System.Drawing.Size(201, 107);
             this.MembersButton.TabIndex = 1;
@@ -58,7 +58,7 @@ partial class HomeForm {
             // EmployeesButton
             // 
             this.EmployeesButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.EmployeesButton.Location = new System.Drawing.Point(318, 164);
+            this.EmployeesButton.Location = new System.Drawing.Point(393, 174);
             this.EmployeesButton.Name = "EmployeesButton";
             this.EmployeesButton.Size = new System.Drawing.Size(201, 107);
             this.EmployeesButton.TabIndex = 2;
@@ -69,32 +69,29 @@ partial class HomeForm {
             // MembershipTypesButton
             // 
             this.MembershipTypesButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MembershipTypesButton.Location = new System.Drawing.Point(525, 164);
+            this.MembershipTypesButton.Location = new System.Drawing.Point(600, 174);
             this.MembershipTypesButton.Name = "MembershipTypesButton";
             this.MembershipTypesButton.Size = new System.Drawing.Size(201, 107);
             this.MembershipTypesButton.TabIndex = 3;
             this.MembershipTypesButton.Text = "Memberships Types";
             this.MembershipTypesButton.UseVisualStyleBackColor = true;
-            this.MembershipTypesButton.Click += new System.EventHandler(this.MembershipsButton_Click);
+            this.MembershipTypesButton.Click += new System.EventHandler(this.MembershipTypesButton_Click);
             // 
-            // panel1
+            // MembershipsButton
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.Controls.Add(this.MembershipsButton);
-            this.panel1.Controls.Add(this.UsersButton);
-            this.panel1.Controls.Add(this.EmployeesButton);
-            this.panel1.Controls.Add(this.MembershipTypesButton);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.MembersButton);
-            this.panel1.Location = new System.Drawing.Point(61, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(828, 420);
-            this.panel1.TabIndex = 4;
+            this.MembershipsButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MembershipsButton.Location = new System.Drawing.Point(186, 287);
+            this.MembershipsButton.Name = "MembershipsButton";
+            this.MembershipsButton.Size = new System.Drawing.Size(201, 107);
+            this.MembershipsButton.TabIndex = 5;
+            this.MembershipsButton.Text = "Memberships";
+            this.MembershipsButton.UseVisualStyleBackColor = true;
+            this.MembershipsButton.Click += new System.EventHandler(this.MembershipsButton_Click);
             // 
             // UsersButton
             // 
             this.UsersButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UsersButton.Location = new System.Drawing.Point(318, 277);
+            this.UsersButton.Location = new System.Drawing.Point(393, 287);
             this.UsersButton.Name = "UsersButton";
             this.UsersButton.Size = new System.Drawing.Size(201, 107);
             this.UsersButton.TabIndex = 4;
@@ -103,29 +100,33 @@ partial class HomeForm {
             this.UsersButton.Visible = false;
             this.UsersButton.Click += new System.EventHandler(this.UsersButton_Click);
             // 
-            // MembershipsButton
+            // panel1
             // 
-            this.MembershipsButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MembershipsButton.Location = new System.Drawing.Point(111, 277);
-            this.MembershipsButton.Name = "MembershipsButton";
-            this.MembershipsButton.Size = new System.Drawing.Size(201, 107);
-            this.MembershipsButton.TabIndex = 5;
-            this.MembershipsButton.Text = "Memberships";
-            this.MembershipsButton.UseVisualStyleBackColor = true;
-            this.MembershipsButton.Click += new System.EventHandler(this.MembershipsButton_Click_1);
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.EmployeesButton);
+            this.panel1.Controls.Add(this.MembershipsButton);
+            this.panel1.Controls.Add(this.UsersButton);
+            this.panel1.Controls.Add(this.MembersButton);
+            this.panel1.Controls.Add(this.MembershipTypesButton);
+            this.panel1.Location = new System.Drawing.Point(12, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(995, 555);
+            this.panel1.TabIndex = 6;
             // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 571);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1019, 572);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "HomeForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "HomeForm";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -138,7 +139,7 @@ partial class HomeForm {
     private Button MembersButton;
     private Button EmployeesButton;
     private Button MembershipTypesButton;
-    private Panel panel1;
     private Button UsersButton;
     private Button MembershipsButton;
+    private Panel panel1;
 }

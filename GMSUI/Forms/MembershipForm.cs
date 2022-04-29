@@ -18,9 +18,9 @@ public partial class MembershipForm : Form {
     private List<MembershipTypeModel> _membershipTypes = new List<MembershipTypeModel>();
     private List<MembershipModel> _memberships = new List<MembershipModel>();
     private DataGridViewRow _selectedRow;
-    private readonly HomeForm _home;
+    private readonly ShellForm _shell;
 
-    public MembershipForm(HomeForm home) {
+    public MembershipForm(ShellForm shell) {
         InitializeComponent();
 
         StartingDatePicker.Format = DateTimePickerFormat.Custom;
@@ -30,7 +30,7 @@ public partial class MembershipForm : Form {
         ExpirationDatePicker.Format = DateTimePickerFormat.Custom;
         ExpirationDatePicker.CustomFormat = "dd/MM/yyyy";
         ExpirationDatePicker.Value = DateTime.Today.AddDays(30);
-        _home = home;
+        _shell = shell;
     }
 
     override protected async void OnLoad(EventArgs e) {
@@ -109,7 +109,7 @@ public partial class MembershipForm : Form {
 
     private async void AddButton_Click(object sender, EventArgs e) {
         
-        AddMembershipForm addMembershipForm = new AddMembershipForm(_home);
+        AddMembershipForm addMembershipForm = new AddMembershipForm(_shell);
         addMembershipForm.ShowDialog();
 
         await ResetForm();
@@ -224,5 +224,9 @@ public partial class MembershipForm : Form {
 
     private void TrainersCheckedListBox_Leave(object sender, EventArgs e) {
         TrainersCheckedListBox.ClearSelected();
+    }
+
+    private void HomeButton_Click(object sender, EventArgs e) {
+        _shell.OpenHomeForm();
     }
 }

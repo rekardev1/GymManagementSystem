@@ -15,14 +15,14 @@ public partial class LoginForm : Form {
     
     public event EventHandler LoggedIn;
 
-    private readonly HomeForm _home;
+    private readonly ShellForm _shell;
     SqlConnector _sqlConnector = new SqlConnector();
 
-    public LoginForm(HomeForm home) {
+    public LoginForm(ShellForm shell) {
 
         InitializeComponent();
-        
-        _home = home;
+
+        _shell = shell;
         
     }
 
@@ -34,12 +34,11 @@ public partial class LoginForm : Form {
 
             UserModel user = await _sqlConnector.GetUserByName(NameTextBox.Text);
 
-            _home.LoggedInUser = user;
+            _shell.LoggedInUser = user;
 
             LoggedIn?.Invoke(this, EventArgs.Empty);
 
-            this.Hide();
-            _home.Show();
+            
 
         } else {
             
@@ -59,7 +58,4 @@ public partial class LoginForm : Form {
         }
     }
 
-    private void LoginForm_FormClosed(object sender, FormClosedEventArgs e) {
-        _home.Close();
-    }
 }

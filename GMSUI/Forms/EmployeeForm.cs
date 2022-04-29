@@ -13,15 +13,15 @@ using System.Windows.Forms;
 namespace GMSUI.Forms {
     public partial class EmployeeForm : Form {
 
-        private readonly HomeForm _home;
+        private readonly ShellForm _shell;
         private SqlConnector _sqlConnector = new SqlConnector();
         private BindingList<EmployeeModel> _employees;
         private DataGridViewRow _selectedRow;
 
-        public EmployeeForm(HomeForm home) {
+        public EmployeeForm(ShellForm shell) {
             InitializeComponent();
 
-            _home = home;
+            _shell = shell;
 
         }
 
@@ -188,6 +188,9 @@ namespace GMSUI.Forms {
             PhoneNumber2TextBox.Text = _selectedRow.Cells[6].Value.ToString();
 
         }
-        
+
+        private void HomeButton_Click(object sender, EventArgs e) {
+            _shell.OpenHomeForm();
+        }
     }
 }
