@@ -94,26 +94,31 @@ public class SqlConnector {
         }
     }
 
-    public async Task<List<MembershipModel>> GetMemberships() {
+    public async Task<List<MembershipModel>> GetMemberships(string fetchType) {
+
+        IEnumerable<MembershipModel> result;
 
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
-            var result = await connection.QueryAsync<MembershipModel>("spMembership_GetAll", new { }, commandType: CommandType.StoredProcedure);
+            switch (fetchType) {
+
+                case "Active":
+                    result = await connection.QueryAsync<MembershipModel>("spMembership_GetActive", new { }, commandType: CommandType.StoredProcedure);
+                    break;
+
+                case "Expired":
+                    result = await connection.QueryAsync<MembershipModel>("spMembership_GetExpired", new { }, commandType: CommandType.StoredProcedure);
+                    break;
+
+                default:
+                    result = await connection.QueryAsync<MembershipModel>("spMembership_GetAll", new { }, commandType: CommandType.StoredProcedure);
+                    break;
+            }
 
             foreach (var item in result) {
                 var r = await connection.QueryAsync<EmployeeModel>("spMembership_GetTrainersById", new { Id = item.Id }, commandType: CommandType.StoredProcedure);
                 item.Trainers = r.ToList();
             }
-
-            return result.ToList();
-        }
-    }
-
-    public async Task<List<EmployeeModel>> GetTrainers() {
-
-        using (IDbConnection connection = new SqlConnection(GetConnString())) {
-
-            var result = await connection.QueryAsync<EmployeeModel>("spEmployee_GetTrainers", new { }, commandType: CommandType.StoredProcedure);
 
             return result.ToList();
         }
@@ -262,13 +267,13 @@ public class SqlConnector {
         }
     }
 
-    public async Task<List<EmployeeModel>> GetEmployees(string type) {
+    public async Task<List<EmployeeModel>> GetEmployees(string fetchType) {
 
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
             IEnumerable<EmployeeModel> result;
 
-            switch (type) {
+            switch (fetchType) {
                 case "Trainer":
                     result = await connection.QueryAsync<EmployeeModel>("spEmployee_GetTrainers", new { }, commandType: CommandType.StoredProcedure);
                     break;

@@ -95,6 +95,8 @@
     <Build Include="StoredProcedures\spMembershipTrainers_Delete.sql" />
     <Build Include="StoredProcedures\spMembership_CheckExpirations.sql" />
     <Build Include="StoredProcedures\spEmployee_GetStaffs.sql" />
+    <Build Include="StoredProcedures\spMembership_GetActive.sql" />
+    <Build Include="StoredProcedures\spMembership_GetExpired.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data.publish.xml" />

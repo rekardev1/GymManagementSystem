@@ -56,6 +56,9 @@ partial class MembershipForm {
             this.AddButton = new System.Windows.Forms.Button();
             this.HomeButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
+            this.ExpiredOnlyRadioButton = new System.Windows.Forms.RadioButton();
+            this.ActiveOnlyRadioButton = new System.Windows.Forms.RadioButton();
+            this.AllRadioButton = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembershipsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -305,7 +308,7 @@ partial class MembershipForm {
             // 
             // AddButton
             // 
-            this.AddButton.Location = new System.Drawing.Point(787, 290);
+            this.AddButton.Location = new System.Drawing.Point(579, 290);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(159, 46);
             this.AddButton.TabIndex = 9;
@@ -335,11 +338,52 @@ partial class MembershipForm {
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
+            // ExpiredOnlyRadioButton
+            // 
+            this.ExpiredOnlyRadioButton.AutoSize = true;
+            this.ExpiredOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ExpiredOnlyRadioButton.Location = new System.Drawing.Point(887, 301);
+            this.ExpiredOnlyRadioButton.Name = "ExpiredOnlyRadioButton";
+            this.ExpiredOnlyRadioButton.Size = new System.Drawing.Size(116, 25);
+            this.ExpiredOnlyRadioButton.TabIndex = 90;
+            this.ExpiredOnlyRadioButton.Text = "Expired Only";
+            this.ExpiredOnlyRadioButton.UseVisualStyleBackColor = true;
+            this.ExpiredOnlyRadioButton.CheckedChanged += new System.EventHandler(this.StaffOnlyRadioButton_CheckedChanged);
+            // 
+            // ActiveOnlyRadioButton
+            // 
+            this.ActiveOnlyRadioButton.AutoSize = true;
+            this.ActiveOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ActiveOnlyRadioButton.Location = new System.Drawing.Point(887, 270);
+            this.ActiveOnlyRadioButton.Name = "ActiveOnlyRadioButton";
+            this.ActiveOnlyRadioButton.Size = new System.Drawing.Size(107, 25);
+            this.ActiveOnlyRadioButton.TabIndex = 89;
+            this.ActiveOnlyRadioButton.Text = "Active Only";
+            this.ActiveOnlyRadioButton.UseVisualStyleBackColor = true;
+            this.ActiveOnlyRadioButton.CheckedChanged += new System.EventHandler(this.ActiveOnlyRadioButton_CheckedChanged);
+            // 
+            // AllRadioButton
+            // 
+            this.AllRadioButton.AutoSize = true;
+            this.AllRadioButton.Checked = true;
+            this.AllRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AllRadioButton.Location = new System.Drawing.Point(887, 239);
+            this.AllRadioButton.Name = "AllRadioButton";
+            this.AllRadioButton.Size = new System.Drawing.Size(46, 25);
+            this.AllRadioButton.TabIndex = 88;
+            this.AllRadioButton.TabStop = true;
+            this.AllRadioButton.Text = "All";
+            this.AllRadioButton.UseVisualStyleBackColor = true;
+            this.AllRadioButton.CheckedChanged += new System.EventHandler(this.AllRadioButton_CheckedChanged);
+            // 
             // MembershipForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 572);
+            this.Controls.Add(this.ExpiredOnlyRadioButton);
+            this.Controls.Add(this.ActiveOnlyRadioButton);
+            this.Controls.Add(this.AllRadioButton);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.MemberNameTextBox);
@@ -398,4 +442,7 @@ partial class MembershipForm {
     private DataGridViewTextBoxColumn ExpirationDate;
     private DataGridViewTextBoxColumn IsExpired;
     private DataGridViewTextBoxColumn UserId;
+    private RadioButton ExpiredOnlyRadioButton;
+    private RadioButton ActiveOnlyRadioButton;
+    private RadioButton AllRadioButton;
 }

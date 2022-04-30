@@ -49,7 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.AddressTextBox = new System.Windows.Forms.TextBox();
-            this.JobTypeTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.SalaryTextBox = new System.Windows.Forms.TextBox();
@@ -58,6 +57,7 @@
             this.AllRadioButton = new System.Windows.Forms.RadioButton();
             this.TrainerOnlyRadioButton = new System.Windows.Forms.RadioButton();
             this.StaffOnlyRadioButton = new System.Windows.Forms.RadioButton();
+            this.JobTypeComboBox = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -253,14 +253,6 @@
             this.AddressTextBox.Size = new System.Drawing.Size(159, 29);
             this.AddressTextBox.TabIndex = 2;
             // 
-            // JobTypeTextBox
-            // 
-            this.JobTypeTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.JobTypeTextBox.Location = new System.Drawing.Point(81, 178);
-            this.JobTypeTextBox.Name = "JobTypeTextBox";
-            this.JobTypeTextBox.Size = new System.Drawing.Size(159, 29);
-            this.JobTypeTextBox.TabIndex = 4;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -332,9 +324,9 @@
             this.TrainerOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TrainerOnlyRadioButton.Location = new System.Drawing.Point(898, 254);
             this.TrainerOnlyRadioButton.Name = "TrainerOnlyRadioButton";
-            this.TrainerOnlyRadioButton.Size = new System.Drawing.Size(120, 25);
+            this.TrainerOnlyRadioButton.Size = new System.Drawing.Size(113, 25);
             this.TrainerOnlyRadioButton.TabIndex = 19;
-            this.TrainerOnlyRadioButton.Text = "Trainers Only";
+            this.TrainerOnlyRadioButton.Text = "Trainer Only";
             this.TrainerOnlyRadioButton.UseVisualStyleBackColor = true;
             this.TrainerOnlyRadioButton.CheckedChanged += new System.EventHandler(this.TrainerOnlyRadioButton_CheckedChanged);
             // 
@@ -344,11 +336,23 @@
             this.StaffOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.StaffOnlyRadioButton.Location = new System.Drawing.Point(898, 285);
             this.StaffOnlyRadioButton.Name = "StaffOnlyRadioButton";
-            this.StaffOnlyRadioButton.Size = new System.Drawing.Size(103, 25);
+            this.StaffOnlyRadioButton.Size = new System.Drawing.Size(96, 25);
             this.StaffOnlyRadioButton.TabIndex = 20;
-            this.StaffOnlyRadioButton.Text = "Staffs Only";
+            this.StaffOnlyRadioButton.Text = "Staff Only";
             this.StaffOnlyRadioButton.UseVisualStyleBackColor = true;
             this.StaffOnlyRadioButton.CheckedChanged += new System.EventHandler(this.StaffOnlyRadioButton_CheckedChanged);
+            // 
+            // JobTypeComboBox
+            // 
+            this.JobTypeComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.JobTypeComboBox.FormattingEnabled = true;
+            this.JobTypeComboBox.Items.AddRange(new object[] {
+            "Staff",
+            "Trainer"});
+            this.JobTypeComboBox.Location = new System.Drawing.Point(81, 178);
+            this.JobTypeComboBox.Name = "JobTypeComboBox";
+            this.JobTypeComboBox.Size = new System.Drawing.Size(159, 29);
+            this.JobTypeComboBox.TabIndex = 21;
             // 
             // EmployeeForm
             // 
@@ -356,6 +360,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1035, 676);
+            this.Controls.Add(this.JobTypeComboBox);
             this.Controls.Add(this.StaffOnlyRadioButton);
             this.Controls.Add(this.TrainerOnlyRadioButton);
             this.Controls.Add(this.AllRadioButton);
@@ -370,7 +375,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.PhoneNumber2TextBox);
-            this.Controls.Add(this.JobTypeTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.AddressTextBox);
             this.Controls.Add(this.label6);
@@ -403,7 +407,6 @@
         private Label label2;
         private Label label5;
         private TextBox AddressTextBox;
-        private TextBox JobTypeTextBox;
         private Label label3;
         private Label label4;
         private TextBox SalaryTextBox;
@@ -420,5 +423,6 @@
         private RadioButton AllRadioButton;
         private RadioButton TrainerOnlyRadioButton;
         private RadioButton StaffOnlyRadioButton;
+        private ComboBox JobTypeComboBox;
     }
 }

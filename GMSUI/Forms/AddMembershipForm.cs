@@ -58,7 +58,7 @@ public partial class AddMembershipForm : Form {
 
     private async Task LoadTrainers() {
 
-        _trainers = await _sqlConnector.GetTrainers();
+        _trainers = await _sqlConnector.GetEmployees("Trainer");
 
         TrainersCheckedListBox.DisplayMember = "Display";
         TrainersCheckedListBox.Items.Clear();

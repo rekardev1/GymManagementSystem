@@ -47,7 +47,7 @@ namespace GMSUI.Forms {
                     e.PhoneNumber1,
                     e.PhoneNumber2);
             }
-            
+
             EmployeesDataGridView.ClearSelection();
         }
 
@@ -60,7 +60,7 @@ namespace GMSUI.Forms {
                 model.Name = NameTextBox.Text;
                 model.Address = AddressTextBox.Text;
                 model.Salary = int.Parse(SalaryTextBox.Text);
-                model.JobType = JobTypeTextBox.Text;
+                model.JobType = JobTypeComboBox.Text;
                 model.PhoneNumber1 = PhoneNumber1TextBox.Text;
                 model.PhoneNumber2 = PhoneNumber2TextBox.Text;
 
@@ -91,7 +91,10 @@ namespace GMSUI.Forms {
             } else if (string.IsNullOrEmpty(SalaryTextBox.Text)) {
                 output = false;
 
-            } else if (string.IsNullOrEmpty(JobTypeTextBox.Text)) {
+            } else if (string.IsNullOrEmpty(JobTypeComboBox.Text) ||
+                        !JobTypeComboBox.Text.Equals("trainer", StringComparison.OrdinalIgnoreCase) &&
+                        !JobTypeComboBox.Text.Equals("staff", StringComparison.OrdinalIgnoreCase)) {
+
                 output = false;
 
             } else if (string.IsNullOrEmpty(PhoneNumber1TextBox.Text)) {
@@ -108,7 +111,7 @@ namespace GMSUI.Forms {
                 MessageBox.Show("Please Select a row!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+
             if (!ValidateForm()) {
                 MessageBox.Show("Please enter all required information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -120,7 +123,7 @@ namespace GMSUI.Forms {
             model.Name = NameTextBox.Text;
             model.Address = AddressTextBox.Text;
             model.Salary = int.Parse(SalaryTextBox.Text);
-            model.JobType = JobTypeTextBox.Text;
+            model.JobType = JobTypeComboBox.Text;
             model.PhoneNumber1 = PhoneNumber1TextBox.Text;
             model.PhoneNumber2 = PhoneNumber2TextBox.Text;
 
@@ -135,7 +138,7 @@ namespace GMSUI.Forms {
 
         }
         private async void DeleteButton_Click(object sender, EventArgs e) {
-            
+
             if (_selectedRow == null) {
                 MessageBox.Show("Please Select a row!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -158,10 +161,10 @@ namespace GMSUI.Forms {
             NameTextBox.Text = "";
             AddressTextBox.Text = "";
             SalaryTextBox.Text = "";
-            JobTypeTextBox.Text = "";
+            JobTypeComboBox.Text = "";
             PhoneNumber1TextBox.Text = "";
             PhoneNumber2TextBox.Text = "";
-            
+
             _selectedRow = null;
 
             await LoadEmployees(FetchType());
@@ -173,7 +176,7 @@ namespace GMSUI.Forms {
             if (AllRadioButton.Checked) {
                 return "All";
 
-            }else if (TrainerOnlyRadioButton.Checked) {
+            } else if (TrainerOnlyRadioButton.Checked) {
                 return "Trainer";
 
             } else {
@@ -200,7 +203,7 @@ namespace GMSUI.Forms {
         }
 
         private void PrintButton_Click(object sender, EventArgs e) {
-            
+
             DGVPrinter printer = new DGVPrinter();
             printer.Title = "Employees Report";
             printer.SubTitle = $"{DateTime.Now}";
@@ -226,7 +229,7 @@ namespace GMSUI.Forms {
         }
 
         private void EmployeesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e) {
-            
+
             if (e.RowIndex < 0) {
                 return;
             }
@@ -236,7 +239,7 @@ namespace GMSUI.Forms {
             NameTextBox.Text = _selectedRow.Cells[1].Value.ToString();
             AddressTextBox.Text = _selectedRow.Cells[2].Value.ToString();
             SalaryTextBox.Text = _selectedRow.Cells[3].Value.ToString();
-            JobTypeTextBox.Text = _selectedRow.Cells[4].Value.ToString();
+            JobTypeComboBox.Text = _selectedRow.Cells[4].Value.ToString();
             PhoneNumber1TextBox.Text = _selectedRow.Cells[5].Value.ToString();
             PhoneNumber2TextBox.Text = _selectedRow.Cells[6].Value.ToString();
 
