@@ -46,10 +46,10 @@ public partial class HomeForm : Form {
         
     }
 
-    private void MembershipTypesButton_Click(object sender, EventArgs e) {
+    private void PlansButton_Click(object sender, EventArgs e) {
 
-        MembershipTypeForm membershipTypeForm = new MembershipTypeForm(_shell);
-        _shell.OpenChildForm(membershipTypeForm, "Membership Types");
+        PlanForm PlanForm = new PlanForm(_shell);
+        _shell.OpenChildForm(PlanForm, "Plans");
     }
 
     private void MembershipsButton_Click(object sender, EventArgs e) {

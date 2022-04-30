@@ -16,7 +16,7 @@ public partial class MembershipForm : Form {
 
     private SqlConnector _sqlConnector = new SqlConnector();
     private List<EmployeeModel> _trainers = new List<EmployeeModel>();
-    private List<MembershipTypeModel> _membershipTypes = new List<MembershipTypeModel>();
+    private List<PlanModel> _plans = new List<PlanModel>();
     private List<MembershipModel> _memberships = new List<MembershipModel>();
     private DataGridViewRow _selectedRow;
     private readonly ShellForm _shell;
@@ -38,7 +38,7 @@ public partial class MembershipForm : Form {
 
         await LoadTrainers();
 
-        await LoadMembershipTypes();
+        await LoadPlans();
 
         
 
@@ -57,8 +57,8 @@ public partial class MembershipForm : Form {
                 membership.MemberId,
                 membership.MemberName,
                 GetNames(membership.Trainers),
-                membership.MembershipTypeId,
-                membership.MembershipTypeName,
+                membership.PlanId,
+                membership.PlanName,
                 membership.StartingDate,
                 membership.ExpirationDate,
                 membership.IsExpired ? "Yes" : "No",
@@ -84,11 +84,11 @@ public partial class MembershipForm : Form {
         return sb.ToString();
     }
 
-    private async Task LoadMembershipTypes() {
+    private async Task LoadPlans() {
 
-        _membershipTypes = await _sqlConnector.GetMembershipTypes();
-        MembershipTypeComboBox.DataSource = _membershipTypes;
-        MembershipTypeComboBox.DisplayMember = "Display";
+        _plans = await _sqlConnector.GetPlans();
+        PlansComboBox.DataSource = _plans;
+        PlansComboBox.DisplayMember = "Display";
 
     }
 
@@ -96,7 +96,7 @@ public partial class MembershipForm : Form {
 
         _trainers = await _sqlConnector.GetTrainers();
 
-        TrainersCheckedListBox.DisplayMember = "Display";
+        TrainersCheckedListBox.DisplayMember = "Name";
         TrainersCheckedListBox.Items.Clear();
 
         foreach (var t in _trainers) {
@@ -137,11 +137,11 @@ public partial class MembershipForm : Form {
 
         _selectedRow = MembershipsDataGridView.Rows[e.RowIndex];
 
-        MembershipTypeComboBox.Text = _selectedRow.Cells[2].Value.ToString();
+        PlansComboBox.Text = _selectedRow.Cells[2].Value.ToString();
 
         MemberNameTextBox.Text= _selectedRow.Cells[2].Value.ToString();
 
-        MembershipTypeComboBox.Text = _selectedRow.Cells[5].Value.ToString();
+        PlansComboBox.Text = _selectedRow.Cells[5].Value.ToString();
 
         string[] names = _selectedRow.Cells[3].Value.ToString().Split(',').Select(p => p.Trim()).Where(p => !string.IsNullOrWhiteSpace(p)).ToArray();
 
@@ -192,7 +192,7 @@ public partial class MembershipForm : Form {
         MembershipModel model = new MembershipModel();
 
         model.Id = int.Parse(_selectedRow.Cells[0].Value.ToString());
-        model.MembershipTypeId = _membershipTypes.Where(x => x.Display == MembershipTypeComboBox.Text).First().Id;
+        model.PlanId = _plans.Where(x => x.Display == PlansComboBox.Text).First().Id;
 
         model.StartingDate = StartingDatePicker.Value;
         model.ExpirationDate = ExpirationDatePicker.Value;

@@ -1,6 +1,6 @@
 ﻿namespace GMSUI.Forms;
 
-partial class MembershipTypeForm {
+partial class PlanForm {
     /// <summary>
     /// Required designer variable.
     /// </summary>
@@ -32,16 +32,21 @@ partial class MembershipTypeForm {
             this.DeleteButton = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.MembershipsDataGridView = new System.Windows.Forms.DataGridView();
+            this.PlansDataGridView = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.FeeTextBox = new System.Windows.Forms.TextBox();
-            this.AddMembershipTypeButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.MembershipLabel = new System.Windows.Forms.Label();
             this.HomeButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlanName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.End = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MembershipsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlansDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // UpdateButton
@@ -115,28 +120,34 @@ partial class MembershipTypeForm {
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.MembershipsDataGridView);
+            this.panel1.Controls.Add(this.PlansDataGridView);
             this.panel1.Location = new System.Drawing.Point(12, 214);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(989, 294);
             this.panel1.TabIndex = 49;
             // 
-            // MembershipsDataGridView
+            // PlansDataGridView
             // 
-            this.MembershipsDataGridView.AllowUserToAddRows = false;
-            this.MembershipsDataGridView.AllowUserToDeleteRows = false;
-            this.MembershipsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.MembershipsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MembershipsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MembershipsDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.MembershipsDataGridView.MultiSelect = false;
-            this.MembershipsDataGridView.Name = "MembershipsDataGridView";
-            this.MembershipsDataGridView.ReadOnly = true;
-            this.MembershipsDataGridView.RowTemplate.Height = 25;
-            this.MembershipsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MembershipsDataGridView.Size = new System.Drawing.Size(989, 294);
-            this.MembershipsDataGridView.TabIndex = 0;
-            this.MembershipsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MembershipsDataGridView_CellClick);
+            this.PlansDataGridView.AllowUserToAddRows = false;
+            this.PlansDataGridView.AllowUserToDeleteRows = false;
+            this.PlansDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.PlansDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PlansDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.PlanName,
+            this.Start,
+            this.End,
+            this.Fee});
+            this.PlansDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PlansDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.PlansDataGridView.MultiSelect = false;
+            this.PlansDataGridView.Name = "PlansDataGridView";
+            this.PlansDataGridView.ReadOnly = true;
+            this.PlansDataGridView.RowTemplate.Height = 25;
+            this.PlansDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.PlansDataGridView.Size = new System.Drawing.Size(989, 294);
+            this.PlansDataGridView.TabIndex = 0;
+            this.PlansDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PlansDataGridView_CellClick);
             // 
             // label3
             // 
@@ -157,15 +168,15 @@ partial class MembershipTypeForm {
             this.FeeTextBox.TabIndex = 4;
             this.FeeTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.FeeTextBox_KeyPress);
             // 
-            // AddMembershipTypeButton
+            // AddButton
             // 
-            this.AddMembershipTypeButton.Location = new System.Drawing.Point(81, 160);
-            this.AddMembershipTypeButton.Name = "AddMembershipTypeButton";
-            this.AddMembershipTypeButton.Size = new System.Drawing.Size(159, 48);
-            this.AddMembershipTypeButton.TabIndex = 7;
-            this.AddMembershipTypeButton.Text = "Add Membership";
-            this.AddMembershipTypeButton.UseVisualStyleBackColor = true;
-            this.AddMembershipTypeButton.Click += new System.EventHandler(this.AddMembershipTypeButton_Click);
+            this.AddButton.Location = new System.Drawing.Point(81, 160);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(159, 48);
+            this.AddButton.TabIndex = 7;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // label4
             // 
@@ -183,9 +194,9 @@ partial class MembershipTypeForm {
             this.MembershipLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.MembershipLabel.Location = new System.Drawing.Point(81, 9);
             this.MembershipLabel.Name = "MembershipLabel";
-            this.MembershipLabel.Size = new System.Drawing.Size(240, 32);
+            this.MembershipLabel.Size = new System.Drawing.Size(75, 32);
             this.MembershipLabel.TabIndex = 1;
-            this.MembershipLabel.Text = "Memberships Types";
+            this.MembershipLabel.Text = "Plans";
             // 
             // HomeButton
             // 
@@ -209,7 +220,37 @@ partial class MembershipTypeForm {
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
-            // MembershipTypeForm
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // Name
+            // 
+            this.PlanName.HeaderText = "Name";
+            this.PlanName.Name = "Name";
+            this.PlanName.ReadOnly = true;
+            // 
+            // Start
+            // 
+            this.Start.HeaderText = "Starting Time";
+            this.Start.Name = "Start";
+            this.Start.ReadOnly = true;
+            // 
+            // End
+            // 
+            this.End.HeaderText = "Ending Time";
+            this.End.Name = "End";
+            this.End.ReadOnly = true;
+            // 
+            // Fee
+            // 
+            this.Fee.HeaderText = "Fee";
+            this.Fee.Name = "Fee";
+            this.Fee.ReadOnly = true;
+            // 
+            // PlanForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -218,7 +259,7 @@ partial class MembershipTypeForm {
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.MembershipLabel);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.AddMembershipTypeButton);
+            this.Controls.Add(this.AddButton);
             this.Controls.Add(this.UpdateButton);
             this.Controls.Add(this.FeeTextBox);
             this.Controls.Add(this.StartTimePicker);
@@ -229,11 +270,11 @@ partial class MembershipTypeForm {
             this.Controls.Add(this.label2);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.DeleteButton);
-            this.Name = "MembershipTypeForm";
+            this.Name = "PlanForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MembershipForm";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.MembershipsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlansDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,12 +290,17 @@ partial class MembershipTypeForm {
     private Button DeleteButton;
     private Label label2;
     private Panel panel1;
-    private DataGridView MembershipsDataGridView;
+    private DataGridView PlansDataGridView;
     private Label label3;
     private TextBox FeeTextBox;
-    private Button AddMembershipTypeButton;
+    private Button AddButton;
     private Label label4;
     private Label MembershipLabel;
     private Button HomeButton;
     private Button PrintButton;
+    private DataGridViewTextBoxColumn Id;
+    private DataGridViewTextBoxColumn PlanName;
+    private DataGridViewTextBoxColumn Start;
+    private DataGridViewTextBoxColumn End;
+    private DataGridViewTextBoxColumn Fee;
 }

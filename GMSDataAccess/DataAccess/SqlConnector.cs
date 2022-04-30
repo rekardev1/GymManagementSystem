@@ -60,11 +60,11 @@ public class SqlConnector {
         }
     }
 
-    public async Task AddMembershipType(MembershipTypeModel model) {
+    public async Task AddPlan(PlanModel model) {
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
             await connection.ExecuteAsync(
-                "spMembershipType_Add",
+                "spPlan_Add",
                 new {
                     Name = model.Name,
                     Start = model.Start,
@@ -128,11 +128,11 @@ public class SqlConnector {
         }
     }
 
-    public async Task<List<MembershipTypeModel>> GetMembershipTypes() {
+    public async Task<List<PlanModel>> GetPlans() {
 
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
-            var result = await connection.QueryAsync<MembershipTypeModel>("spMembershipType_GetAll", new { }, commandType: CommandType.StoredProcedure);
+            var result = await connection.QueryAsync<PlanModel>("spPlan_GetAll", new { }, commandType: CommandType.StoredProcedure);
 
             return result.ToList();
         }
@@ -146,7 +146,7 @@ public class SqlConnector {
 
             p.Add("Id", dbType: DbType.Int32, direction: ParameterDirection.Output);
             p.Add("MemberId", model.MemberId);
-            p.Add("MembershipTypeId", model.MembershipTypeId);
+            p.Add("PlanId", model.PlanId);
             p.Add("StartingDate", model.StartingDate);
             p.Add("ExpirationDate", model.ExpirationDate);
             p.Add("UserId", model.UserId);
@@ -162,11 +162,11 @@ public class SqlConnector {
         }
     }
 
-    public async Task UpdateMembershipType(MembershipTypeModel model) {
+    public async Task UpdatePlan(PlanModel model) {
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
             await connection.ExecuteAsync(
-                "spMembershipType_Update",
+                "spPlan_Update",
                 new {
                     Id = model.Id,
                     Name = model.Name,
@@ -206,7 +206,7 @@ public class SqlConnector {
                 "spMembership_Update",
                 new {
                     Id = model.Id,
-                    MembershipTypeId = model.MembershipTypeId,
+                    PlanId = model.PlanId,
                     StartingDate = model.StartingDate,
                     ExpirationDate = model.ExpirationDate
                 }
@@ -291,11 +291,11 @@ public class SqlConnector {
         }
     }
 
-    public async Task DeleteMembershipType(int id) {
+    public async Task DeletePlan(int id) {
 
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
-            await connection.ExecuteAsync("spMembershipType_Delete", new { Id = id }, commandType: CommandType.StoredProcedure);
+            await connection.ExecuteAsync("spPlan_Delete", new { Id = id }, commandType: CommandType.StoredProcedure);
         }
     }
 

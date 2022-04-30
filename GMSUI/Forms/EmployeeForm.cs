@@ -37,7 +37,18 @@ namespace GMSUI.Forms {
 
             _employees = await _sqlConnector.GetEmployees();
 
-            EmployeesDataGridView.DataSource = _employees;
+            EmployeesDataGridView.Rows.Clear();
+
+            foreach (var e in _employees) {
+                EmployeesDataGridView.Rows.Add(
+                    e.Id,
+                    e.Name,
+                    e.Address,
+                    e.Salary,
+                    e.JobType,
+                    e.PhoneNumber1,
+                    e.PhoneNumber2);
+            }
             
             EmployeesDataGridView.ClearSelection();
         }
@@ -171,23 +182,6 @@ namespace GMSUI.Forms {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
-        private void EmployeesGridView_CellClick(object sender, DataGridViewCellEventArgs e) {
-
-            if (e.RowIndex < 0) {
-                return;
-            }
-
-            _selectedRow = EmployeesDataGridView.Rows[e.RowIndex];
-
-            NameTextBox.Text = _selectedRow.Cells[1].Value.ToString();
-            AddressTextBox.Text = _selectedRow.Cells[2].Value.ToString();
-            SalaryTextBox.Text = _selectedRow.Cells[3].Value.ToString();
-            JobTypeTextBox.Text = _selectedRow.Cells[4].Value.ToString();
-            PhoneNumber1TextBox.Text = _selectedRow.Cells[5].Value.ToString();
-            PhoneNumber2TextBox.Text = _selectedRow.Cells[6].Value.ToString();
-
-        }
-
         private void HomeButton_Click(object sender, EventArgs e) {
             _shell.OpenHomeForm();
         }
@@ -218,5 +212,21 @@ namespace GMSUI.Forms {
 
         }
 
+        private void EmployeesDataGridView_CellClick(object sender, DataGridViewCellEventArgs e) {
+            
+            if (e.RowIndex < 0) {
+                return;
+            }
+
+            _selectedRow = EmployeesDataGridView.Rows[e.RowIndex];
+
+            NameTextBox.Text = _selectedRow.Cells[1].Value.ToString();
+            AddressTextBox.Text = _selectedRow.Cells[2].Value.ToString();
+            SalaryTextBox.Text = _selectedRow.Cells[3].Value.ToString();
+            JobTypeTextBox.Text = _selectedRow.Cells[4].Value.ToString();
+            PhoneNumber1TextBox.Text = _selectedRow.Cells[5].Value.ToString();
+            PhoneNumber2TextBox.Text = _selectedRow.Cells[6].Value.ToString();
+
+        }
     }
 }

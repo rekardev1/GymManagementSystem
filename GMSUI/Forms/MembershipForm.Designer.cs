@@ -24,9 +24,9 @@ partial class MembershipForm {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MemberNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.StartingDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -36,7 +36,7 @@ partial class MembershipForm {
             this.label3 = new System.Windows.Forms.Label();
             this.ExpirationDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.MembershipTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.PlansComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TrainersCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -47,8 +47,8 @@ partial class MembershipForm {
             this.MemberId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TrainerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MembershipTypeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MembershipTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlanId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlanName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExpirationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -143,15 +143,15 @@ partial class MembershipForm {
             this.label2.TabIndex = 77;
             this.label2.Text = "Membership Type";
             // 
-            // MembershipTypeComboBox
+            // PlansComboBox
             // 
-            this.MembershipTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.MembershipTypeComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MembershipTypeComboBox.FormattingEnabled = true;
-            this.MembershipTypeComboBox.Location = new System.Drawing.Point(280, 92);
-            this.MembershipTypeComboBox.Name = "MembershipTypeComboBox";
-            this.MembershipTypeComboBox.Size = new System.Drawing.Size(207, 29);
-            this.MembershipTypeComboBox.TabIndex = 2;
+            this.PlansComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PlansComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PlansComboBox.FormattingEnabled = true;
+            this.PlansComboBox.Location = new System.Drawing.Point(280, 92);
+            this.PlansComboBox.Name = "PlansComboBox";
+            this.PlansComboBox.Size = new System.Drawing.Size(207, 29);
+            this.PlansComboBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -216,8 +216,8 @@ partial class MembershipForm {
             this.MemberId,
             this.MemberName,
             this.TrainerName,
-            this.MembershipTypeId,
-            this.MembershipTypeName,
+            this.PlanId,
+            this.PlanName,
             this.StartingDate,
             this.ExpirationDate,
             this.IsExpired,
@@ -236,8 +236,8 @@ partial class MembershipForm {
             // 
             // Id
             // 
-            dataGridViewCellStyle1.Format = "d";
-            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "d";
+            this.Id.DefaultCellStyle = dataGridViewCellStyle4;
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
@@ -261,32 +261,32 @@ partial class MembershipForm {
             this.TrainerName.Name = "TrainerName";
             this.TrainerName.ReadOnly = true;
             // 
-            // MembershipTypeId
+            // PlanId
             // 
-            this.MembershipTypeId.HeaderText = "MembershipId";
-            this.MembershipTypeId.Name = "MembershipTypeId";
-            this.MembershipTypeId.ReadOnly = true;
-            this.MembershipTypeId.Visible = false;
+            this.PlanId.HeaderText = "PlanId";
+            this.PlanId.Name = "PlanId";
+            this.PlanId.ReadOnly = true;
+            this.PlanId.Visible = false;
             // 
-            // MembershipTypeName
+            // PlanName
             // 
-            this.MembershipTypeName.HeaderText = "Membership Type";
-            this.MembershipTypeName.Name = "MembershipTypeName";
-            this.MembershipTypeName.ReadOnly = true;
+            this.PlanName.HeaderText = "Plan";
+            this.PlanName.Name = "PlanName";
+            this.PlanName.ReadOnly = true;
             // 
             // StartingDate
             // 
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.StartingDate.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = null;
+            this.StartingDate.DefaultCellStyle = dataGridViewCellStyle5;
             this.StartingDate.HeaderText = "Starting Date";
             this.StartingDate.Name = "StartingDate";
             this.StartingDate.ReadOnly = true;
             // 
             // ExpirationDate
             // 
-            dataGridViewCellStyle3.Format = "d";
-            this.ExpirationDate.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Format = "d";
+            this.ExpirationDate.DefaultCellStyle = dataGridViewCellStyle6;
             this.ExpirationDate.HeaderText = "Expiration Date";
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.ReadOnly = true;
@@ -356,7 +356,7 @@ partial class MembershipForm {
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ExpirationDatePicker);
-            this.Controls.Add(this.MembershipTypeComboBox);
+            this.Controls.Add(this.PlansComboBox);
             this.Controls.Add(this.label2);
             this.Name = "MembershipForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -379,7 +379,7 @@ partial class MembershipForm {
     private Label label3;
     private DateTimePicker ExpirationDatePicker;
     private Label label2;
-    private ComboBox MembershipTypeComboBox;
+    private ComboBox PlansComboBox;
     private Button Terminateutton;
     private Button DeleteButton;
     private Button UpdateButton;
@@ -387,15 +387,15 @@ partial class MembershipForm {
     private DateTimePicker StartingDatePicker;
     private TextBox MemberNameTextBox;
     private Button HomeButton;
+    private Button PrintButton;
     private DataGridViewTextBoxColumn Id;
     private DataGridViewTextBoxColumn MemberId;
     private DataGridViewTextBoxColumn MemberName;
     private DataGridViewTextBoxColumn TrainerName;
-    private DataGridViewTextBoxColumn MembershipTypeId;
-    private DataGridViewTextBoxColumn MembershipTypeName;
+    private DataGridViewTextBoxColumn PlanId;
+    private DataGridViewTextBoxColumn PlanName;
     private DataGridViewTextBoxColumn StartingDate;
     private DataGridViewTextBoxColumn ExpirationDate;
     private DataGridViewTextBoxColumn IsExpired;
     private DataGridViewTextBoxColumn UserId;
-    private Button PrintButton;
 }

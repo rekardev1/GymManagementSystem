@@ -31,6 +31,13 @@
             this.EmployeeLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.EmployeesDataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmployeeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.JobType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.AddEmployeeButton = new System.Windows.Forms.Button();
@@ -78,16 +85,66 @@
             this.EmployeesDataGridView.AllowUserToAddRows = false;
             this.EmployeesDataGridView.AllowUserToDeleteRows = false;
             this.EmployeesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.EmployeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EmployeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.EmployeeName,
+            this.Address,
+            this.Salary,
+            this.JobType,
+            this.PhoneNumber1,
+            this.PhoneNumber2});
             this.EmployeesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeesDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.EmployeesDataGridView.MultiSelect = false;
             this.EmployeesDataGridView.Name = "EmployeesDataGridView";
             this.EmployeesDataGridView.ReadOnly = true;
             this.EmployeesDataGridView.RowTemplate.Height = 25;
             this.EmployeesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.EmployeesDataGridView.Size = new System.Drawing.Size(1011, 294);
             this.EmployeesDataGridView.TabIndex = 0;
-            this.EmployeesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeesGridView_CellClick);
+            this.EmployeesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeesDataGridView_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // EmployeeName
+            // 
+            this.EmployeeName.HeaderText = "EmployeeName";
+            this.EmployeeName.Name = "EmployeeName";
+            this.EmployeeName.ReadOnly = true;
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // Salary
+            // 
+            this.Salary.HeaderText = "Salary";
+            this.Salary.Name = "Salary";
+            this.Salary.ReadOnly = true;
+            // 
+            // JobType
+            // 
+            this.JobType.HeaderText = "Job Type";
+            this.JobType.Name = "JobType";
+            this.JobType.ReadOnly = true;
+            // 
+            // PhoneNumber1
+            // 
+            this.PhoneNumber1.HeaderText = "Phone Number 1";
+            this.PhoneNumber1.Name = "PhoneNumber1";
+            this.PhoneNumber1.ReadOnly = true;
+            // 
+            // PhoneNumber2
+            // 
+            this.PhoneNumber2.HeaderText = "Phone Number 2";
+            this.PhoneNumber2.Name = "PhoneNumber2";
+            this.PhoneNumber2.ReadOnly = true;
             // 
             // UpdateButton
             // 
@@ -294,7 +351,6 @@
         private Button DeleteButton;
         private Button AddEmployeeButton;
         private Panel panel2;
-        private DataGridView EmployeesDataGridView;
         private TextBox PhoneNumber2TextBox;
         private Label label1;
         private Label label6;
@@ -309,5 +365,13 @@
         private TextBox SalaryTextBox;
         private Button HomeButton;
         private Button PrintButton;
+        private DataGridView EmployeesDataGridView;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn EmployeeName;
+        private DataGridViewTextBoxColumn Address;
+        private DataGridViewTextBoxColumn Salary;
+        private DataGridViewTextBoxColumn JobType;
+        private DataGridViewTextBoxColumn PhoneNumber1;
+        private DataGridViewTextBoxColumn PhoneNumber2;
     }
 }

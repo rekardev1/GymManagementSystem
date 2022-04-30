@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace GMSDataAccess.Model;
-public class MembershipTypeModel {
+public class PlanModel {
     public int Id { get; set; }
     public string Name { get; set; }
     public DateTime Start { get; set; }

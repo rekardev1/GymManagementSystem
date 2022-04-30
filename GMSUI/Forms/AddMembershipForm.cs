@@ -14,7 +14,7 @@ namespace GMSUI.Forms;
 public partial class AddMembershipForm : Form {
     private readonly ShellForm _shell;
     private List<MemberModel> _members = new List<MemberModel>();
-    private List<MembershipTypeModel> _membershipTypes = new List<MembershipTypeModel>();
+    private List<PlanModel> _plans = new List<PlanModel>();
     private List<EmployeeModel> _trainers = new List<EmployeeModel>();
     private SqlConnector _sqlConnector = new SqlConnector();
 
@@ -34,18 +34,18 @@ public partial class AddMembershipForm : Form {
 
     override async protected void OnLoad(EventArgs e) {
         
-        await LoadMembershipTypes();
+        await LoadPlans();
 
         await LoadMembers();
 
         await LoadTrainers();
     }
 
-    private async Task LoadMembershipTypes() {
+    private async Task LoadPlans() {
 
-        _membershipTypes = await _sqlConnector.GetMembershipTypes();
-        MembershipTypeComboBox.DataSource = _membershipTypes;
-        MembershipTypeComboBox.DisplayMember = "Display";
+        _plans = await _sqlConnector.GetPlans();
+        PlansComboBox.DataSource = _plans;
+        PlansComboBox.DisplayMember = "Display";
 
     }
     private async Task LoadMembers() {
@@ -77,7 +77,7 @@ public partial class AddMembershipForm : Form {
                 MembershipModel model = new MembershipModel();
 
                 model.MemberId = _members.Where(x => x.FullName == MemberComboBox.Text).First().Id;
-                model.MembershipTypeId = _membershipTypes.Where(x => x.Display == MembershipTypeComboBox.Text).First().Id;
+                model.PlanId = _plans.Where(x => x.Display == PlansComboBox.Text).First().Id;
 
                 foreach (var item in TrainersCheckedListBox.CheckedItems) {
                     model.Trainers.Add((EmployeeModel)item);

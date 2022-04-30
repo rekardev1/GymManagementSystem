@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[MembershipType]
+﻿CREATE TABLE [dbo].[Plan]
 (
 	[Id] INT NOT NULL PRIMARY KEY identity, 
     [Name] NVARCHAR(100) NOT NULL, 

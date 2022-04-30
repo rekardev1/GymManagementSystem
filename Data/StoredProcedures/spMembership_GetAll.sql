@@ -6,8 +6,8 @@ begin
 		Membership.Id,
 		Member.Id as 'MemberId',
 		Member.FirstName + ' '+ Member.LastName as 'MemberName', 
-		MembershipType.Id as 'MembershipTypeId',
-		MembershipType.[Name] as 'MembershipTypeName',
+		[Plan].Id as 'PlanId',
+		[Plan].[Name] as 'PlanName',
 		Membership.StartingDate, 
 		Membership.ExpirationDate,
 		Membership.IsExpired,
@@ -16,7 +16,7 @@ begin
 
 		from Membership
 		inner join Member on Member.Id = Membership.MemberId
-		inner join MembershipType on MembershipType.Id = Membership.MembershipTypeId
+		inner join [Plan] on [Plan].Id = Membership.PlanId
 		inner join [User] on [User].Id = Membership.UserId
 
 end

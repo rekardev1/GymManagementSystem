@@ -9,8 +9,8 @@ public class MembershipModel {
     public int Id { get; set; }
     public int MemberId { get; set; }
     public string MemberName { get; set; }
-    public int MembershipTypeId { get; set; }
-    public string MembershipTypeName { get; set; }
+    public int PlanId { get; set; }
+    public string PlanName { get; set; }
     public List<EmployeeModel> Trainers { get; set; } = new List<EmployeeModel>();
     public DateTime StartingDate { get; set; }
     public DateTime ExpirationDate { get; set; }

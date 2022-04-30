@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[spMembershipType_Update]
+﻿CREATE PROCEDURE [dbo].[spPlan_Update]
 	@Id int,
 	@Name nvarchar(250),
 	@Start DATETIME2,
@@ -8,7 +8,7 @@
 AS
 begin
 	
-	update MembershipType 
+	update [Plan]
 
 	set [Name] = @Name,
 		[Start] = @Start,

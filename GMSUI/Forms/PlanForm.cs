@@ -12,14 +12,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GMSUI.Forms;
-public partial class MembershipTypeForm : Form {
+public partial class PlanForm : Form {
 
     private readonly ShellForm _shell;
     private SqlConnector _sqlConnector = new SqlConnector();
-    private BindingList<MembershipTypeModel> _membershipTypes;
+    private List<PlanModel> _plans;
     private DataGridViewRow _selectedRow;
 
-    public MembershipTypeForm(ShellForm shell) {
+    public PlanForm(ShellForm shell) {
         InitializeComponent();
 
         StartTimePicker.Format = DateTimePickerFormat.Time;
@@ -35,25 +35,29 @@ public partial class MembershipTypeForm : Form {
     protected async override void OnLoad(EventArgs e) {
 
 
-        await LoadMembershipTypes();
+        await LoadPlans();
 
     }
 
-    internal async Task LoadMembershipTypes() {
+    internal async Task LoadPlans() {
 
-        var m = await _sqlConnector.GetMembershipTypes();
+        PlansDataGridView.Rows.Clear();
+        _plans = await _sqlConnector.GetPlans();
 
-        _membershipTypes = new BindingList<MembershipTypeModel>(m);
-
-        MembershipsDataGridView.DataSource = _membershipTypes;
-        MembershipsDataGridView.ClearSelection();
-
-        if (_membershipTypes.Count > 0) {
-
-            MembershipsDataGridView.Columns["Start"].DefaultCellStyle.Format = "t";
-            MembershipsDataGridView.Columns["End"].DefaultCellStyle.Format = "t";
-
+        foreach (var p in _plans) {
+            PlansDataGridView.Rows.Add(
+                p.Id,
+                p.Name,
+                p.Start,
+                p.End,
+                p.Fee
+                );
         }
+
+        PlansDataGridView.ClearSelection();
+
+        PlansDataGridView.Columns["Start"].DefaultCellStyle.Format = "t";
+        PlansDataGridView.Columns["End"].DefaultCellStyle.Format = "t";
     }
 
     private async void UpdateButton_Click(object sender, EventArgs e) {
@@ -68,7 +72,7 @@ public partial class MembershipTypeForm : Form {
             return;
         }
 
-        MembershipTypeModel model = new MembershipTypeModel();
+        PlanModel model = new PlanModel();
 
         model.Id = int.Parse(_selectedRow.Cells[0].Value.ToString());
 
@@ -78,7 +82,7 @@ public partial class MembershipTypeForm : Form {
         model.Fee = int.Parse(FeeTextBox.Text);
 
         try {
-            await _sqlConnector.UpdateMembershipType(model);
+            await _sqlConnector.UpdatePlan(model);
 
         } catch (Exception ex) {
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -94,19 +98,19 @@ public partial class MembershipTypeForm : Form {
 
         _selectedRow = null;
 
-        await LoadMembershipTypes();
+        await LoadPlans();
     }
 
     private void FeeTextBox_KeyPress(object sender, KeyPressEventArgs e) {
         e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
     }
 
-    private void MembershipsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e) {
+    private void PlansDataGridView_CellClick(object sender, DataGridViewCellEventArgs e) {
         if (e.RowIndex < 0) {
             return;
         }
 
-        _selectedRow = MembershipsDataGridView.Rows[e.RowIndex];
+        _selectedRow = PlansDataGridView.Rows[e.RowIndex];
 
         NameTextBox.Text = _selectedRow.Cells[1].Value.ToString();
         StartTimePicker.Text = _selectedRow.Cells[2].Value.ToString();
@@ -115,10 +119,10 @@ public partial class MembershipTypeForm : Form {
 
     }
 
-    private async void AddMembershipTypeButton_Click(object sender, EventArgs e) {
+    private async void AddButton_Click(object sender, EventArgs e) {
         if (ValidateForm()) {
 
-            MembershipTypeModel model = new MembershipTypeModel();
+            PlanModel model = new PlanModel();
 
             model.Name = NameTextBox.Text;
             model.Start = StartTimePicker.Value;
@@ -127,9 +131,9 @@ public partial class MembershipTypeForm : Form {
 
 
             try {
-                await _sqlConnector.AddMembershipType(model);
+                await _sqlConnector.AddPlan(model);
                 await ResetForm();
-                
+
 
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -163,7 +167,7 @@ public partial class MembershipTypeForm : Form {
         int id = int.Parse(_selectedRow.Cells[0].Value.ToString());
 
         try {
-            await _sqlConnector.DeleteMembershipType(id);
+            await _sqlConnector.DeletePlan(id);
 
         } catch (Exception ex) {
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -185,16 +189,16 @@ public partial class MembershipTypeForm : Form {
         printer.PageNumbers = true;
         printer.PageNumberInHeader = false;
         printer.PorportionalColumns = true;
-        printer.Footer = $"Total Number of Plans: {_membershipTypes.Count}";
+        printer.Footer = $"Total Number of Plans: {_plans.Count}";
         printer.HeaderCellAlignment = StringAlignment.Near;
-        
+
         printer.FooterSpacing = 15;
 
-        MembershipsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+        PlansDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
 
-        printer.PrintDataGridView(MembershipsDataGridView);
+        printer.PrintDataGridView(PlansDataGridView);
 
-        MembershipsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        PlansDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
     }
 }

@@ -62,7 +62,7 @@
   <ItemGroup>
     <Build Include="Tables\Member.sql" />
     <Build Include="Tables\Employee.sql" />
-    <Build Include="Tables\MembershipType.sql" />
+    <Build Include="Tables\Plan.sql" />
     <Build Include="Tables\Membership.sql" />
     <Build Include="StoredProcedures\spEmployee_Add.sql" />
     <Build Include="Tables\User.sql" />
@@ -76,10 +76,10 @@
     <Build Include="StoredProcedures\spUser_GetByName.sql" />
     <Build Include="StoredProcedures\spUser_GetAll.sql" />
     <Build Include="StoredProcedures\spUser_UpdatePassword.sql" />
-    <Build Include="StoredProcedures\spMembershipType_GetAll.sql" />
-    <Build Include="StoredProcedures\spMembershipType_Add.sql" />
-    <Build Include="StoredProcedures\spMembershipType_Delete.sql" />
-    <Build Include="StoredProcedures\spMembershipType_Update.sql" />
+    <Build Include="StoredProcedures\spPlan_GetAll.sql" />
+    <Build Include="StoredProcedures\spPlan_Add.sql" />
+    <Build Include="StoredProcedures\spPlan_Delete.sql" />
+    <Build Include="StoredProcedures\spPlan_Update.sql" />
     <Build Include="Tables\MembershipTrainers.sql" />
     <Build Include="StoredProcedures\spTrainer_GetByMembershipId.sql" />
     <Build Include="StoredProcedures\spEmployee_GetTrainers.sql" />

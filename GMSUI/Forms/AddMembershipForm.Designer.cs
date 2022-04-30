@@ -29,7 +29,7 @@ partial class AddMembershipForm {
             this.label3 = new System.Windows.Forms.Label();
             this.ExpirationDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.MembershipTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.PlansComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.MemberComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -86,15 +86,15 @@ partial class AddMembershipForm {
             this.label2.TabIndex = 77;
             this.label2.Text = "Membership Type";
             // 
-            // MembershipTypeComboBox
+            // PlansComboBox
             // 
-            this.MembershipTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.MembershipTypeComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MembershipTypeComboBox.FormattingEnabled = true;
-            this.MembershipTypeComboBox.Location = new System.Drawing.Point(3, 151);
-            this.MembershipTypeComboBox.Name = "MembershipTypeComboBox";
-            this.MembershipTypeComboBox.Size = new System.Drawing.Size(207, 29);
-            this.MembershipTypeComboBox.TabIndex = 2;
+            this.PlansComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PlansComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PlansComboBox.FormattingEnabled = true;
+            this.PlansComboBox.Location = new System.Drawing.Point(3, 151);
+            this.PlansComboBox.Name = "PlanComboBox";
+            this.PlansComboBox.Size = new System.Drawing.Size(207, 29);
+            this.PlansComboBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -166,7 +166,7 @@ partial class AddMembershipForm {
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.ExpirationDatePicker);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.MembershipTypeComboBox);
+            this.panel2.Controls.Add(this.PlansComboBox);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.MemberComboBox);
             this.panel2.Controls.Add(this.TrainersCheckedListBox);
@@ -200,7 +200,7 @@ partial class AddMembershipForm {
     private Label label3;
     private DateTimePicker ExpirationDatePicker;
     private Label label2;
-    private ComboBox MembershipTypeComboBox;
+    private ComboBox PlansComboBox;
     private Label label1;
     private ComboBox MemberComboBox;
     private Label label8;

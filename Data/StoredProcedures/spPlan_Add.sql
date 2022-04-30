@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[spMembershipType_Add]
+﻿CREATE PROCEDURE [dbo].[spPlan_Add]
 	@Name nvarchar(250),
 	@Start DATETIME2,
 	@End DATETIME2,
@@ -6,7 +6,7 @@
 AS
 begin
 	
-	insert into dbo.[MembershipType]([Name], [Start], [End], Fee)
+	insert into dbo.[Plan]([Name], [Start], [End], Fee)
 	values (@Name, @Start, @End, @Fee)
 
 end

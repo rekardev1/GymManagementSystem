@@ -27,7 +27,7 @@ partial class HomeForm {
             this.label1 = new System.Windows.Forms.Label();
             this.MembersButton = new System.Windows.Forms.Button();
             this.EmployeesButton = new System.Windows.Forms.Button();
-            this.MembershipTypesButton = new System.Windows.Forms.Button();
+            this.PlansButton = new System.Windows.Forms.Button();
             this.MembershipsButton = new System.Windows.Forms.Button();
             this.UsersButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -66,16 +66,16 @@ partial class HomeForm {
             this.EmployeesButton.UseVisualStyleBackColor = true;
             this.EmployeesButton.Click += new System.EventHandler(this.EmployeesButton_Click);
             // 
-            // MembershipTypesButton
+            // PlansButton
             // 
-            this.MembershipTypesButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.MembershipTypesButton.Location = new System.Drawing.Point(600, 174);
-            this.MembershipTypesButton.Name = "MembershipTypesButton";
-            this.MembershipTypesButton.Size = new System.Drawing.Size(201, 107);
-            this.MembershipTypesButton.TabIndex = 3;
-            this.MembershipTypesButton.Text = "Memberships Types";
-            this.MembershipTypesButton.UseVisualStyleBackColor = true;
-            this.MembershipTypesButton.Click += new System.EventHandler(this.MembershipTypesButton_Click);
+            this.PlansButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PlansButton.Location = new System.Drawing.Point(600, 174);
+            this.PlansButton.Name = "PlansButton";
+            this.PlansButton.Size = new System.Drawing.Size(201, 107);
+            this.PlansButton.TabIndex = 3;
+            this.PlansButton.Text = "Plans";
+            this.PlansButton.UseVisualStyleBackColor = true;
+            this.PlansButton.Click += new System.EventHandler(this.PlansButton_Click);
             // 
             // MembershipsButton
             // 
@@ -109,7 +109,7 @@ partial class HomeForm {
             this.panel1.Controls.Add(this.MembershipsButton);
             this.panel1.Controls.Add(this.UsersButton);
             this.panel1.Controls.Add(this.MembersButton);
-            this.panel1.Controls.Add(this.MembershipTypesButton);
+            this.panel1.Controls.Add(this.PlansButton);
             this.panel1.Location = new System.Drawing.Point(12, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(995, 555);
@@ -138,7 +138,7 @@ partial class HomeForm {
     private Label label1;
     private Button MembersButton;
     private Button EmployeesButton;
-    private Button MembershipTypesButton;
+    private Button PlansButton;
     private Button UsersButton;
     private Button MembershipsButton;
     private Panel panel1;
