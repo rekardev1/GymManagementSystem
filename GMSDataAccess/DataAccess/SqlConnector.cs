@@ -41,7 +41,7 @@ public class SqlConnector {
     }
 
     public async void CheckMembershipExpirations() {
-        
+
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
             await connection.ExecuteAsync("spMembership_CheckExpirations", commandType: CommandType.StoredProcedure);
@@ -262,11 +262,26 @@ public class SqlConnector {
         }
     }
 
-    public async Task<List<EmployeeModel>> GetEmployees() {
+    public async Task<List<EmployeeModel>> GetEmployees(string type) {
 
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
-            var result = await connection.QueryAsync<EmployeeModel>("spEmployee_GetAll", new { }, commandType: CommandType.StoredProcedure);
+            IEnumerable<EmployeeModel> result;
+
+            switch (type) {
+                case "Trainer":
+                    result = await connection.QueryAsync<EmployeeModel>("spEmployee_GetTrainers", new { }, commandType: CommandType.StoredProcedure);
+                    break;
+
+
+                case "Staff":
+                    result = await connection.QueryAsync<EmployeeModel>("spEmployee_GetStaffs", new { }, commandType: CommandType.StoredProcedure);
+                    break;
+
+                default:
+                    result = await connection.QueryAsync<EmployeeModel>("spEmployee_GetAll", new { }, commandType: CommandType.StoredProcedure);
+                    break;
+            }
 
             return result.ToList();
         }

@@ -55,6 +55,9 @@
             this.SalaryTextBox = new System.Windows.Forms.TextBox();
             this.HomeButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
+            this.AllRadioButton = new System.Windows.Forms.RadioButton();
+            this.TrainerOnlyRadioButton = new System.Windows.Forms.RadioButton();
+            this.StaffOnlyRadioButton = new System.Windows.Forms.RadioButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -309,12 +312,53 @@
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
+            // AllRadioButton
+            // 
+            this.AllRadioButton.AutoSize = true;
+            this.AllRadioButton.Checked = true;
+            this.AllRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AllRadioButton.Location = new System.Drawing.Point(898, 223);
+            this.AllRadioButton.Name = "AllRadioButton";
+            this.AllRadioButton.Size = new System.Drawing.Size(46, 25);
+            this.AllRadioButton.TabIndex = 18;
+            this.AllRadioButton.TabStop = true;
+            this.AllRadioButton.Text = "All";
+            this.AllRadioButton.UseVisualStyleBackColor = true;
+            this.AllRadioButton.CheckedChanged += new System.EventHandler(this.AllRadioButton_CheckedChanged);
+            // 
+            // TrainerOnlyRadioButton
+            // 
+            this.TrainerOnlyRadioButton.AutoSize = true;
+            this.TrainerOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TrainerOnlyRadioButton.Location = new System.Drawing.Point(898, 254);
+            this.TrainerOnlyRadioButton.Name = "TrainerOnlyRadioButton";
+            this.TrainerOnlyRadioButton.Size = new System.Drawing.Size(120, 25);
+            this.TrainerOnlyRadioButton.TabIndex = 19;
+            this.TrainerOnlyRadioButton.Text = "Trainers Only";
+            this.TrainerOnlyRadioButton.UseVisualStyleBackColor = true;
+            this.TrainerOnlyRadioButton.CheckedChanged += new System.EventHandler(this.TrainerOnlyRadioButton_CheckedChanged);
+            // 
+            // StaffOnlyRadioButton
+            // 
+            this.StaffOnlyRadioButton.AutoSize = true;
+            this.StaffOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.StaffOnlyRadioButton.Location = new System.Drawing.Point(898, 285);
+            this.StaffOnlyRadioButton.Name = "StaffOnlyRadioButton";
+            this.StaffOnlyRadioButton.Size = new System.Drawing.Size(103, 25);
+            this.StaffOnlyRadioButton.TabIndex = 20;
+            this.StaffOnlyRadioButton.Text = "Staffs Only";
+            this.StaffOnlyRadioButton.UseVisualStyleBackColor = true;
+            this.StaffOnlyRadioButton.CheckedChanged += new System.EventHandler(this.StaffOnlyRadioButton_CheckedChanged);
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1035, 676);
+            this.Controls.Add(this.StaffOnlyRadioButton);
+            this.Controls.Add(this.TrainerOnlyRadioButton);
+            this.Controls.Add(this.AllRadioButton);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.panel2);
@@ -373,5 +417,8 @@
         private DataGridViewTextBoxColumn JobType;
         private DataGridViewTextBoxColumn PhoneNumber1;
         private DataGridViewTextBoxColumn PhoneNumber2;
+        private RadioButton AllRadioButton;
+        private RadioButton TrainerOnlyRadioButton;
+        private RadioButton StaffOnlyRadioButton;
     }
 }

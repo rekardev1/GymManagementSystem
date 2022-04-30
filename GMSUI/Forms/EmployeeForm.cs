@@ -23,19 +23,17 @@ namespace GMSUI.Forms {
             InitializeComponent();
 
             _shell = shell;
-
         }
 
         protected async override void OnLoad(EventArgs e) {
 
-            await LoadEmployees();
-            
+            await LoadEmployees("All");
 
         }
 
-        internal async Task LoadEmployees() {
+        internal async Task LoadEmployees(string fetchType) {
 
-            _employees = await _sqlConnector.GetEmployees();
+            _employees = await _sqlConnector.GetEmployees(fetchType);
 
             EmployeesDataGridView.Rows.Clear();
 
@@ -166,7 +164,22 @@ namespace GMSUI.Forms {
             
             _selectedRow = null;
 
-            await LoadEmployees();
+            await LoadEmployees(FetchType());
+
+        }
+
+        private string FetchType() {
+
+            if (AllRadioButton.Checked) {
+                return "All";
+
+            }else if (TrainerOnlyRadioButton.Checked) {
+                return "Trainer";
+
+            } else {
+                return "Staff";
+
+            }
 
         }
 
@@ -227,6 +240,18 @@ namespace GMSUI.Forms {
             PhoneNumber1TextBox.Text = _selectedRow.Cells[5].Value.ToString();
             PhoneNumber2TextBox.Text = _selectedRow.Cells[6].Value.ToString();
 
+        }
+
+        private async void TrainerOnlyRadioButton_CheckedChanged(object sender, EventArgs e) {
+            await LoadEmployees(FetchType());
+        }
+
+        private async void StaffOnlyRadioButton_CheckedChanged(object sender, EventArgs e) {
+            await LoadEmployees(FetchType());
+        }
+
+        private async void AllRadioButton_CheckedChanged(object sender, EventArgs e) {
+            await LoadEmployees(FetchType());
         }
     }
 }
