@@ -24,9 +24,9 @@ partial class MembershipForm {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MemberNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.StartingDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -43,6 +43,8 @@ partial class MembershipForm {
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MembershipsDataGridView = new System.Windows.Forms.DataGridView();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.HomeButton = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MemberId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,9 +53,8 @@ partial class MembershipForm {
             this.MembershipTypeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExpirationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.HomeButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembershipsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -218,6 +219,7 @@ partial class MembershipForm {
             this.MembershipTypeName,
             this.StartingDate,
             this.ExpirationDate,
+            this.IsExpired,
             this.UserId});
             this.MembershipsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MembershipsDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -231,10 +233,31 @@ partial class MembershipForm {
             this.MembershipsDataGridView.TabStop = false;
             this.MembershipsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MembershipsDataGridView_CellClick);
             // 
+            // AddButton
+            // 
+            this.AddButton.Location = new System.Drawing.Point(787, 290);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(159, 46);
+            this.AddButton.TabIndex = 9;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // HomeButton
+            // 
+            this.HomeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HomeButton.Image = global::GMSUI.Properties.Resources.home_60x60;
+            this.HomeButton.Location = new System.Drawing.Point(12, 12);
+            this.HomeButton.Name = "HomeButton";
+            this.HomeButton.Size = new System.Drawing.Size(63, 58);
+            this.HomeButton.TabIndex = 86;
+            this.HomeButton.UseVisualStyleBackColor = true;
+            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
+            // 
             // Id
             // 
-            dataGridViewCellStyle7.Format = "d";
-            this.Id.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Format = "d";
+            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
@@ -273,47 +296,32 @@ partial class MembershipForm {
             // 
             // StartingDate
             // 
-            dataGridViewCellStyle8.Format = "d";
-            dataGridViewCellStyle8.NullValue = null;
-            this.StartingDate.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.StartingDate.DefaultCellStyle = dataGridViewCellStyle2;
             this.StartingDate.HeaderText = "Starting Date";
             this.StartingDate.Name = "StartingDate";
             this.StartingDate.ReadOnly = true;
             // 
             // ExpirationDate
             // 
-            dataGridViewCellStyle9.Format = "d";
-            this.ExpirationDate.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Format = "d";
+            this.ExpirationDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.ExpirationDate.HeaderText = "Expiration Date";
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.ReadOnly = true;
+            // 
+            // IsExpired
+            // 
+            this.IsExpired.HeaderText = "Is Expired";
+            this.IsExpired.Name = "IsExpired";
+            this.IsExpired.ReadOnly = true;
             // 
             // UserId
             // 
             this.UserId.HeaderText = "Added By";
             this.UserId.Name = "UserId";
             this.UserId.ReadOnly = true;
-            // 
-            // AddButton
-            // 
-            this.AddButton.Location = new System.Drawing.Point(787, 290);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(159, 46);
-            this.AddButton.TabIndex = 9;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // HomeButton
-            // 
-            this.HomeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HomeButton.Image = global::GMSUI.Properties.Resources.home_60x60;
-            this.HomeButton.Location = new System.Drawing.Point(12, 12);
-            this.HomeButton.Name = "HomeButton";
-            this.HomeButton.Size = new System.Drawing.Size(63, 58);
-            this.HomeButton.TabIndex = 86;
-            this.HomeButton.UseVisualStyleBackColor = true;
-            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
             // MembershipForm
             // 
@@ -365,6 +373,7 @@ partial class MembershipForm {
     private Label label4;
     private DateTimePicker StartingDatePicker;
     private TextBox MemberNameTextBox;
+    private Button HomeButton;
     private DataGridViewTextBoxColumn Id;
     private DataGridViewTextBoxColumn MemberId;
     private DataGridViewTextBoxColumn MemberName;
@@ -373,6 +382,6 @@ partial class MembershipForm {
     private DataGridViewTextBoxColumn MembershipTypeName;
     private DataGridViewTextBoxColumn StartingDate;
     private DataGridViewTextBoxColumn ExpirationDate;
+    private DataGridViewTextBoxColumn IsExpired;
     private DataGridViewTextBoxColumn UserId;
-    private Button HomeButton;
 }

@@ -40,6 +40,15 @@ public class SqlConnector {
 
     }
 
+    public async void CheckMembershipExpirations() {
+        
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            await connection.ExecuteAsync("spMembership_CheckExpirations", commandType: CommandType.StoredProcedure);
+
+        }
+    }
+
     public async Task<List<MemberModel>> GetMembers() {
 
         using (IDbConnection connection = new SqlConnection(GetConnString())) {

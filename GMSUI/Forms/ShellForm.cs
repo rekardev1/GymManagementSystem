@@ -1,4 +1,5 @@
-﻿using GMSDataAccess.Model;
+﻿using GMSDataAccess.DataAccess;
+using GMSDataAccess.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,24 @@ public partial class ShellForm : Form {
 
     private Form activeForm;
     internal HomeForm homeForm;
+    private SqlConnector _sqlConnector = new SqlConnector();
+
+
     public UserModel LoggedInUser { get; set; }
 
     public ShellForm() {
         InitializeComponent();
+
+        
+
+    }
+    override protected void OnLoad(EventArgs e) {
+
+        _sqlConnector.CheckMembershipExpirations();
+
+        LoginForm frm = new LoginForm(this);
+        frm.LoggedIn += Frm_LoggedIn;
+        OpenChildForm(frm, "Login");
     }
 
     internal void OpenChildForm(Form childForm, string ChildFormTitle) {
@@ -39,12 +54,6 @@ public partial class ShellForm : Form {
 
     }
 
-    override protected void OnLoad(EventArgs e) {
-        
-        LoginForm frm = new LoginForm(this);
-        frm.LoggedIn += Frm_LoggedIn;
-        OpenChildForm(frm, "Login");
-    }
 
     private void Frm_LoggedIn(object? sender, EventArgs e) {
 

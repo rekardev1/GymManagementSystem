@@ -10,6 +10,7 @@ begin
 		MembershipType.[Name] as 'MembershipTypeName',
 		Membership.StartingDate, 
 		Membership.ExpirationDate,
+		Membership.IsExpired,
 		Membership.UserId,
 		[User].[Name] as 'UserName'
 

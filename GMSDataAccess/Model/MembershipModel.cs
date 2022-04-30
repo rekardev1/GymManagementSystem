@@ -14,6 +14,7 @@ public class MembershipModel {
     public List<EmployeeModel> Trainers { get; set; } = new List<EmployeeModel>();
     public DateTime StartingDate { get; set; }
     public DateTime ExpirationDate { get; set; }
+    public bool IsExpired { get; set; }
     public int UserId { get; set; }
     public string UserName { get; set; }
 }

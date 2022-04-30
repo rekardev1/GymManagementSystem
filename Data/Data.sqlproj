@@ -93,6 +93,7 @@
     <Build Include="StoredProcedures\spMembershipTrainers_Add.sql" />
     <Build Include="StoredProcedures\spMembership_Update.sql" />
     <Build Include="StoredProcedures\spMembershipTrainers_Delete.sql" />
+    <Build Include="StoredProcedures\spMembership_CheckExpirations.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Data.publish.xml" />

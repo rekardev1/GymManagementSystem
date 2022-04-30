@@ -39,7 +39,7 @@ public partial class MembershipForm : Form {
 
         await LoadMembershipTypes();
 
-        await LoadMembers();
+        
 
         await LoadMemberships();
     }
@@ -60,6 +60,7 @@ public partial class MembershipForm : Form {
                 membership.MembershipTypeName,
                 membership.StartingDate,
                 membership.ExpirationDate,
+                membership.IsExpired ? "Yes" : "No",
                 membership.UserName);
         }
 
@@ -87,10 +88,6 @@ public partial class MembershipForm : Form {
         _membershipTypes = await _sqlConnector.GetMembershipTypes();
         MembershipTypeComboBox.DataSource = _membershipTypes;
         MembershipTypeComboBox.DisplayMember = "Display";
-
-    }
-    private async Task LoadMembers() {
-
 
     }
 
@@ -130,8 +127,6 @@ public partial class MembershipForm : Form {
 
         await LoadMemberships();
     }
-
-    
 
     private void MembershipsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e) {
         
@@ -176,10 +171,7 @@ public partial class MembershipForm : Form {
         } else if (TrainersCheckedListBox.CheckedItems.Count == 0 ) {
             output = false;
 
-        } else if (ExpirationDatePicker.Value < DateTime.Today) {
-            output = false;
-
-        }
+        } 
 
         return output;
     }

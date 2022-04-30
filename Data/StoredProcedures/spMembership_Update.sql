@@ -10,7 +10,17 @@ begin
 	set MembershipTypeId = @MembershipTypeId,
 		StartingDate = @StartingDate,
 		ExpirationDate = @ExpirationDate
+	where Id = @Id;
 
-	where Id = @Id
 
+	update Membership
+	set IsExpired = 1
+	where Id = @Id and ExpirationDate < GETDATE()
+
+
+	update Membership
+	set IsExpired = 0
+	where Id = @Id and ExpirationDate > GETDATE()
+
+	
 end
