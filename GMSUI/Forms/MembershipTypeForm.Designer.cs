@@ -39,6 +39,7 @@ partial class MembershipTypeForm {
             this.label4 = new System.Windows.Forms.Label();
             this.MembershipLabel = new System.Windows.Forms.Label();
             this.HomeButton = new System.Windows.Forms.Button();
+            this.PrintButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembershipsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -117,7 +118,7 @@ partial class MembershipTypeForm {
             this.panel1.Controls.Add(this.MembershipsDataGridView);
             this.panel1.Location = new System.Drawing.Point(12, 214);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(989, 340);
+            this.panel1.Size = new System.Drawing.Size(989, 294);
             this.panel1.TabIndex = 49;
             // 
             // MembershipsDataGridView
@@ -133,7 +134,7 @@ partial class MembershipTypeForm {
             this.MembershipsDataGridView.ReadOnly = true;
             this.MembershipsDataGridView.RowTemplate.Height = 25;
             this.MembershipsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MembershipsDataGridView.Size = new System.Drawing.Size(989, 340);
+            this.MembershipsDataGridView.Size = new System.Drawing.Size(989, 294);
             this.MembershipsDataGridView.TabIndex = 0;
             this.MembershipsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MembershipsDataGridView_CellClick);
             // 
@@ -197,11 +198,23 @@ partial class MembershipTypeForm {
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
+            // PrintButton
+            // 
+            this.PrintButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrintButton.Location = new System.Drawing.Point(848, 514);
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.Size = new System.Drawing.Size(159, 46);
+            this.PrintButton.TabIndex = 73;
+            this.PrintButton.Text = "Print";
+            this.PrintButton.UseVisualStyleBackColor = true;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
             // MembershipTypeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 572);
+            this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.MembershipLabel);
             this.Controls.Add(this.label4);
@@ -243,4 +256,5 @@ partial class MembershipTypeForm {
     private Label label4;
     private Label MembershipLabel;
     private Button HomeButton;
+    private Button PrintButton;
 }

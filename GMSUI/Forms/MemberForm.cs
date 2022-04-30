@@ -1,4 +1,5 @@
-﻿using GMSDataAccess.DataAccess;
+﻿using DGVPrinterHelper;
+using GMSDataAccess.DataAccess;
 using GMSDataAccess.Model;
 using System;
 using System.Collections.Generic;
@@ -70,7 +71,7 @@ public partial class MemberForm : Form {
     }
 
     private async Task ResetForm() {
-        
+
         FirstNameTextBox.Text = "";
         LastNameTextBox.Text = "";
         AddressTextBox.Text = "";
@@ -93,10 +94,10 @@ public partial class MemberForm : Form {
         } else if (string.IsNullOrEmpty(LastNameTextBox.Text)) {
             output = false;
 
-        }else if (string.IsNullOrEmpty(GenderTextBox.Text)) {
+        } else if (string.IsNullOrEmpty(GenderTextBox.Text)) {
             output = false;
 
-        }else if (BirthDatePicker.Value > DateTime.Now) {
+        } else if (BirthDatePicker.Value > DateTime.Now) {
             output = false;
 
         } else if (string.IsNullOrEmpty(AddressTextBox.Text)) {
@@ -111,7 +112,7 @@ public partial class MemberForm : Form {
     }
 
     private void MembersDataGridView_CellClick(object sender, DataGridViewCellEventArgs e) {
-        
+
         if (e.RowIndex < 0) {
             return;
         }
@@ -128,7 +129,7 @@ public partial class MemberForm : Form {
     }
 
     private async void UpdateButton_Click(object sender, EventArgs e) {
-        
+
         if (_selectedRow == null) {
             MessageBox.Show("Please Select a row!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
@@ -161,7 +162,7 @@ public partial class MemberForm : Form {
     }
 
     private async void DeleteButton_Click(object sender, EventArgs e) {
-        
+
         if (_selectedRow == null) {
             MessageBox.Show("Please Select a row!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
@@ -182,4 +183,27 @@ public partial class MemberForm : Form {
     private void HomeButton_Click(object sender, EventArgs e) {
         _shell.OpenHomeForm();
     }
+
+    private void PrintButton_Click(object sender, EventArgs e) {
+
+        DGVPrinter printer = new DGVPrinter();
+        printer.Title = "Members Report";
+        printer.SubTitle = $"{DateTime.Now}";
+        printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+        printer.PageNumbers = true;
+        printer.PageNumberInHeader = false;
+        printer.PorportionalColumns = true;
+        printer.HeaderCellAlignment = StringAlignment.Near;
+        printer.Footer = $"Total Members: {_members.Count}";
+        printer.FooterSpacing = 15;
+
+        MembersDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+
+        printer.PrintDataGridView(MembersDataGridView);
+
+        MembersDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
+    }
+
 }

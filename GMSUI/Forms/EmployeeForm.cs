@@ -1,4 +1,5 @@
-﻿using GMSDataAccess.DataAccess;
+﻿using DGVPrinterHelper;
+using GMSDataAccess.DataAccess;
 using GMSDataAccess.Model;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace GMSUI.Forms {
 
         private readonly ShellForm _shell;
         private SqlConnector _sqlConnector = new SqlConnector();
-        private BindingList<EmployeeModel> _employees;
+        private List<EmployeeModel> _employees;
         private DataGridViewRow _selectedRow;
 
         public EmployeeForm(ShellForm shell) {
@@ -34,9 +35,7 @@ namespace GMSUI.Forms {
 
         internal async Task LoadEmployees() {
 
-            var em = await _sqlConnector.GetEmployees();
-
-            _employees = new BindingList<EmployeeModel>(em);
+            _employees = await _sqlConnector.GetEmployees();
 
             EmployeesDataGridView.DataSource = _employees;
             
@@ -192,5 +191,32 @@ namespace GMSUI.Forms {
         private void HomeButton_Click(object sender, EventArgs e) {
             _shell.OpenHomeForm();
         }
+
+        private void PrintButton_Click(object sender, EventArgs e) {
+            
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "Employees Report";
+            printer.SubTitle = $"{DateTime.Now}";
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = $"Total Employees: {_employees.Count} | Total salary: {TotalSalary(_employees)}";
+            printer.FooterSpacing = 15;
+
+            EmployeesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+
+            printer.PrintDataGridView(EmployeesDataGridView);
+
+            EmployeesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private int TotalSalary(List<EmployeeModel> employees) {
+
+            return employees.Sum(x => x.Salary);
+
+        }
+
     }
 }

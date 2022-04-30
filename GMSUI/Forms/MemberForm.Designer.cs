@@ -26,6 +26,7 @@ partial class MemberForm {
     private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberForm));
             this.label8 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -56,6 +57,8 @@ partial class MemberForm {
             this.DeleteButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.HomeButton = new System.Windows.Forms.Button();
+            this.PrintButton = new System.Windows.Forms.Button();
+            this.PrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembersDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memberModelBindingSource)).BeginInit();
@@ -215,7 +218,7 @@ partial class MemberForm {
             this.panel1.Controls.Add(this.MembersDataGridView);
             this.panel1.Location = new System.Drawing.Point(15, 288);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(989, 266);
+            this.panel1.Size = new System.Drawing.Size(989, 220);
             this.panel1.TabIndex = 68;
             // 
             // MembersDataGridView
@@ -242,7 +245,7 @@ partial class MemberForm {
             this.MembersDataGridView.ReadOnly = true;
             this.MembersDataGridView.RowTemplate.Height = 25;
             this.MembersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MembersDataGridView.Size = new System.Drawing.Size(989, 266);
+            this.MembersDataGridView.Size = new System.Drawing.Size(989, 220);
             this.MembersDataGridView.TabIndex = 0;
             this.MembersDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MembersDataGridView_CellClick);
             // 
@@ -340,11 +343,33 @@ partial class MemberForm {
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
+            // PrintButton
+            // 
+            this.PrintButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrintButton.Location = new System.Drawing.Point(848, 514);
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.Size = new System.Drawing.Size(159, 46);
+            this.PrintButton.TabIndex = 72;
+            this.PrintButton.Text = "Print";
+            this.PrintButton.UseVisualStyleBackColor = true;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
+            // PrintPreviewDialog
+            // 
+            this.PrintPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.PrintPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.PrintPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.PrintPreviewDialog.Enabled = true;
+            this.PrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("PrintPreviewDialog.Icon")));
+            this.PrintPreviewDialog.Name = "PrintPreviewDialog";
+            this.PrintPreviewDialog.Visible = false;
+            // 
             // MemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 572);
+            this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.UpdateButton);
@@ -408,4 +433,6 @@ partial class MemberForm {
     private DataGridViewTextBoxColumn phoneNumber1DataGridViewTextBoxColumn;
     private DataGridViewTextBoxColumn phoneNumber2DataGridViewTextBoxColumn;
     private Button HomeButton;
+    private Button PrintButton;
+    private PrintPreviewDialog PrintPreviewDialog;
 }

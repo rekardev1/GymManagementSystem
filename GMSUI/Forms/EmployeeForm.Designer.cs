@@ -47,6 +47,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.SalaryTextBox = new System.Windows.Forms.TextBox();
             this.HomeButton = new System.Windows.Forms.Button();
+            this.PrintButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EmployeesDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +70,7 @@
             this.panel2.Controls.Add(this.EmployeesDataGridView);
             this.panel2.Location = new System.Drawing.Point(12, 316);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1011, 348);
+            this.panel2.Size = new System.Drawing.Size(1011, 294);
             this.panel2.TabIndex = 16;
             // 
             // EmployeesDataGridView
@@ -84,7 +85,7 @@
             this.EmployeesDataGridView.ReadOnly = true;
             this.EmployeesDataGridView.RowTemplate.Height = 25;
             this.EmployeesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.EmployeesDataGridView.Size = new System.Drawing.Size(1011, 348);
+            this.EmployeesDataGridView.Size = new System.Drawing.Size(1011, 294);
             this.EmployeesDataGridView.TabIndex = 0;
             this.EmployeesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeesGridView_CellClick);
             // 
@@ -240,12 +241,24 @@
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
+            // PrintButton
+            // 
+            this.PrintButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrintButton.Location = new System.Drawing.Point(864, 616);
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.Size = new System.Drawing.Size(159, 48);
+            this.PrintButton.TabIndex = 9;
+            this.PrintButton.Text = "Print";
+            this.PrintButton.UseVisualStyleBackColor = true;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1035, 676);
+            this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.UpdateButton);
@@ -295,5 +308,6 @@
         private Label label4;
         private TextBox SalaryTextBox;
         private Button HomeButton;
+        private Button PrintButton;
     }
 }

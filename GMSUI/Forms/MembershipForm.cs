@@ -1,4 +1,5 @@
-﻿using GMSDataAccess.DataAccess;
+﻿using DGVPrinterHelper;
+using GMSDataAccess.DataAccess;
 using GMSDataAccess.Model;
 using System;
 using System.Collections.Generic;
@@ -220,5 +221,25 @@ public partial class MembershipForm : Form {
 
     private void HomeButton_Click(object sender, EventArgs e) {
         _shell.OpenHomeForm();
+    }
+
+    private void PrintButton_Click(object sender, EventArgs e) {
+
+        DGVPrinter printer = new DGVPrinter();
+        printer.Title = "MemberShips Report";
+        printer.SubTitle = $"{DateTime.Now}";
+        printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+        printer.PageNumbers = true;
+        printer.PageNumberInHeader = false;
+        printer.PorportionalColumns = true;
+        printer.HeaderCellAlignment = StringAlignment.Near;
+        printer.Footer = $"Total MemberShips: {_memberships.Count}";
+        printer.FooterSpacing = 15;
+
+        MembershipsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+
+        printer.PrintDataGridView(MembershipsDataGridView);
+
+        MembershipsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
     }
 }

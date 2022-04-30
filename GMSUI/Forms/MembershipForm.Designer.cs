@@ -43,8 +43,6 @@ partial class MembershipForm {
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MembershipsDataGridView = new System.Windows.Forms.DataGridView();
-            this.AddButton = new System.Windows.Forms.Button();
-            this.HomeButton = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MemberId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MemberName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +53,9 @@ partial class MembershipForm {
             this.ExpirationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddButton = new System.Windows.Forms.Button();
+            this.HomeButton = new System.Windows.Forms.Button();
+            this.PrintButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembershipsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -201,7 +202,7 @@ partial class MembershipForm {
             this.panel1.Controls.Add(this.MembershipsDataGridView);
             this.panel1.Location = new System.Drawing.Point(12, 342);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(995, 212);
+            this.panel1.Size = new System.Drawing.Size(995, 164);
             this.panel1.TabIndex = 68;
             // 
             // MembershipsDataGridView
@@ -228,31 +229,10 @@ partial class MembershipForm {
             this.MembershipsDataGridView.ReadOnly = true;
             this.MembershipsDataGridView.RowTemplate.Height = 25;
             this.MembershipsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.MembershipsDataGridView.Size = new System.Drawing.Size(995, 212);
+            this.MembershipsDataGridView.Size = new System.Drawing.Size(995, 164);
             this.MembershipsDataGridView.TabIndex = 0;
             this.MembershipsDataGridView.TabStop = false;
             this.MembershipsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MembershipsDataGridView_CellClick);
-            // 
-            // AddButton
-            // 
-            this.AddButton.Location = new System.Drawing.Point(787, 290);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(159, 46);
-            this.AddButton.TabIndex = 9;
-            this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
-            // 
-            // HomeButton
-            // 
-            this.HomeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.HomeButton.Image = global::GMSUI.Properties.Resources.home_60x60;
-            this.HomeButton.Location = new System.Drawing.Point(12, 12);
-            this.HomeButton.Name = "HomeButton";
-            this.HomeButton.Size = new System.Drawing.Size(63, 58);
-            this.HomeButton.TabIndex = 86;
-            this.HomeButton.UseVisualStyleBackColor = true;
-            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
             // Id
             // 
@@ -323,11 +303,44 @@ partial class MembershipForm {
             this.UserId.Name = "UserId";
             this.UserId.ReadOnly = true;
             // 
+            // AddButton
+            // 
+            this.AddButton.Location = new System.Drawing.Point(787, 290);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(159, 46);
+            this.AddButton.TabIndex = 9;
+            this.AddButton.Text = "Add";
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
+            // 
+            // HomeButton
+            // 
+            this.HomeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.HomeButton.Image = global::GMSUI.Properties.Resources.home_60x60;
+            this.HomeButton.Location = new System.Drawing.Point(12, 12);
+            this.HomeButton.Name = "HomeButton";
+            this.HomeButton.Size = new System.Drawing.Size(63, 58);
+            this.HomeButton.TabIndex = 86;
+            this.HomeButton.UseVisualStyleBackColor = true;
+            this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
+            // 
+            // PrintButton
+            // 
+            this.PrintButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrintButton.Location = new System.Drawing.Point(848, 512);
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.Size = new System.Drawing.Size(159, 48);
+            this.PrintButton.TabIndex = 87;
+            this.PrintButton.Text = "Print";
+            this.PrintButton.UseVisualStyleBackColor = true;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
             // MembershipForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 572);
+            this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.MemberNameTextBox);
             this.Controls.Add(this.label4);
@@ -384,4 +397,5 @@ partial class MembershipForm {
     private DataGridViewTextBoxColumn ExpirationDate;
     private DataGridViewTextBoxColumn IsExpired;
     private DataGridViewTextBoxColumn UserId;
+    private Button PrintButton;
 }
