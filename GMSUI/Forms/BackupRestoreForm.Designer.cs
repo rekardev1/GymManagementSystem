@@ -38,6 +38,7 @@ partial class BackupRestoreForm {
             this.restoreFilePathTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.restoreButton = new System.Windows.Forms.Button();
+            this.AppendDateTimeCheckBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -169,11 +170,23 @@ partial class BackupRestoreForm {
             this.restoreButton.UseVisualStyleBackColor = true;
             this.restoreButton.Click += new System.EventHandler(this.restoreButton_Click);
             // 
+            // AppendDateTimeCheckBox
+            // 
+            this.AppendDateTimeCheckBox.AutoSize = true;
+            this.AppendDateTimeCheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AppendDateTimeCheckBox.Location = new System.Drawing.Point(247, 114);
+            this.AppendDateTimeCheckBox.Name = "AppendDateTimeCheckBox";
+            this.AppendDateTimeCheckBox.Size = new System.Drawing.Size(153, 25);
+            this.AppendDateTimeCheckBox.TabIndex = 24;
+            this.AppendDateTimeCheckBox.Text = "Append DateTime";
+            this.AppendDateTimeCheckBox.UseVisualStyleBackColor = true;
+            // 
             // BackupRestoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1035, 676);
+            this.Controls.Add(this.AppendDateTimeCheckBox);
             this.Controls.Add(this.restoreButton);
             this.Controls.Add(this.restoreBrowseButton);
             this.Controls.Add(this.restoreFilePathTextBox);
@@ -210,4 +223,5 @@ partial class BackupRestoreForm {
     private TextBox restoreFilePathTextBox;
     private Label label5;
     private Button restoreButton;
+    private CheckBox AppendDateTimeCheckBox;
 }

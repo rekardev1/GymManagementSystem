@@ -42,13 +42,7 @@ public class SqlConnector {
 
     public async Task BackupDatabase(string destination, string fileName) {
 
-        if (fileName == "") {
-            fileName = "Backup";
-        }
-
-        string date = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
-
-        destination = $"{destination}\\{fileName}_{date}.bak";
+        destination = $"{destination}\\{fileName}.bak";
 
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 

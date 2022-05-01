@@ -31,7 +31,20 @@ public partial class BackupRestoreForm : Form {
         if (ValidateBackup()) {
             try {
 
-                await _sqlConnector.BackupDatabase(backupDestinationTextBox.Text, backupFileNameTextBox.Text);
+                string name;
+
+                if (backupFileNameTextBox.Text != "") {
+                    name = backupFileNameTextBox.Text;
+                } else {
+                    name = "backup";
+                }
+
+                if (AppendDateTimeCheckBox.Checked) {
+
+                    name += $"_{DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss")}";
+                }
+
+                await _sqlConnector.BackupDatabase(backupDestinationTextBox.Text, name);
                 MessageBox.Show("The database successfully backed up.", "Backup Database Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
