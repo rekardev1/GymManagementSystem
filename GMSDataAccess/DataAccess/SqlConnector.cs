@@ -40,6 +40,24 @@ public class SqlConnector {
 
     }
 
+    public async Task BackupDatabase(string destination, string fileName) {
+
+        if (fileName == "") {
+            fileName = "Backup";
+        }
+
+        string date = DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss");
+
+        destination = $"{destination}\\{fileName}_{date}.bak";
+
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+
+            await connection.ExecuteAsync("spDbBackup", new { Destination = destination }, commandType: CommandType.StoredProcedure);
+
+        }
+    }
+
     public async void CheckMembershipExpirations() {
 
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
@@ -72,6 +90,15 @@ public class SqlConnector {
                     Fee = model.Fee
                 },
                 commandType: CommandType.StoredProcedure);
+        }
+    }
+
+    public async Task RestoreDatabase(string file) {
+        
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            connection.Execute(@$"use master; RESTORE DATABASE GMSData FROM DISK = N'{file}' WITH REPLACE ");
+
         }
     }
 
@@ -246,6 +273,15 @@ public class SqlConnector {
                     PhoneNumber2 = model.PhoneNumber2
                 }
                 , commandType: CommandType.StoredProcedure);
+        }
+    }
+
+    public async Task DeleteMembership(int id) {
+        using (IDbConnection connection = new SqlConnection(GetConnString())) {
+
+            await connection.ExecuteAsync("spMembershipTrainers_Delete", new { Id = id }, commandType: CommandType.StoredProcedure);
+
+            await connection.ExecuteAsync("spMembership_Delete", new { Id = id }, commandType: CommandType.StoredProcedure);
         }
     }
 

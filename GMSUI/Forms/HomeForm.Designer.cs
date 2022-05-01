@@ -31,6 +31,7 @@ partial class HomeForm {
             this.MembershipsButton = new System.Windows.Forms.Button();
             this.UsersButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,6 +105,7 @@ partial class HomeForm {
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.EmployeesButton);
             this.panel1.Controls.Add(this.MembershipsButton);
@@ -114,6 +116,17 @@ partial class HomeForm {
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(995, 555);
             this.panel1.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(600, 287);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(201, 107);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Backup/Restore Database";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.BackupRestoreDatabaseButton_Click);
             // 
             // HomeForm
             // 
@@ -142,4 +155,5 @@ partial class HomeForm {
     private Button UsersButton;
     private Button MembershipsButton;
     private Panel panel1;
+    private Button button1;
 }

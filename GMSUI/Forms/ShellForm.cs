@@ -23,8 +23,6 @@ public partial class ShellForm : Form {
     public ShellForm() {
         InitializeComponent();
 
-        
-
     }
     override protected void OnLoad(EventArgs e) {
 

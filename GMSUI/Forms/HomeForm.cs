@@ -57,4 +57,9 @@ public partial class HomeForm : Form {
         MembershipForm membership = new MembershipForm(_shell);
         _shell.OpenChildForm(membership, "Memberships");
     }
+
+    private void BackupRestoreDatabaseButton_Click(object sender, EventArgs e) {
+        BackupRestoreForm backupRestore = new BackupRestoreForm(_shell);
+        _shell.OpenChildForm(backupRestore, "Backup and Restore Database");
+    }
 }
