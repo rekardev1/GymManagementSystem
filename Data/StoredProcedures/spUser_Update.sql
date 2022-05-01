@@ -5,7 +5,7 @@
 	@Salary money,
 	@PhoneNumber1 nvarchar(11),
 	@PhoneNumber2 nvarchar(11),
-	@RoleLevel int
+	@Role nvarchar(250)
 
 AS
 begin
@@ -17,7 +17,7 @@ begin
 		Salary = @Salary, 
 		PhoneNumber1 = @PhoneNumber1,
 		PhoneNumber2 = @PhoneNumber2,
-		RoleLevel = @RoleLevel
+		[Role] = @Role
 
 	where Id = @Id;
 	

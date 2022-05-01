@@ -64,7 +64,7 @@ public partial class UserForm : Form {
             UserModel model = new UserModel();
 
             model.Name = NameTextBox.Text;
-            model.RoleLevel = int.Parse(RoleLevelComboBox.SelectedItem.ToString());
+            model.Role = RoleLevelComboBox.SelectedItem.ToString();
             model.Address = AddressTextBox.Text;
             model.Salary = int.Parse(SalaryTextBox.Text);
             model.PhoneNumber1 = PhoneNumber1TextBox.Text;
@@ -120,7 +120,7 @@ public partial class UserForm : Form {
 
         model.Id = int.Parse(_selectedRow.Cells[0].Value.ToString());
         model.Name = NameTextBox.Text;
-        model.RoleLevel = int.Parse(RoleLevelComboBox.SelectedItem.ToString());
+        model.Role = RoleLevelComboBox.Text;
         model.Address = AddressTextBox.Text;
         model.Salary = int.Parse(SalaryTextBox.Text);
         model.PhoneNumber1 = PhoneNumber1TextBox.Text;
@@ -148,8 +148,16 @@ public partial class UserForm : Form {
             MessageBox.Show("Please enter a password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
-        
+
         int id = int.Parse(_selectedRow.Cells[0].Value.ToString());
+        string role = _selectedRow.Cells[2].Value.ToString();
+
+        if (id != _shell.LoggedInUser.Id && role == "Admin") {
+            MessageBox.Show("You can not update other admin's password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            PasswordTextBox.Text = "";
+            return;
+        }
+
         try {
             await _sqlConnector.UpdateUserPassword(id, PasswordTextBox.Text.Trim());
             PasswordTextBox.Text = "";
@@ -169,7 +177,7 @@ public partial class UserForm : Form {
         }
 
         int id = int.Parse(_selectedRow.Cells[0].Value.ToString());
-
+        
         try {
             await _sqlConnector.DeleteUser(id);
 
@@ -215,11 +223,14 @@ public partial class UserForm : Form {
         _selectedRow = UsersDataGridView.Rows[e.RowIndex];
 
         NameTextBox.Text = _selectedRow.Cells[1].Value.ToString();
-        RoleLevelComboBox.SelectedIndex = int.Parse(_selectedRow.Cells[2].Value.ToString()) - 1;
+        RoleLevelComboBox.Text = _selectedRow.Cells[2].Value.ToString();
         AddressTextBox.Text = _selectedRow.Cells[3].Value.ToString();
         SalaryTextBox.Text = _selectedRow.Cells[4].Value.ToString();
         PhoneNumber1TextBox.Text = _selectedRow.Cells[5].Value.ToString();
         PhoneNumber2TextBox.Text = _selectedRow.Cells[6].Value.ToString();
+
+        
+
     }
 
     private void HomeButton_Click(object sender, EventArgs e) {

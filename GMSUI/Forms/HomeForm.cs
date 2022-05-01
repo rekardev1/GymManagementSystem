@@ -21,7 +21,7 @@ public partial class HomeForm : Form {
 
     override protected void OnLoad(EventArgs e) {
 
-        if (_shell.LoggedInUser.RoleLevel == 1) {
+        if (_shell.LoggedInUser.Role == "Admin") {
 
             UsersButton.Visible = true;
         }

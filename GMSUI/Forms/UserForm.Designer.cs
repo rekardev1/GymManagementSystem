@@ -256,8 +256,8 @@ partial class UserForm {
             this.RoleLevelComboBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RoleLevelComboBox.FormattingEnabled = true;
             this.RoleLevelComboBox.Items.AddRange(new object[] {
-            "1",
-            "2"});
+            "Admin",
+            "Manager"});
             this.RoleLevelComboBox.Location = new System.Drawing.Point(246, 98);
             this.RoleLevelComboBox.Name = "RoleLevelComboBox";
             this.RoleLevelComboBox.Size = new System.Drawing.Size(159, 28);

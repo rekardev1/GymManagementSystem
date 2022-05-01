@@ -5,11 +5,11 @@
 	@PhoneNumber1 nvarchar(11),
 	@PhoneNumber2 nvarchar(11),
 	@Password nvarchar(250),
-	@RoleLevel int 
+	@Role nvarchar(250)
 AS
 begin
 	
-	insert into dbo.[User]([Name], [Address], Salary, PhoneNumber1, PhoneNumber2, [Password], RoleLevel)
-	values (@Name, @Address, @Salary, @PhoneNumber1, @PhoneNumber2, @Password, @RoleLevel)
+	insert into dbo.[User]([Name], [Address], Salary, PhoneNumber1, PhoneNumber2, [Password], [Role])
+	values (@Name, @Address, @Salary, @PhoneNumber1, @PhoneNumber2, @Password, @Role)
 
 end

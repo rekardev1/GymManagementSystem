@@ -217,7 +217,7 @@ public class SqlConnector {
                     PhoneNumber1 = model.PhoneNumber1,
                     PhoneNumber2 = model.PhoneNumber2,
                     Password = password,
-                    RoleLevel = model.RoleLevel
+                    Role = model.Role
                 },
                 commandType: CommandType.StoredProcedure);
 

@@ -8,7 +8,7 @@ namespace GMSDataAccess.Model;
 public  class UserModel {
     public int Id { get; set; }
     public string Name { get; set; }
-    public int RoleLevel { get; set; }
+    public string Role { get; set; }
     public string Address { get; set; }
     public int Salary { get; set; }
     public string PhoneNumber1 { get; set; }
