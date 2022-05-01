@@ -97,7 +97,7 @@ public class SqlConnector {
         
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
-            connection.Execute(@$"use master; RESTORE DATABASE GMSData FROM DISK = N'{file}' WITH REPLACE ");
+            await connection.ExecuteAsync(@$"IF DB_ID('TDB') IS NULL BEGIN CREATE DATABASE TDB; END ELSE BEGIN USE TDB; END; RESTORE DATABASE GMSData FROM DISK = N'{file}' WITH REPLACE");
 
         }
     }

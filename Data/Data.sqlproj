@@ -98,7 +98,6 @@
     <Build Include="StoredProcedures\spMembership_GetActive.sql" />
     <Build Include="StoredProcedures\spMembership_GetExpired.sql" />
     <Build Include="StoredProcedures\spDbBackup.sql" />
-    <Build Include="StoredProcedures\spDbRestore.sql" />
     <Build Include="StoredProcedures\spMembership_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
