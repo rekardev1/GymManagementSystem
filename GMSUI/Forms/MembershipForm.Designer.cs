@@ -24,13 +24,12 @@ partial class MembershipForm {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MemberNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.StartingDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.Terminateutton = new System.Windows.Forms.Button();
             this.DeleteButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -90,15 +89,6 @@ partial class MembershipForm {
             this.StartingDatePicker.Size = new System.Drawing.Size(200, 29);
             this.StartingDatePicker.TabIndex = 4;
             // 
-            // Terminateutton
-            // 
-            this.Terminateutton.Location = new System.Drawing.Point(342, 290);
-            this.Terminateutton.Name = "Terminateutton";
-            this.Terminateutton.Size = new System.Drawing.Size(159, 46);
-            this.Terminateutton.TabIndex = 8;
-            this.Terminateutton.Text = "Terminate";
-            this.Terminateutton.UseVisualStyleBackColor = true;
-            // 
             // DeleteButton
             // 
             this.DeleteButton.Location = new System.Drawing.Point(177, 290);
@@ -107,6 +97,7 @@ partial class MembershipForm {
             this.DeleteButton.TabIndex = 7;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // UpdateButton
             // 
@@ -239,8 +230,8 @@ partial class MembershipForm {
             // 
             // Id
             // 
-            dataGridViewCellStyle4.Format = "d";
-            this.Id.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.Format = "d";
+            this.Id.DefaultCellStyle = dataGridViewCellStyle7;
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
@@ -279,17 +270,17 @@ partial class MembershipForm {
             // 
             // StartingDate
             // 
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.StartingDate.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Format = "d";
+            dataGridViewCellStyle8.NullValue = null;
+            this.StartingDate.DefaultCellStyle = dataGridViewCellStyle8;
             this.StartingDate.HeaderText = "Starting Date";
             this.StartingDate.Name = "StartingDate";
             this.StartingDate.ReadOnly = true;
             // 
             // ExpirationDate
             // 
-            dataGridViewCellStyle6.Format = "d";
-            this.ExpirationDate.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Format = "d";
+            this.ExpirationDate.DefaultCellStyle = dataGridViewCellStyle9;
             this.ExpirationDate.HeaderText = "Expiration Date";
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.ReadOnly = true;
@@ -391,7 +382,6 @@ partial class MembershipForm {
             this.Controls.Add(this.label8);
             this.Controls.Add(this.StartingDatePicker);
             this.Controls.Add(this.AddButton);
-            this.Controls.Add(this.Terminateutton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.label10);
@@ -424,7 +414,6 @@ partial class MembershipForm {
     private DateTimePicker ExpirationDatePicker;
     private Label label2;
     private ComboBox PlansComboBox;
-    private Button Terminateutton;
     private Button DeleteButton;
     private Button UpdateButton;
     private Label label4;

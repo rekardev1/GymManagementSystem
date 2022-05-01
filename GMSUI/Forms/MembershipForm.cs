@@ -231,8 +231,10 @@ public partial class MembershipForm : Form {
         printer.PageNumberInHeader = false;
         printer.PorportionalColumns = true;
         printer.HeaderCellAlignment = StringAlignment.Near;
+        printer.Footer = $"Total MemberShips: {_memberships.Count}";
+
         if (!ExpiredOnlyRadioButton.Checked) {
-            printer.Footer = $"Total MemberShips: {_memberships.Count} | Total Income: {TotalIncome(_memberships)}";
+            printer.Footer += $" | Total Income: {TotalIncome(_memberships)}";
         }
         printer.FooterSpacing = 15;
 
@@ -276,4 +278,27 @@ public partial class MembershipForm : Form {
             return "Expired";
         }
     }
+
+    private async void DeleteButton_Click(object sender, EventArgs e) {
+        if (_selectedRow == null) {
+            MessageBox.Show("Please Select a row!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        MembershipModel model = new MembershipModel();
+
+        model.Id = int.Parse(_selectedRow.Cells[0].Value.ToString());
+
+        var trainers = TrainersCheckedListBox.CheckedItems;
+
+        try {
+            await _sqlConnector.DeleteMembership(model.Id);
+
+        } catch (Exception ex) {
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        await ResetForm();
+    }
+
 }
