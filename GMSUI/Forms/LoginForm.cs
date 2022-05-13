@@ -26,6 +26,10 @@ public partial class LoginForm : Form {
         
     }
 
+    override protected void OnLoad(EventArgs e) {
+        NameTextBox.Focus();
+    }
+
     private async void LogInButton_Click(object sender, EventArgs e) {
         
         bool success = await _sqlConnector.LogIn(NameTextBox.Text, PasswordTextBox.Text);

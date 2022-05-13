@@ -34,9 +34,8 @@ public partial class PlanForm : Form {
 
     protected async override void OnLoad(EventArgs e) {
 
-
         await LoadPlans();
-
+        NameTextBox.Focus();
     }
 
     internal async Task LoadPlans() {
