@@ -84,7 +84,7 @@ partial class HomeForm {
             this.MembershipsButton.Location = new System.Drawing.Point(186, 287);
             this.MembershipsButton.Name = "MembershipsButton";
             this.MembershipsButton.Size = new System.Drawing.Size(201, 107);
-            this.MembershipsButton.TabIndex = 5;
+            this.MembershipsButton.TabIndex = 4;
             this.MembershipsButton.Text = "Memberships";
             this.MembershipsButton.UseVisualStyleBackColor = true;
             this.MembershipsButton.Click += new System.EventHandler(this.MembershipsButton_Click);
@@ -95,7 +95,7 @@ partial class HomeForm {
             this.UsersButton.Location = new System.Drawing.Point(600, 287);
             this.UsersButton.Name = "UsersButton";
             this.UsersButton.Size = new System.Drawing.Size(201, 107);
-            this.UsersButton.TabIndex = 4;
+            this.UsersButton.TabIndex = 6;
             this.UsersButton.Text = "Users";
             this.UsersButton.UseVisualStyleBackColor = true;
             this.UsersButton.Visible = false;
@@ -123,7 +123,7 @@ partial class HomeForm {
             this.button1.Location = new System.Drawing.Point(393, 287);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(201, 107);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 5;
             this.button1.Text = "Backup/Restore Database";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.BackupRestoreDatabaseButton_Click);

@@ -23,12 +23,13 @@ namespace GMSUI.Forms {
             InitializeComponent();
 
             _shell = shell;
+            
         }
 
         protected async override void OnLoad(EventArgs e) {
 
             await LoadEmployees("All");
-
+            NameTextBox.Focus();
         }
 
         internal async Task LoadEmployees(string fetchType) {

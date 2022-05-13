@@ -67,7 +67,8 @@ partial class BackupRestoreForm {
             this.backupDestinationTextBox.Location = new System.Drawing.Point(12, 179);
             this.backupDestinationTextBox.Name = "backupDestinationTextBox";
             this.backupDestinationTextBox.Size = new System.Drawing.Size(229, 29);
-            this.backupDestinationTextBox.TabIndex = 2;
+            this.backupDestinationTextBox.TabIndex = 3;
+            this.backupDestinationTextBox.TabStop = false;
             // 
             // backupBrowseButton
             // 
@@ -75,7 +76,7 @@ partial class BackupRestoreForm {
             this.backupBrowseButton.Location = new System.Drawing.Point(247, 179);
             this.backupBrowseButton.Name = "backupBrowseButton";
             this.backupBrowseButton.Size = new System.Drawing.Size(81, 29);
-            this.backupBrowseButton.TabIndex = 3;
+            this.backupBrowseButton.TabIndex = 4;
             this.backupBrowseButton.Text = "Browse";
             this.backupBrowseButton.UseVisualStyleBackColor = true;
             this.backupBrowseButton.Click += new System.EventHandler(this.backupBrowseButton_Click);
@@ -86,7 +87,7 @@ partial class BackupRestoreForm {
             this.backupButton.Location = new System.Drawing.Point(12, 230);
             this.backupButton.Name = "backupButton";
             this.backupButton.Size = new System.Drawing.Size(123, 29);
-            this.backupButton.TabIndex = 4;
+            this.backupButton.TabIndex = 5;
             this.backupButton.Text = "Backup Now";
             this.backupButton.UseVisualStyleBackColor = true;
             this.backupButton.Click += new System.EventHandler(this.backupButton_Click);
@@ -97,7 +98,7 @@ partial class BackupRestoreForm {
             this.backupFileNameTextBox.Location = new System.Drawing.Point(12, 110);
             this.backupFileNameTextBox.Name = "backupFileNameTextBox";
             this.backupFileNameTextBox.Size = new System.Drawing.Size(229, 29);
-            this.backupFileNameTextBox.TabIndex = 5;
+            this.backupFileNameTextBox.TabIndex = 1;
             // 
             // label3
             // 
@@ -116,7 +117,7 @@ partial class BackupRestoreForm {
             this.HomeButton.Location = new System.Drawing.Point(12, 6);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Size = new System.Drawing.Size(63, 58);
-            this.HomeButton.TabIndex = 18;
+            this.HomeButton.TabIndex = 0;
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
@@ -136,7 +137,7 @@ partial class BackupRestoreForm {
             this.restoreBrowseButton.Location = new System.Drawing.Point(247, 394);
             this.restoreBrowseButton.Name = "restoreBrowseButton";
             this.restoreBrowseButton.Size = new System.Drawing.Size(81, 29);
-            this.restoreBrowseButton.TabIndex = 22;
+            this.restoreBrowseButton.TabIndex = 7;
             this.restoreBrowseButton.Text = "Browse";
             this.restoreBrowseButton.UseVisualStyleBackColor = true;
             this.restoreBrowseButton.Click += new System.EventHandler(this.restoreBrowseButton_Click);
@@ -147,7 +148,8 @@ partial class BackupRestoreForm {
             this.restoreFilePathTextBox.Location = new System.Drawing.Point(12, 394);
             this.restoreFilePathTextBox.Name = "restoreFilePathTextBox";
             this.restoreFilePathTextBox.Size = new System.Drawing.Size(229, 29);
-            this.restoreFilePathTextBox.TabIndex = 21;
+            this.restoreFilePathTextBox.TabIndex = 6;
+            this.restoreFilePathTextBox.TabStop = false;
             // 
             // label5
             // 
@@ -165,7 +167,7 @@ partial class BackupRestoreForm {
             this.restoreButton.Location = new System.Drawing.Point(12, 447);
             this.restoreButton.Name = "restoreButton";
             this.restoreButton.Size = new System.Drawing.Size(123, 29);
-            this.restoreButton.TabIndex = 23;
+            this.restoreButton.TabIndex = 8;
             this.restoreButton.Text = "Restore";
             this.restoreButton.UseVisualStyleBackColor = true;
             this.restoreButton.Click += new System.EventHandler(this.restoreButton_Click);
@@ -177,7 +179,7 @@ partial class BackupRestoreForm {
             this.AppendDateTimeCheckBox.Location = new System.Drawing.Point(247, 114);
             this.AppendDateTimeCheckBox.Name = "AppendDateTimeCheckBox";
             this.AppendDateTimeCheckBox.Size = new System.Drawing.Size(153, 25);
-            this.AppendDateTimeCheckBox.TabIndex = 24;
+            this.AppendDateTimeCheckBox.TabIndex = 2;
             this.AppendDateTimeCheckBox.Text = "Append DateTime";
             this.AppendDateTimeCheckBox.UseVisualStyleBackColor = true;
             // 

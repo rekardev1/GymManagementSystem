@@ -92,7 +92,7 @@ partial class AddMembershipForm {
             this.PlansComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.PlansComboBox.FormattingEnabled = true;
             this.PlansComboBox.Location = new System.Drawing.Point(3, 151);
-            this.PlansComboBox.Name = "PlanComboBox";
+            this.PlansComboBox.Name = "PlansComboBox";
             this.PlansComboBox.Size = new System.Drawing.Size(207, 29);
             this.PlansComboBox.TabIndex = 2;
             // 
@@ -175,14 +175,14 @@ partial class AddMembershipForm {
             this.panel2.Controls.Add(this.AddButton);
             this.panel2.Location = new System.Drawing.Point(12, 12);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(766, 414);
+            this.panel2.Size = new System.Drawing.Size(696, 339);
             this.panel2.TabIndex = 71;
             // 
             // AddMembershipForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(790, 438);
+            this.ClientSize = new System.Drawing.Size(720, 363);
             this.Controls.Add(this.panel2);
             this.Name = "AddMembershipForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

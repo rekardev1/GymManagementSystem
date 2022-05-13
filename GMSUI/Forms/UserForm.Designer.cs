@@ -76,7 +76,8 @@ partial class UserForm {
             this.UsersDataGridView.RowTemplate.Height = 25;
             this.UsersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.UsersDataGridView.Size = new System.Drawing.Size(995, 254);
-            this.UsersDataGridView.TabIndex = 0;
+            this.UsersDataGridView.TabIndex = 13;
+            this.UsersDataGridView.TabStop = false;
             this.UsersDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersDataGridView_CellClick);
             // 
             // UpdateInfoButton
@@ -84,7 +85,7 @@ partial class UserForm {
             this.UpdateInfoButton.Location = new System.Drawing.Point(246, 232);
             this.UpdateInfoButton.Name = "UpdateInfoButton";
             this.UpdateInfoButton.Size = new System.Drawing.Size(159, 48);
-            this.UpdateInfoButton.TabIndex = 9;
+            this.UpdateInfoButton.TabIndex = 11;
             this.UpdateInfoButton.Text = "Update Info";
             this.UpdateInfoButton.UseVisualStyleBackColor = true;
             this.UpdateInfoButton.Click += new System.EventHandler(this.UpdateInfoButton_Click);
@@ -94,7 +95,7 @@ partial class UserForm {
             this.DeleteButton.Location = new System.Drawing.Point(411, 232);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(159, 48);
-            this.DeleteButton.TabIndex = 10;
+            this.DeleteButton.TabIndex = 12;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
@@ -104,7 +105,7 @@ partial class UserForm {
             this.AddUserButton.Location = new System.Drawing.Point(81, 232);
             this.AddUserButton.Name = "AddUserButton";
             this.AddUserButton.Size = new System.Drawing.Size(159, 48);
-            this.AddUserButton.TabIndex = 11;
+            this.AddUserButton.TabIndex = 10;
             this.AddUserButton.Text = "Add User";
             this.AddUserButton.UseVisualStyleBackColor = true;
             this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
@@ -261,7 +262,7 @@ partial class UserForm {
             this.RoleLevelComboBox.Location = new System.Drawing.Point(246, 98);
             this.RoleLevelComboBox.Name = "RoleLevelComboBox";
             this.RoleLevelComboBox.Size = new System.Drawing.Size(159, 28);
-            this.RoleLevelComboBox.TabIndex = 38;
+            this.RoleLevelComboBox.TabIndex = 2;
             // 
             // label8
             // 
@@ -280,7 +281,7 @@ partial class UserForm {
             this.HomeButton.Location = new System.Drawing.Point(12, 12);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Size = new System.Drawing.Size(63, 58);
-            this.HomeButton.TabIndex = 72;
+            this.HomeButton.TabIndex = 0;
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 

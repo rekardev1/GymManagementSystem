@@ -60,7 +60,7 @@ partial class LoginForm {
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(267, 34);
-            this.PasswordTextBox.TabIndex = 3;
+            this.PasswordTextBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -105,7 +105,7 @@ partial class LoginForm {
             this.ShowPasswordCheckBox.Location = new System.Drawing.Point(77, 279);
             this.ShowPasswordCheckBox.Name = "ShowPasswordCheckBox";
             this.ShowPasswordCheckBox.Size = new System.Drawing.Size(165, 32);
-            this.ShowPasswordCheckBox.TabIndex = 6;
+            this.ShowPasswordCheckBox.TabIndex = 3;
             this.ShowPasswordCheckBox.Text = "Show Password";
             this.ShowPasswordCheckBox.UseVisualStyleBackColor = true;
             this.ShowPasswordCheckBox.CheckedChanged += new System.EventHandler(this.ShowPasswordCheckBox_CheckedChanged);

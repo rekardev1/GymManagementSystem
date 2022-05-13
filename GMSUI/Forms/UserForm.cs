@@ -31,6 +31,7 @@ public partial class UserForm : Form {
 
 
         await LoadUsers();
+        NameTextBox.Focus();
 
     }
 

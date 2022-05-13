@@ -104,7 +104,7 @@
             this.EmployeesDataGridView.RowTemplate.Height = 25;
             this.EmployeesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.EmployeesDataGridView.Size = new System.Drawing.Size(1011, 294);
-            this.EmployeesDataGridView.TabIndex = 0;
+            this.EmployeesDataGridView.TabIndex = 11;
             this.EmployeesDataGridView.TabStop = false;
             this.EmployeesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeesDataGridView_CellClick);
             // 
@@ -291,7 +291,6 @@
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Size = new System.Drawing.Size(63, 58);
             this.HomeButton.TabIndex = 0;
-            this.HomeButton.TabStop = false;
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
@@ -301,7 +300,7 @@
             this.PrintButton.Location = new System.Drawing.Point(864, 616);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(159, 48);
-            this.PrintButton.TabIndex = 13;
+            this.PrintButton.TabIndex = 12;
             this.PrintButton.TabStop = false;
             this.PrintButton.Text = "Print";
             this.PrintButton.UseVisualStyleBackColor = true;
@@ -309,6 +308,7 @@
             // 
             // AllRadioButton
             // 
+            this.AllRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AllRadioButton.AutoSize = true;
             this.AllRadioButton.Checked = true;
             this.AllRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -316,12 +316,14 @@
             this.AllRadioButton.Name = "AllRadioButton";
             this.AllRadioButton.Size = new System.Drawing.Size(46, 25);
             this.AllRadioButton.TabIndex = 10;
+            this.AllRadioButton.TabStop = true;
             this.AllRadioButton.Text = "All";
             this.AllRadioButton.UseVisualStyleBackColor = true;
             this.AllRadioButton.CheckedChanged += new System.EventHandler(this.AllRadioButton_CheckedChanged);
             // 
             // TrainerOnlyRadioButton
             // 
+            this.TrainerOnlyRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TrainerOnlyRadioButton.AutoSize = true;
             this.TrainerOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TrainerOnlyRadioButton.Location = new System.Drawing.Point(898, 254);
@@ -334,6 +336,7 @@
             // 
             // StaffOnlyRadioButton
             // 
+            this.StaffOnlyRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.StaffOnlyRadioButton.AutoSize = true;
             this.StaffOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.StaffOnlyRadioButton.Location = new System.Drawing.Point(898, 285);

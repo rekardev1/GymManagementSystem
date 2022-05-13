@@ -18,6 +18,11 @@ public partial class BackupRestoreForm : Form {
     public BackupRestoreForm(ShellForm shell) {
         InitializeComponent();
         _shell = shell;
+        
+    }
+
+    override protected void OnLoad(EventArgs e) {
+        backupFileNameTextBox.Focus();
     }
 
     private void backupBrowseButton_Click(object sender, EventArgs e) {

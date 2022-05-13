@@ -66,7 +66,7 @@ partial class MemberForm {
             this.AddButton.Location = new System.Drawing.Point(81, 231);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(159, 46);
-            this.AddButton.TabIndex = 46;
+            this.AddButton.TabIndex = 8;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
@@ -87,7 +87,7 @@ partial class MemberForm {
             this.FirstNameTextBox.Location = new System.Drawing.Point(81, 103);
             this.FirstNameTextBox.Name = "FirstNameTextBox";
             this.FirstNameTextBox.Size = new System.Drawing.Size(159, 29);
-            this.FirstNameTextBox.TabIndex = 40;
+            this.FirstNameTextBox.TabIndex = 1;
             // 
             // label2
             // 
@@ -105,7 +105,7 @@ partial class MemberForm {
             this.LastNameTextBox.Location = new System.Drawing.Point(246, 103);
             this.LastNameTextBox.Name = "LastNameTextBox";
             this.LastNameTextBox.Size = new System.Drawing.Size(159, 29);
-            this.LastNameTextBox.TabIndex = 56;
+            this.LastNameTextBox.TabIndex = 2;
             // 
             // BirthDatePicker
             // 
@@ -113,7 +113,7 @@ partial class MemberForm {
             this.BirthDatePicker.Location = new System.Drawing.Point(411, 103);
             this.BirthDatePicker.Name = "BirthDatePicker";
             this.BirthDatePicker.Size = new System.Drawing.Size(161, 29);
-            this.BirthDatePicker.TabIndex = 58;
+            this.BirthDatePicker.TabIndex = 3;
             // 
             // label3
             // 
@@ -141,7 +141,7 @@ partial class MemberForm {
             this.GenderTextBox.Location = new System.Drawing.Point(581, 103);
             this.GenderTextBox.Name = "GenderTextBox";
             this.GenderTextBox.Size = new System.Drawing.Size(161, 29);
-            this.GenderTextBox.TabIndex = 60;
+            this.GenderTextBox.TabIndex = 4;
             // 
             // label5
             // 
@@ -159,7 +159,7 @@ partial class MemberForm {
             this.AddressTextBox.Location = new System.Drawing.Point(84, 168);
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(159, 29);
-            this.AddressTextBox.TabIndex = 62;
+            this.AddressTextBox.TabIndex = 5;
             // 
             // PhoneNumber2TextBox
             // 
@@ -167,7 +167,7 @@ partial class MemberForm {
             this.PhoneNumber2TextBox.Location = new System.Drawing.Point(414, 168);
             this.PhoneNumber2TextBox.Name = "PhoneNumber2TextBox";
             this.PhoneNumber2TextBox.Size = new System.Drawing.Size(159, 29);
-            this.PhoneNumber2TextBox.TabIndex = 65;
+            this.PhoneNumber2TextBox.TabIndex = 7;
             // 
             // label6
             // 
@@ -185,7 +185,7 @@ partial class MemberForm {
             this.PhoneNumber1TextBox.Location = new System.Drawing.Point(249, 168);
             this.PhoneNumber1TextBox.Name = "PhoneNumber1TextBox";
             this.PhoneNumber1TextBox.Size = new System.Drawing.Size(159, 29);
-            this.PhoneNumber1TextBox.TabIndex = 64;
+            this.PhoneNumber1TextBox.TabIndex = 6;
             // 
             // label7
             // 
@@ -222,7 +222,8 @@ partial class MemberForm {
             this.MembersDataGridView.RowTemplate.Height = 25;
             this.MembersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.MembersDataGridView.Size = new System.Drawing.Size(989, 220);
-            this.MembersDataGridView.TabIndex = 0;
+            this.MembersDataGridView.TabIndex = 12;
+            this.MembersDataGridView.TabStop = false;
             this.MembersDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MembersDataGridView_CellClick);
             // 
             // DeleteButton
@@ -230,7 +231,7 @@ partial class MemberForm {
             this.DeleteButton.Location = new System.Drawing.Point(411, 231);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(159, 46);
-            this.DeleteButton.TabIndex = 70;
+            this.DeleteButton.TabIndex = 10;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
@@ -240,7 +241,7 @@ partial class MemberForm {
             this.UpdateButton.Location = new System.Drawing.Point(246, 231);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(159, 46);
-            this.UpdateButton.TabIndex = 69;
+            this.UpdateButton.TabIndex = 9;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
@@ -252,17 +253,18 @@ partial class MemberForm {
             this.HomeButton.Location = new System.Drawing.Point(12, 12);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Size = new System.Drawing.Size(63, 58);
-            this.HomeButton.TabIndex = 71;
+            this.HomeButton.TabIndex = 0;
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
             // PrintButton
             // 
             this.PrintButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.PrintButton.Location = new System.Drawing.Point(848, 514);
+            this.PrintButton.Location = new System.Drawing.Point(845, 514);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(159, 46);
-            this.PrintButton.TabIndex = 72;
+            this.PrintButton.TabIndex = 13;
+            this.PrintButton.TabStop = false;
             this.PrintButton.Text = "Print";
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
@@ -273,7 +275,7 @@ partial class MemberForm {
             this.AddMembershipButton.Location = new System.Drawing.Point(845, 231);
             this.AddMembershipButton.Name = "AddMembershipButton";
             this.AddMembershipButton.Size = new System.Drawing.Size(159, 46);
-            this.AddMembershipButton.TabIndex = 73;
+            this.AddMembershipButton.TabIndex = 11;
             this.AddMembershipButton.Text = "Add Membership";
             this.AddMembershipButton.UseVisualStyleBackColor = true;
             this.AddMembershipButton.Click += new System.EventHandler(this.AddMembershipButton_Click);

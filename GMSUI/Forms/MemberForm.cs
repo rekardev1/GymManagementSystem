@@ -26,12 +26,13 @@ public partial class MemberForm : Form {
         BirthDatePicker.CustomFormat = "dd/MM/yyyy";
         BirthDatePicker.Value = DateTime.Today;
         _shell = shell;
+
     }
 
     override async protected void OnLoad(EventArgs e) {
 
         await LoadMembers();
-
+        FirstNameTextBox.Focus();
     }
 
     private async Task LoadMembers() {

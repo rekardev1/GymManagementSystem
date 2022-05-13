@@ -70,6 +70,7 @@ partial class MembershipForm {
             this.MemberNameTextBox.ReadOnly = true;
             this.MemberNameTextBox.Size = new System.Drawing.Size(179, 29);
             this.MemberNameTextBox.TabIndex = 85;
+            this.MemberNameTextBox.TabStop = false;
             // 
             // label4
             // 
@@ -87,14 +88,14 @@ partial class MembershipForm {
             this.StartingDatePicker.Location = new System.Drawing.Point(746, 92);
             this.StartingDatePicker.Name = "StartingDatePicker";
             this.StartingDatePicker.Size = new System.Drawing.Size(200, 29);
-            this.StartingDatePicker.TabIndex = 4;
+            this.StartingDatePicker.TabIndex = 3;
             // 
             // DeleteButton
             // 
             this.DeleteButton.Location = new System.Drawing.Point(177, 290);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(159, 46);
-            this.DeleteButton.TabIndex = 7;
+            this.DeleteButton.TabIndex = 6;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
@@ -104,7 +105,7 @@ partial class MembershipForm {
             this.UpdateButton.Location = new System.Drawing.Point(12, 290);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(159, 46);
-            this.UpdateButton.TabIndex = 6;
+            this.UpdateButton.TabIndex = 5;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
@@ -125,7 +126,7 @@ partial class MembershipForm {
             this.ExpirationDatePicker.Location = new System.Drawing.Point(746, 157);
             this.ExpirationDatePicker.Name = "ExpirationDatePicker";
             this.ExpirationDatePicker.Size = new System.Drawing.Size(200, 29);
-            this.ExpirationDatePicker.TabIndex = 5;
+            this.ExpirationDatePicker.TabIndex = 4;
             // 
             // label2
             // 
@@ -145,7 +146,7 @@ partial class MembershipForm {
             this.PlansComboBox.Location = new System.Drawing.Point(280, 92);
             this.PlansComboBox.Name = "PlansComboBox";
             this.PlansComboBox.Size = new System.Drawing.Size(207, 29);
-            this.PlansComboBox.TabIndex = 2;
+            this.PlansComboBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -165,7 +166,7 @@ partial class MembershipForm {
             this.TrainersCheckedListBox.Location = new System.Drawing.Point(493, 92);
             this.TrainersCheckedListBox.Name = "TrainersCheckedListBox";
             this.TrainersCheckedListBox.Size = new System.Drawing.Size(245, 172);
-            this.TrainersCheckedListBox.TabIndex = 3;
+            this.TrainersCheckedListBox.TabIndex = 2;
             this.TrainersCheckedListBox.Leave += new System.EventHandler(this.TrainersCheckedListBox_Leave);
             // 
             // label10
@@ -224,7 +225,7 @@ partial class MembershipForm {
             this.MembershipsDataGridView.RowTemplate.Height = 25;
             this.MembershipsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.MembershipsDataGridView.Size = new System.Drawing.Size(995, 164);
-            this.MembershipsDataGridView.TabIndex = 0;
+            this.MembershipsDataGridView.TabIndex = 11;
             this.MembershipsDataGridView.TabStop = false;
             this.MembershipsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MembershipsDataGridView_CellClick);
             // 
@@ -302,7 +303,7 @@ partial class MembershipForm {
             this.AddButton.Location = new System.Drawing.Point(579, 290);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(159, 46);
-            this.AddButton.TabIndex = 9;
+            this.AddButton.TabIndex = 7;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
@@ -314,7 +315,7 @@ partial class MembershipForm {
             this.HomeButton.Location = new System.Drawing.Point(12, 12);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Size = new System.Drawing.Size(63, 58);
-            this.HomeButton.TabIndex = 86;
+            this.HomeButton.TabIndex = 0;
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
@@ -324,44 +325,48 @@ partial class MembershipForm {
             this.PrintButton.Location = new System.Drawing.Point(848, 512);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(159, 48);
-            this.PrintButton.TabIndex = 87;
+            this.PrintButton.TabIndex = 12;
+            this.PrintButton.TabStop = false;
             this.PrintButton.Text = "Print";
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
             // ExpiredOnlyRadioButton
             // 
+            this.ExpiredOnlyRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ExpiredOnlyRadioButton.AutoSize = true;
             this.ExpiredOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ExpiredOnlyRadioButton.Location = new System.Drawing.Point(887, 301);
             this.ExpiredOnlyRadioButton.Name = "ExpiredOnlyRadioButton";
             this.ExpiredOnlyRadioButton.Size = new System.Drawing.Size(116, 25);
-            this.ExpiredOnlyRadioButton.TabIndex = 90;
+            this.ExpiredOnlyRadioButton.TabIndex = 10;
             this.ExpiredOnlyRadioButton.Text = "Expired Only";
             this.ExpiredOnlyRadioButton.UseVisualStyleBackColor = true;
             this.ExpiredOnlyRadioButton.CheckedChanged += new System.EventHandler(this.StaffOnlyRadioButton_CheckedChanged);
             // 
             // ActiveOnlyRadioButton
             // 
+            this.ActiveOnlyRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ActiveOnlyRadioButton.AutoSize = true;
             this.ActiveOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ActiveOnlyRadioButton.Location = new System.Drawing.Point(887, 270);
             this.ActiveOnlyRadioButton.Name = "ActiveOnlyRadioButton";
             this.ActiveOnlyRadioButton.Size = new System.Drawing.Size(107, 25);
-            this.ActiveOnlyRadioButton.TabIndex = 89;
+            this.ActiveOnlyRadioButton.TabIndex = 9;
             this.ActiveOnlyRadioButton.Text = "Active Only";
             this.ActiveOnlyRadioButton.UseVisualStyleBackColor = true;
             this.ActiveOnlyRadioButton.CheckedChanged += new System.EventHandler(this.ActiveOnlyRadioButton_CheckedChanged);
             // 
             // AllRadioButton
             // 
+            this.AllRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AllRadioButton.AutoSize = true;
             this.AllRadioButton.Checked = true;
             this.AllRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.AllRadioButton.Location = new System.Drawing.Point(887, 239);
             this.AllRadioButton.Name = "AllRadioButton";
             this.AllRadioButton.Size = new System.Drawing.Size(46, 25);
-            this.AllRadioButton.TabIndex = 88;
+            this.AllRadioButton.TabIndex = 8;
             this.AllRadioButton.TabStop = true;
             this.AllRadioButton.Text = "All";
             this.AllRadioButton.UseVisualStyleBackColor = true;

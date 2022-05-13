@@ -33,6 +33,11 @@ partial class PlanForm {
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.PlansDataGridView = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PlanName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.End = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.FeeTextBox = new System.Windows.Forms.TextBox();
             this.AddButton = new System.Windows.Forms.Button();
@@ -40,11 +45,6 @@ partial class PlanForm {
             this.MembershipLabel = new System.Windows.Forms.Label();
             this.HomeButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PlanName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.End = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PlansDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +54,7 @@ partial class PlanForm {
             this.UpdateButton.Location = new System.Drawing.Point(246, 160);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(159, 48);
-            this.UpdateButton.TabIndex = 5;
+            this.UpdateButton.TabIndex = 6;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
@@ -100,7 +100,7 @@ partial class PlanForm {
             this.DeleteButton.Location = new System.Drawing.Point(411, 160);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(159, 48);
-            this.DeleteButton.TabIndex = 6;
+            this.DeleteButton.TabIndex = 7;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
@@ -146,8 +146,39 @@ partial class PlanForm {
             this.PlansDataGridView.RowTemplate.Height = 25;
             this.PlansDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.PlansDataGridView.Size = new System.Drawing.Size(989, 294);
-            this.PlansDataGridView.TabIndex = 0;
+            this.PlansDataGridView.TabIndex = 8;
+            this.PlansDataGridView.TabStop = false;
             this.PlansDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.PlansDataGridView_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // PlanName
+            // 
+            this.PlanName.HeaderText = "Name";
+            this.PlanName.Name = "PlanName";
+            this.PlanName.ReadOnly = true;
+            // 
+            // Start
+            // 
+            this.Start.HeaderText = "Starting Time";
+            this.Start.Name = "Start";
+            this.Start.ReadOnly = true;
+            // 
+            // End
+            // 
+            this.End.HeaderText = "Ending Time";
+            this.End.Name = "End";
+            this.End.ReadOnly = true;
+            // 
+            // Fee
+            // 
+            this.Fee.HeaderText = "Fee";
+            this.Fee.Name = "Fee";
+            this.Fee.ReadOnly = true;
             // 
             // label3
             // 
@@ -173,7 +204,7 @@ partial class PlanForm {
             this.AddButton.Location = new System.Drawing.Point(81, 160);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(159, 48);
-            this.AddButton.TabIndex = 7;
+            this.AddButton.TabIndex = 5;
             this.AddButton.Text = "Add";
             this.AddButton.UseVisualStyleBackColor = true;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
@@ -205,7 +236,7 @@ partial class PlanForm {
             this.HomeButton.Location = new System.Drawing.Point(12, 9);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Size = new System.Drawing.Size(63, 58);
-            this.HomeButton.TabIndex = 52;
+            this.HomeButton.TabIndex = 0;
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
@@ -215,40 +246,11 @@ partial class PlanForm {
             this.PrintButton.Location = new System.Drawing.Point(848, 514);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(159, 46);
-            this.PrintButton.TabIndex = 73;
+            this.PrintButton.TabIndex = 9;
+            this.PrintButton.TabStop = false;
             this.PrintButton.Text = "Print";
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // Name
-            // 
-            this.PlanName.HeaderText = "Name";
-            this.PlanName.Name = "Name";
-            this.PlanName.ReadOnly = true;
-            // 
-            // Start
-            // 
-            this.Start.HeaderText = "Starting Time";
-            this.Start.Name = "Start";
-            this.Start.ReadOnly = true;
-            // 
-            // End
-            // 
-            this.End.HeaderText = "Ending Time";
-            this.End.Name = "End";
-            this.End.ReadOnly = true;
-            // 
-            // Fee
-            // 
-            this.Fee.HeaderText = "Fee";
-            this.Fee.Name = "Fee";
-            this.Fee.ReadOnly = true;
             // 
             // PlanForm
             // 
