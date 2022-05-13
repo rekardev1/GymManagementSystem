@@ -24,9 +24,6 @@ partial class MemberForm {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberForm));
             this.label8 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,23 +42,13 @@ partial class MemberForm {
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.MembersDataGridView = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.birthDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumber1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumber2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.memberModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DeleteButton = new System.Windows.Forms.Button();
             this.UpdateButton = new System.Windows.Forms.Button();
             this.HomeButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
-            this.PrintPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
+            this.AddMembershipButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembersDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memberModelBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -225,19 +212,8 @@ partial class MemberForm {
             // 
             this.MembersDataGridView.AllowUserToAddRows = false;
             this.MembersDataGridView.AllowUserToDeleteRows = false;
-            this.MembersDataGridView.AutoGenerateColumns = false;
             this.MembersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.MembersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MembersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.birthDateDataGridViewTextBoxColumn,
-            this.genderDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.phoneNumber1DataGridViewTextBoxColumn,
-            this.phoneNumber2DataGridViewTextBoxColumn});
-            this.MembersDataGridView.DataSource = this.memberModelBindingSource;
             this.MembersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MembersDataGridView.Location = new System.Drawing.Point(0, 0);
             this.MembersDataGridView.MultiSelect = false;
@@ -248,69 +224,6 @@ partial class MemberForm {
             this.MembersDataGridView.Size = new System.Drawing.Size(989, 220);
             this.MembersDataGridView.TabIndex = 0;
             this.MembersDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.MembersDataGridView_CellClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // birthDateDataGridViewTextBoxColumn
-            // 
-            this.birthDateDataGridViewTextBoxColumn.DataPropertyName = "BirthDate";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.birthDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.birthDateDataGridViewTextBoxColumn.HeaderText = "BirthDate";
-            this.birthDateDataGridViewTextBoxColumn.Name = "birthDateDataGridViewTextBoxColumn";
-            this.birthDateDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // genderDataGridViewTextBoxColumn
-            // 
-            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
-            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneNumber1DataGridViewTextBoxColumn
-            // 
-            this.phoneNumber1DataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber1";
-            this.phoneNumber1DataGridViewTextBoxColumn.HeaderText = "PhoneNumber1";
-            this.phoneNumber1DataGridViewTextBoxColumn.Name = "phoneNumber1DataGridViewTextBoxColumn";
-            this.phoneNumber1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneNumber2DataGridViewTextBoxColumn
-            // 
-            this.phoneNumber2DataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber2";
-            this.phoneNumber2DataGridViewTextBoxColumn.HeaderText = "PhoneNumber2";
-            this.phoneNumber2DataGridViewTextBoxColumn.Name = "phoneNumber2DataGridViewTextBoxColumn";
-            this.phoneNumber2DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // memberModelBindingSource
-            // 
-            this.memberModelBindingSource.DataSource = typeof(GMSDataAccess.Model.MemberModel);
             // 
             // DeleteButton
             // 
@@ -354,21 +267,23 @@ partial class MemberForm {
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
-            // PrintPreviewDialog
+            // AddMembershipButton
             // 
-            this.PrintPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.PrintPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.PrintPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
-            this.PrintPreviewDialog.Enabled = true;
-            this.PrintPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("PrintPreviewDialog.Icon")));
-            this.PrintPreviewDialog.Name = "PrintPreviewDialog";
-            this.PrintPreviewDialog.Visible = false;
+            this.AddMembershipButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddMembershipButton.Location = new System.Drawing.Point(845, 231);
+            this.AddMembershipButton.Name = "AddMembershipButton";
+            this.AddMembershipButton.Size = new System.Drawing.Size(159, 46);
+            this.AddMembershipButton.TabIndex = 73;
+            this.AddMembershipButton.Text = "Add Membership";
+            this.AddMembershipButton.UseVisualStyleBackColor = true;
+            this.AddMembershipButton.Click += new System.EventHandler(this.AddMembershipButton_Click);
             // 
             // MemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 572);
+            this.Controls.Add(this.AddMembershipButton);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.DeleteButton);
@@ -395,7 +310,6 @@ partial class MemberForm {
             this.Text = "MemberForm";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.MembersDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memberModelBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,18 +335,9 @@ partial class MemberForm {
     private Label label7;
     private Panel panel1;
     private DataGridView MembersDataGridView;
-    private BindingSource memberModelBindingSource;
     private Button UpdateButton;
     private Button DeleteButton;
-    private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-    private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-    private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-    private DataGridViewTextBoxColumn birthDateDataGridViewTextBoxColumn;
-    private DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-    private DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-    private DataGridViewTextBoxColumn phoneNumber1DataGridViewTextBoxColumn;
-    private DataGridViewTextBoxColumn phoneNumber2DataGridViewTextBoxColumn;
     private Button HomeButton;
     private Button PrintButton;
-    private PrintPreviewDialog PrintPreviewDialog;
+    private Button AddMembershipButton;
 }

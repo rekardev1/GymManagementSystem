@@ -105,6 +105,7 @@
             this.EmployeesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.EmployeesDataGridView.Size = new System.Drawing.Size(1011, 294);
             this.EmployeesDataGridView.TabIndex = 0;
+            this.EmployeesDataGridView.TabStop = false;
             this.EmployeesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.EmployeesDataGridView_CellClick);
             // 
             // Id
@@ -154,7 +155,7 @@
             this.UpdateButton.Location = new System.Drawing.Point(246, 237);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(159, 48);
-            this.UpdateButton.TabIndex = 7;
+            this.UpdateButton.TabIndex = 8;
             this.UpdateButton.Text = "Update";
             this.UpdateButton.UseVisualStyleBackColor = true;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
@@ -164,7 +165,7 @@
             this.DeleteButton.Location = new System.Drawing.Point(414, 237);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(159, 48);
-            this.DeleteButton.TabIndex = 8;
+            this.DeleteButton.TabIndex = 9;
             this.DeleteButton.Text = "Delete";
             this.DeleteButton.UseVisualStyleBackColor = true;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
@@ -174,7 +175,7 @@
             this.AddEmployeeButton.Location = new System.Drawing.Point(81, 237);
             this.AddEmployeeButton.Name = "AddEmployeeButton";
             this.AddEmployeeButton.Size = new System.Drawing.Size(159, 48);
-            this.AddEmployeeButton.TabIndex = 9;
+            this.AddEmployeeButton.TabIndex = 7;
             this.AddEmployeeButton.Text = "Add Employee";
             this.AddEmployeeButton.UseVisualStyleBackColor = true;
             this.AddEmployeeButton.Click += new System.EventHandler(this.AddButton_Click);
@@ -185,7 +186,7 @@
             this.PhoneNumber2TextBox.Location = new System.Drawing.Point(414, 178);
             this.PhoneNumber2TextBox.Name = "PhoneNumber2TextBox";
             this.PhoneNumber2TextBox.Size = new System.Drawing.Size(159, 29);
-            this.PhoneNumber2TextBox.TabIndex = 7;
+            this.PhoneNumber2TextBox.TabIndex = 6;
             this.PhoneNumber2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber2TextBox_KeyPress);
             // 
             // label1
@@ -222,7 +223,7 @@
             this.PhoneNumber1TextBox.Location = new System.Drawing.Point(249, 178);
             this.PhoneNumber1TextBox.Name = "PhoneNumber1TextBox";
             this.PhoneNumber1TextBox.Size = new System.Drawing.Size(159, 29);
-            this.PhoneNumber1TextBox.TabIndex = 6;
+            this.PhoneNumber1TextBox.TabIndex = 5;
             this.PhoneNumber1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber1TextBox_KeyPress);
             // 
             // label2
@@ -289,7 +290,8 @@
             this.HomeButton.Location = new System.Drawing.Point(12, 11);
             this.HomeButton.Name = "HomeButton";
             this.HomeButton.Size = new System.Drawing.Size(63, 58);
-            this.HomeButton.TabIndex = 17;
+            this.HomeButton.TabIndex = 0;
+            this.HomeButton.TabStop = false;
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
@@ -299,7 +301,8 @@
             this.PrintButton.Location = new System.Drawing.Point(864, 616);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(159, 48);
-            this.PrintButton.TabIndex = 9;
+            this.PrintButton.TabIndex = 13;
+            this.PrintButton.TabStop = false;
             this.PrintButton.Text = "Print";
             this.PrintButton.UseVisualStyleBackColor = true;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
@@ -312,8 +315,7 @@
             this.AllRadioButton.Location = new System.Drawing.Point(898, 223);
             this.AllRadioButton.Name = "AllRadioButton";
             this.AllRadioButton.Size = new System.Drawing.Size(46, 25);
-            this.AllRadioButton.TabIndex = 18;
-            this.AllRadioButton.TabStop = true;
+            this.AllRadioButton.TabIndex = 10;
             this.AllRadioButton.Text = "All";
             this.AllRadioButton.UseVisualStyleBackColor = true;
             this.AllRadioButton.CheckedChanged += new System.EventHandler(this.AllRadioButton_CheckedChanged);
@@ -325,7 +327,7 @@
             this.TrainerOnlyRadioButton.Location = new System.Drawing.Point(898, 254);
             this.TrainerOnlyRadioButton.Name = "TrainerOnlyRadioButton";
             this.TrainerOnlyRadioButton.Size = new System.Drawing.Size(113, 25);
-            this.TrainerOnlyRadioButton.TabIndex = 19;
+            this.TrainerOnlyRadioButton.TabIndex = 11;
             this.TrainerOnlyRadioButton.Text = "Trainer Only";
             this.TrainerOnlyRadioButton.UseVisualStyleBackColor = true;
             this.TrainerOnlyRadioButton.CheckedChanged += new System.EventHandler(this.TrainerOnlyRadioButton_CheckedChanged);
@@ -337,7 +339,7 @@
             this.StaffOnlyRadioButton.Location = new System.Drawing.Point(898, 285);
             this.StaffOnlyRadioButton.Name = "StaffOnlyRadioButton";
             this.StaffOnlyRadioButton.Size = new System.Drawing.Size(96, 25);
-            this.StaffOnlyRadioButton.TabIndex = 20;
+            this.StaffOnlyRadioButton.TabIndex = 12;
             this.StaffOnlyRadioButton.Text = "Staff Only";
             this.StaffOnlyRadioButton.UseVisualStyleBackColor = true;
             this.StaffOnlyRadioButton.CheckedChanged += new System.EventHandler(this.StaffOnlyRadioButton_CheckedChanged);
@@ -352,7 +354,7 @@
             this.JobTypeComboBox.Location = new System.Drawing.Point(81, 178);
             this.JobTypeComboBox.Name = "JobTypeComboBox";
             this.JobTypeComboBox.Size = new System.Drawing.Size(159, 29);
-            this.JobTypeComboBox.TabIndex = 21;
+            this.JobTypeComboBox.TabIndex = 4;
             // 
             // EmployeeForm
             // 

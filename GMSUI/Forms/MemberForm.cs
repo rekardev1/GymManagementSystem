@@ -206,4 +206,10 @@ public partial class MemberForm : Form {
 
     }
 
+    private void AddMembershipButton_Click(object sender, EventArgs e) {
+
+        AddMembershipForm addMembershipForm = new AddMembershipForm(_shell);
+        addMembershipForm.ShowDialog();
+
+    }
 }
