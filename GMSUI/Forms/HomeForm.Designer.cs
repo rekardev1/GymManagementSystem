@@ -92,7 +92,7 @@ partial class HomeForm {
             // UsersButton
             // 
             this.UsersButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.UsersButton.Location = new System.Drawing.Point(393, 287);
+            this.UsersButton.Location = new System.Drawing.Point(600, 287);
             this.UsersButton.Name = "UsersButton";
             this.UsersButton.Size = new System.Drawing.Size(201, 107);
             this.UsersButton.TabIndex = 4;
@@ -120,7 +120,7 @@ partial class HomeForm {
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(600, 287);
+            this.button1.Location = new System.Drawing.Point(393, 287);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(201, 107);
             this.button1.TabIndex = 6;
