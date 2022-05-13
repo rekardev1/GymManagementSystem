@@ -24,9 +24,9 @@ public partial class ShellForm : Form {
         InitializeComponent();
 
     }
-    override protected void OnLoad(EventArgs e) {
+    override protected async void OnLoad(EventArgs e) {
 
-        _sqlConnector.CheckMembershipExpirations();
+        await _sqlConnector.CheckMembershipExpirationsAsync();
 
         LoginForm frm = new LoginForm(this);
         frm.LoggedIn += Frm_LoggedIn;

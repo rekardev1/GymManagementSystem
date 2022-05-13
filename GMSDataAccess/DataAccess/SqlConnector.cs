@@ -52,7 +52,7 @@ public class SqlConnector {
         }
     }
 
-    public async void CheckMembershipExpirations() {
+    public async Task CheckMembershipExpirationsAsync() {
 
         using (IDbConnection connection = new SqlConnection(GetConnString())) {
 
