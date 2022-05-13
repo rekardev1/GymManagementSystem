@@ -41,7 +41,7 @@ public partial class LoginForm : Form {
             
 
         } else {
-            
+            MessageBox.Show("Username and password mismatch!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             PasswordTextBox.Text = "";
         }
 
