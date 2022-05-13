@@ -24,9 +24,9 @@ partial class MembershipForm {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MemberNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.StartingDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -230,8 +230,8 @@ partial class MembershipForm {
             // 
             // Id
             // 
-            dataGridViewCellStyle7.Format = "d";
-            this.Id.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Format = "d";
+            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
             this.Id.HeaderText = "Id";
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
@@ -270,17 +270,17 @@ partial class MembershipForm {
             // 
             // StartingDate
             // 
-            dataGridViewCellStyle8.Format = "d";
-            dataGridViewCellStyle8.NullValue = null;
-            this.StartingDate.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.StartingDate.DefaultCellStyle = dataGridViewCellStyle2;
             this.StartingDate.HeaderText = "Starting Date";
             this.StartingDate.Name = "StartingDate";
             this.StartingDate.ReadOnly = true;
             // 
             // ExpirationDate
             // 
-            dataGridViewCellStyle9.Format = "d";
-            this.ExpirationDate.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Format = "d";
+            this.ExpirationDate.DefaultCellStyle = dataGridViewCellStyle3;
             this.ExpirationDate.HeaderText = "Expiration Date";
             this.ExpirationDate.Name = "ExpirationDate";
             this.ExpirationDate.ReadOnly = true;

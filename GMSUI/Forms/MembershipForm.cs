@@ -224,7 +224,7 @@ public partial class MembershipForm : Form {
     private void PrintButton_Click(object sender, EventArgs e) {
 
         DGVPrinter printer = new DGVPrinter();
-        printer.Title = "MemberShips Report";
+        printer.Title = "Memberships Report";
         printer.SubTitle = $"{DateTime.Now}";
         printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
         printer.PageNumbers = true;

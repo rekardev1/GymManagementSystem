@@ -24,20 +24,6 @@ public partial class UserForm : Form {
 
         _shell = shell;
 
-        ComboBoxItem<int> item1 = new ComboBoxItem<int>();
-        item1.Label = "Admin";
-        item1.Value = 1;
-
-        ComboBoxItem<int> item2 = new ComboBoxItem<int>();
-        item2.Label = "Manager";
-        item2.Value = 2;
-
-        List<ComboBoxItem<int>> items = new List<ComboBoxItem<int>>();
-        items.Add(item1);
-        items.Add(item2);
-
-        RoleLevelComboBox.DataSource = items;
-        RoleLevelComboBox.DisplayMember = "Label";
 
     }
 
