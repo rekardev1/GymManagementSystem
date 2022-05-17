@@ -56,13 +56,25 @@ public partial class BackupRestoreForm : Form {
             } catch (Exception ex) {
 
                 MessageBox.Show(ex.Message, "Backup Database Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
 
             }
 
+            ResetForm();
 
         } else {
             MessageBox.Show("Invalid path!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            backupDestinationTextBox.Text = "";
         }
+    }
+
+    private void ResetForm() {
+
+        backupFileNameTextBox.Text = "";
+        AppendDateTimeCheckBox.Checked = false;
+        backupDestinationTextBox.Text = "";
+
+        restoreFilePathTextBox.Text = "";
     }
 
     private bool ValidateBackup() {
@@ -94,8 +106,18 @@ public partial class BackupRestoreForm : Form {
         if (ValidateRestore()) {
             try {
 
-                await _sqlConnector.RestoreDatabase(restoreFilePathTextBox.Text);
-                MessageBox.Show("The database successfully restored.", "Restore Database Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                var result = MessageBox.Show("Are you sure to override existing database?", "Restoring Database", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes) {
+                    
+                    await _sqlConnector.RestoreDatabase(restoreFilePathTextBox.Text);
+                    MessageBox.Show("The database successfully restored.", "Restore Database Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ResetForm();
+
+                } else {
+                    MessageBox.Show("Restoring database canceled.", "Restore Database Abort", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
 
 
             } catch (Exception ex) {

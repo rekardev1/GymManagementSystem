@@ -50,6 +50,7 @@ public partial class MembershipForm : Form {
         MembershipsDataGridView.Rows.Clear();
 
         foreach (var membership in _memberships) {
+            
             MembershipsDataGridView.Rows.Add(
                 membership.Id,
                 membership.MemberId,
@@ -165,9 +166,6 @@ public partial class MembershipForm : Form {
         bool output = true;
 
         if (string.IsNullOrEmpty(MemberNameTextBox.Text)) {
-            output = false;
-
-        } else if (TrainersCheckedListBox.CheckedItems.Count == 0) {
             output = false;
 
         }

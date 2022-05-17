@@ -82,9 +82,9 @@ partial class AddMembershipForm {
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.Location = new System.Drawing.Point(3, 127);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(134, 21);
+            this.label2.Size = new System.Drawing.Size(40, 21);
             this.label2.TabIndex = 77;
-            this.label2.Text = "Membership Type";
+            this.label2.Text = "Plan";
             // 
             // PlansComboBox
             // 

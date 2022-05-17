@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace GMSUI.Forms {
         private DataGridViewRow _selectedRow;
 
         public EmployeeForm(ShellForm shell) {
+            
             InitializeComponent();
 
             _shell = shell;
@@ -29,7 +31,7 @@ namespace GMSUI.Forms {
         protected async override void OnLoad(EventArgs e) {
 
             await LoadEmployees("All");
-            NameTextBox.Focus();
+            
         }
 
         internal async Task LoadEmployees(string fetchType) {
@@ -50,6 +52,9 @@ namespace GMSUI.Forms {
             }
 
             EmployeesDataGridView.ClearSelection();
+            
+            JobTypeComboBox.SelectedIndex = 0;
+            NameTextBox.Focus();
         }
 
         private async void AddButton_Click(object sender, EventArgs e) {
@@ -149,6 +154,12 @@ namespace GMSUI.Forms {
 
             try {
                 await _sqlConnector.DeleteEmployee(id);
+
+            } catch (SqlException ex) {
+
+                if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint \"FK_MembershipTrainers_Employee\"")) {
+                    MessageBox.Show("This employee is a trainer in a membership, can not be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             } catch (Exception ex) {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

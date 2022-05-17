@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -52,7 +53,7 @@ public partial class MemberForm : Form {
             model.FirstName= FirstNameTextBox.Text;
             model.LastName = LastNameTextBox.Text;
             model.Address = AddressTextBox.Text;
-            model.Gender = GenderTextBox.Text;
+            model.Gender = GenderComboBox.Text;
             model.BirthDate = BirthDatePicker.Value;
             model.PhoneNumber1 = PhoneNumber1TextBox.Text;
             model.PhoneNumber2 = PhoneNumber2TextBox.Text;
@@ -76,7 +77,7 @@ public partial class MemberForm : Form {
         FirstNameTextBox.Text = "";
         LastNameTextBox.Text = "";
         AddressTextBox.Text = "";
-        GenderTextBox.Text = "";
+        GenderComboBox.Text = "";
         BirthDatePicker.Value = DateTime.Today;
         PhoneNumber1TextBox.Text = "";
         PhoneNumber2TextBox.Text = "";
@@ -95,7 +96,7 @@ public partial class MemberForm : Form {
         } else if (string.IsNullOrEmpty(LastNameTextBox.Text)) {
             output = false;
 
-        } else if (string.IsNullOrEmpty(GenderTextBox.Text)) {
+        } else if (string.IsNullOrEmpty(GenderComboBox.Text)) {
             output = false;
 
         } else if (BirthDatePicker.Value > DateTime.Now) {
@@ -123,7 +124,7 @@ public partial class MemberForm : Form {
         FirstNameTextBox.Text = _selectedRow.Cells[1].Value.ToString();
         LastNameTextBox.Text = _selectedRow.Cells[2].Value.ToString();
         BirthDatePicker.Value= (DateTime)_selectedRow.Cells[3].Value;
-        GenderTextBox.Text = _selectedRow.Cells[4].Value.ToString();
+        GenderComboBox.Text = _selectedRow.Cells[4].Value.ToString();
         AddressTextBox.Text = _selectedRow.Cells[5].Value.ToString();
         PhoneNumber1TextBox.Text = _selectedRow.Cells[6].Value.ToString();
         PhoneNumber2TextBox.Text = _selectedRow.Cells[7].Value.ToString();
@@ -147,7 +148,7 @@ public partial class MemberForm : Form {
         model.FirstName= FirstNameTextBox.Text;
         model.LastName = LastNameTextBox.Text;
         model.Address = AddressTextBox.Text;
-        model.Gender = GenderTextBox.Text;
+        model.Gender = GenderComboBox.Text;
         model.BirthDate = BirthDatePicker.Value;
         model.PhoneNumber1 = PhoneNumber1TextBox.Text;
         model.PhoneNumber2 = PhoneNumber2TextBox.Text;
@@ -173,6 +174,12 @@ public partial class MemberForm : Form {
 
         try {
             await _sqlConnector.DeleteMember(id);
+
+        }catch (SqlException ex) {
+
+            if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint \"FK_Membership_Member\"")) {
+                MessageBox.Show("This member has a membership, can not be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         } catch (Exception ex) {
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

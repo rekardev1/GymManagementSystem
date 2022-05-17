@@ -79,6 +79,7 @@ public partial class AddMembershipForm : Form {
                 model.MemberId = _members.Where(x => x.FullName == MemberComboBox.Text).First().Id;
                 model.PlanId = _plans.Where(x => x.Display == PlansComboBox.Text).First().Id;
 
+
                 foreach (var item in TrainersCheckedListBox.CheckedItems) {
                     model.Trainers.Add((EmployeeModel)item);
                 }
@@ -106,9 +107,6 @@ public partial class AddMembershipForm : Form {
         bool output = true;
 
         if (MemberComboBox.SelectedItem == null) {
-            output = false;
-
-        } else if (TrainersCheckedListBox.CheckedItems.Count == 0) {
             output = false;
 
         } else if (ExpirationDatePicker.Value < DateTime.Today) {

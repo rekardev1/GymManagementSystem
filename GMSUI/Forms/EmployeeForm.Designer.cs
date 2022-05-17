@@ -349,6 +349,7 @@
             // 
             // JobTypeComboBox
             // 
+            this.JobTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.JobTypeComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.JobTypeComboBox.FormattingEnabled = true;
             this.JobTypeComboBox.Items.AddRange(new object[] {

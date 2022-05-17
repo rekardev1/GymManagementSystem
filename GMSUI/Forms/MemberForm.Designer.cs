@@ -33,7 +33,6 @@ partial class MemberForm {
             this.BirthDatePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.GenderTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.AddressTextBox = new System.Windows.Forms.TextBox();
             this.PhoneNumber2TextBox = new System.Windows.Forms.TextBox();
@@ -47,6 +46,7 @@ partial class MemberForm {
             this.HomeButton = new System.Windows.Forms.Button();
             this.PrintButton = new System.Windows.Forms.Button();
             this.AddMembershipButton = new System.Windows.Forms.Button();
+            this.GenderComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembersDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -134,14 +134,6 @@ partial class MemberForm {
             this.label4.Size = new System.Drawing.Size(61, 21);
             this.label4.TabIndex = 61;
             this.label4.Text = "Gender";
-            // 
-            // GenderTextBox
-            // 
-            this.GenderTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.GenderTextBox.Location = new System.Drawing.Point(581, 103);
-            this.GenderTextBox.Name = "GenderTextBox";
-            this.GenderTextBox.Size = new System.Drawing.Size(161, 29);
-            this.GenderTextBox.TabIndex = 4;
             // 
             // label5
             // 
@@ -280,17 +272,30 @@ partial class MemberForm {
             this.AddMembershipButton.UseVisualStyleBackColor = true;
             this.AddMembershipButton.Click += new System.EventHandler(this.AddMembershipButton_Click);
             // 
+            // GenderComboBox
+            // 
+            this.GenderComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.GenderComboBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.GenderComboBox.FormattingEnabled = true;
+            this.GenderComboBox.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.GenderComboBox.Location = new System.Drawing.Point(581, 103);
+            this.GenderComboBox.Name = "GenderComboBox";
+            this.GenderComboBox.Size = new System.Drawing.Size(159, 29);
+            this.GenderComboBox.TabIndex = 4;
+            // 
             // MemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 572);
+            this.Controls.Add(this.GenderComboBox);
             this.Controls.Add(this.AddMembershipButton);
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.UpdateButton);
-            this.Controls.Add(this.GenderTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
@@ -328,7 +333,6 @@ partial class MemberForm {
     private DateTimePicker BirthDatePicker;
     private Label label3;
     private Label label4;
-    private TextBox GenderTextBox;
     private Label label5;
     private TextBox AddressTextBox;
     private TextBox PhoneNumber2TextBox;
@@ -342,4 +346,5 @@ partial class MemberForm {
     private Button HomeButton;
     private Button PrintButton;
     private Button AddMembershipButton;
+    private ComboBox GenderComboBox;
 }
