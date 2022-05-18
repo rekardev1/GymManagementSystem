@@ -47,9 +47,8 @@ partial class ShellForm {
             this.ChildFormTitleLabel.ForeColor = System.Drawing.Color.White;
             this.ChildFormTitleLabel.Location = new System.Drawing.Point(12, 16);
             this.ChildFormTitleLabel.Name = "ChildFormTitleLabel";
-            this.ChildFormTitleLabel.Size = new System.Drawing.Size(60, 32);
+            this.ChildFormTitleLabel.Size = new System.Drawing.Size(0, 32);
             this.ChildFormTitleLabel.TabIndex = 0;
-            this.ChildFormTitleLabel.Text = "Title";
             // 
             // MainPanel
             // 

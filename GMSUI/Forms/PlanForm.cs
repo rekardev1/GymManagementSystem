@@ -35,7 +35,7 @@ public partial class PlanForm : Form {
     protected async override void OnLoad(EventArgs e) {
 
         await LoadPlans();
-        NameTextBox.Focus();
+        
     }
 
     internal async Task LoadPlans() {
@@ -54,6 +54,7 @@ public partial class PlanForm : Form {
         }
 
         PlansDataGridView.ClearSelection();
+        NameTextBox.Focus();
 
         PlansDataGridView.Columns["Start"].DefaultCellStyle.Format = "t";
         PlansDataGridView.Columns["End"].DefaultCellStyle.Format = "t";
@@ -166,13 +167,19 @@ public partial class PlanForm : Form {
         int id = int.Parse(_selectedRow.Cells[0].Value.ToString());
 
         try {
-            await _sqlConnector.DeletePlan(id);
+
+            var result = MessageBox.Show("Are you sure to delete this plan?", "Delteing Plan", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes) {
+
+                await _sqlConnector.DeletePlan(id);
+
+                await ResetForm();
+            }
 
         } catch (Exception ex) {
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-        await ResetForm();
     }
 
     private void HomeButton_Click(object sender, EventArgs e) {

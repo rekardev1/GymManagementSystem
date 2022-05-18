@@ -111,19 +111,16 @@ public partial class BackupRestoreForm : Form {
                 if (result == DialogResult.Yes) {
                     
                     await _sqlConnector.RestoreDatabase(restoreFilePathTextBox.Text);
-                    MessageBox.Show("The database successfully restored.", "Restore Database Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("The database successfully restored.", "Task Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ResetForm();
 
                 } else {
                     MessageBox.Show("Restoring database canceled.", "Restore Database Abort", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
-
 
             } catch (Exception ex) {
 
                 MessageBox.Show(ex.Message, "Restore Database Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
 
 

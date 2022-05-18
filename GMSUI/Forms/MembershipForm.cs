@@ -25,11 +25,11 @@ public partial class MembershipForm : Form {
         InitializeComponent();
 
         StartingDatePicker.Format = DateTimePickerFormat.Custom;
-        StartingDatePicker.CustomFormat = "dd/MM/yyyy";
+        StartingDatePicker.CustomFormat = "MM/dd/yyyy";
         StartingDatePicker.Value = DateTime.Today;
 
         ExpirationDatePicker.Format = DateTimePickerFormat.Custom;
-        ExpirationDatePicker.CustomFormat = "dd/MM/yyyy";
+        ExpirationDatePicker.CustomFormat = "MM/dd/yyyy";
         ExpirationDatePicker.Value = DateTime.Today.AddDays(30);
         _shell = shell;
     }
@@ -287,16 +287,20 @@ public partial class MembershipForm : Form {
 
         model.Id = int.Parse(_selectedRow.Cells[0].Value.ToString());
 
-        var trainers = TrainersCheckedListBox.CheckedItems;
-
         try {
-            await _sqlConnector.DeleteMembership(model.Id);
 
+            var result = MessageBox.Show("Are you sure to delete this membership?", "Delteing Membbership", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes) {
+
+                await _sqlConnector.DeleteMembership(model.Id);
+
+                await ResetForm();
+            }
+            s
         } catch (Exception ex) {
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-        await ResetForm();
     }
 
 }

@@ -153,7 +153,15 @@ namespace GMSUI.Forms {
             int id = int.Parse(_selectedRow.Cells[0].Value.ToString());
 
             try {
-                await _sqlConnector.DeleteEmployee(id);
+
+                var result = MessageBox.Show("Are you sure to delete this employee?", "Delteing Employee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes) {
+
+                    await _sqlConnector.DeleteEmployee(id);
+
+                    await ResetForm();
+                }
 
             } catch (SqlException ex) {
 
@@ -165,7 +173,6 @@ namespace GMSUI.Forms {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            await ResetForm();
         }
 
         private async Task ResetForm() {

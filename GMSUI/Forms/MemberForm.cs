@@ -24,7 +24,7 @@ public partial class MemberForm : Form {
         InitializeComponent();
 
         BirthDatePicker.Format = DateTimePickerFormat.Custom;
-        BirthDatePicker.CustomFormat = "dd/MM/yyyy";
+        BirthDatePicker.CustomFormat = "MM/dd/yyyy";
         BirthDatePicker.Value = DateTime.Today;
         _shell = shell;
 
@@ -33,7 +33,7 @@ public partial class MemberForm : Form {
     override async protected void OnLoad(EventArgs e) {
 
         await LoadMembers();
-        FirstNameTextBox.Focus();
+        
     }
 
     private async Task LoadMembers() {
@@ -42,6 +42,9 @@ public partial class MemberForm : Form {
 
         MembersDataGridView.DataSource = _members;
         MembersDataGridView.ClearSelection();
+
+        GenderComboBox.SelectedIndex = 0;
+        FirstNameTextBox.Focus();
     }
 
     private async void AddButton_Click(object sender, EventArgs e) {
@@ -173,7 +176,14 @@ public partial class MemberForm : Form {
         int id = int.Parse(_selectedRow.Cells[0].Value.ToString());
 
         try {
-            await _sqlConnector.DeleteMember(id);
+
+            var result = MessageBox.Show("Are you sure to delete this memeber?", "Delteing Member", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes) {
+
+                await _sqlConnector.DeleteMember(id);
+                await ResetForm();
+            }
 
         }catch (SqlException ex) {
 
@@ -185,7 +195,6 @@ public partial class MemberForm : Form {
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        await ResetForm();
     }
 
     private void HomeButton_Click(object sender, EventArgs e) {

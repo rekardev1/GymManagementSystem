@@ -24,11 +24,11 @@ public partial class AddMembershipForm : Form {
         _shell = shell;
 
         StartingDatePicker.Format = DateTimePickerFormat.Custom;
-        StartingDatePicker.CustomFormat = "dd/MM/yyyy";
+        StartingDatePicker.CustomFormat = "MM/dd/yyyy";
         StartingDatePicker.Value = DateTime.Today;
 
         ExpirationDatePicker.Format = DateTimePickerFormat.Custom;
-        ExpirationDatePicker.CustomFormat = "dd/MM/yyyy";
+        ExpirationDatePicker.CustomFormat = "MM/dd/yyyy";
         ExpirationDatePicker.Value = DateTime.Today.AddDays(30);
     }
 

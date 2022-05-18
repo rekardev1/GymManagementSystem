@@ -31,7 +31,6 @@ public partial class UserForm : Form {
 
 
         await LoadUsers();
-        NameTextBox.Focus();
 
     }
 
@@ -43,6 +42,10 @@ public partial class UserForm : Form {
 
         UsersDataGridView.DataSource = _Users;
         UsersDataGridView.ClearSelection();
+
+        RoleLevelComboBox.SelectedIndex = 0;
+        NameTextBox.Focus();
+
     }
     private async void AddUserButton_Click(object sender, EventArgs e) {
         
@@ -147,7 +150,8 @@ public partial class UserForm : Form {
 
         try {
             await _sqlConnector.UpdateUserPassword(id, PasswordTextBox.Text.Trim());
-            PasswordTextBox.Text = "";
+            //PasswordTextBox.Text = "";
+            await ResetForm();
 
         } catch (Exception ex) {
 
@@ -166,13 +170,20 @@ public partial class UserForm : Form {
         int id = int.Parse(_selectedRow.Cells[0].Value.ToString());
         
         try {
-            await _sqlConnector.DeleteUser(id);
+
+            var result = MessageBox.Show("Are you sure to delete this user?", "Deleting User", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes) {
+
+                await _sqlConnector.DeleteUser(id);
+                await ResetForm();
+            }
+
 
         } catch (Exception ex) {
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        await ResetForm();
     }
 
     private async Task ResetForm() {
