@@ -297,7 +297,7 @@ public partial class MembershipForm : Form {
 
                 await ResetForm();
             }
-            s
+            
         } catch (Exception ex) {
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
