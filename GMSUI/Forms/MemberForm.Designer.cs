@@ -160,6 +160,7 @@ partial class MemberForm {
             this.PhoneNumber2TextBox.Name = "PhoneNumber2TextBox";
             this.PhoneNumber2TextBox.Size = new System.Drawing.Size(159, 29);
             this.PhoneNumber2TextBox.TabIndex = 7;
+            this.PhoneNumber2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber2TextBox_KeyPress);
             // 
             // label6
             // 
@@ -178,6 +179,7 @@ partial class MemberForm {
             this.PhoneNumber1TextBox.Name = "PhoneNumber1TextBox";
             this.PhoneNumber1TextBox.Size = new System.Drawing.Size(159, 29);
             this.PhoneNumber1TextBox.TabIndex = 6;
+            this.PhoneNumber1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PhoneNumber1TextBox_KeyPress);
             // 
             // label7
             // 

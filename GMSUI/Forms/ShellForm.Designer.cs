@@ -71,7 +71,7 @@ partial class ShellForm {
             this.Controls.Add(this.TopPanel);
             this.Name = "ShellForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ShellForm";
+            this.Text = "Gym Management System";
             this.TopPanel.ResumeLayout(false);
             this.TopPanel.PerformLayout();
             this.ResumeLayout(false);

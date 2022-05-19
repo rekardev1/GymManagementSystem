@@ -229,4 +229,12 @@ public partial class MemberForm : Form {
         addMembershipForm.ShowDialog();
 
     }
+
+    private void PhoneNumber1TextBox_KeyPress(object sender, KeyPressEventArgs e) {
+        e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+    }
+
+    private void PhoneNumber2TextBox_KeyPress(object sender, KeyPressEventArgs e) {
+        e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+    }
 }
