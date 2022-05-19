@@ -5,7 +5,7 @@
     [Address] NVARCHAR(250) NOT NULL, 
     [Salary] MONEY NOT NULL, 
     [PhoneNumber1] NVARCHAR(11) NOT NULL, 
-    [PhoneNumber2] NVARCHAR(11) NULL,
+    [PhoneNumber2] NVARCHAR(11) NOT NULL,
     [Password] NVARCHAR(250) NOT NULL, 
     [Role] NVARCHAR(250) NOT NULL
 )
