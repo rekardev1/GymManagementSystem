@@ -5,12 +5,6 @@ AS
 
 begin
 
-	--BACKUP DATABASE GMSData
-	--TO DISK = @Destination
-	--WITH FORMAT,
-	--MEDIANAME = 'SQLServerBackups',
- --   NAME = 'Full Backup of GMSData';
-
 	BACKUP DATABASE [GMSData]
 	TO DISK = @Destination 
 	WITH NOFORMAT, NOINIT,
