@@ -122,9 +122,9 @@ partial class AddMembershipForm {
             this.label8.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(168, 32);
+            this.label8.Size = new System.Drawing.Size(211, 32);
             this.label8.TabIndex = 55;
-            this.label8.Text = "Memberships";
+            this.label8.Text = "Add Membership";
             // 
             // TrainersCheckedListBox
             // 
