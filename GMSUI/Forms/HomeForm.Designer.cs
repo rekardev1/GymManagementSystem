@@ -47,57 +47,72 @@ partial class HomeForm {
             // 
             // MembersButton
             // 
-            this.MembersButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MembersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.MembersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MembersButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MembersButton.ForeColor = System.Drawing.Color.White;
             this.MembersButton.Location = new System.Drawing.Point(186, 174);
             this.MembersButton.Name = "MembersButton";
             this.MembersButton.Size = new System.Drawing.Size(201, 107);
             this.MembersButton.TabIndex = 1;
             this.MembersButton.Text = "Members";
-            this.MembersButton.UseVisualStyleBackColor = true;
+            this.MembersButton.UseVisualStyleBackColor = false;
             this.MembersButton.Click += new System.EventHandler(this.MembersButton_Click);
             // 
             // EmployeesButton
             // 
-            this.EmployeesButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EmployeesButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.EmployeesButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EmployeesButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.EmployeesButton.ForeColor = System.Drawing.Color.White;
             this.EmployeesButton.Location = new System.Drawing.Point(393, 174);
             this.EmployeesButton.Name = "EmployeesButton";
             this.EmployeesButton.Size = new System.Drawing.Size(201, 107);
             this.EmployeesButton.TabIndex = 2;
             this.EmployeesButton.Text = "Employees";
-            this.EmployeesButton.UseVisualStyleBackColor = true;
+            this.EmployeesButton.UseVisualStyleBackColor = false;
             this.EmployeesButton.Click += new System.EventHandler(this.EmployeesButton_Click);
             // 
             // PlansButton
             // 
-            this.PlansButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.PlansButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.PlansButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PlansButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.PlansButton.ForeColor = System.Drawing.Color.White;
             this.PlansButton.Location = new System.Drawing.Point(600, 174);
             this.PlansButton.Name = "PlansButton";
             this.PlansButton.Size = new System.Drawing.Size(201, 107);
             this.PlansButton.TabIndex = 3;
             this.PlansButton.Text = "Plans";
-            this.PlansButton.UseVisualStyleBackColor = true;
+            this.PlansButton.UseVisualStyleBackColor = false;
             this.PlansButton.Click += new System.EventHandler(this.PlansButton_Click);
             // 
             // MembershipsButton
             // 
-            this.MembershipsButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.MembershipsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.MembershipsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MembershipsButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MembershipsButton.ForeColor = System.Drawing.Color.White;
             this.MembershipsButton.Location = new System.Drawing.Point(186, 287);
             this.MembershipsButton.Name = "MembershipsButton";
             this.MembershipsButton.Size = new System.Drawing.Size(201, 107);
             this.MembershipsButton.TabIndex = 4;
             this.MembershipsButton.Text = "Memberships";
-            this.MembershipsButton.UseVisualStyleBackColor = true;
+            this.MembershipsButton.UseVisualStyleBackColor = false;
             this.MembershipsButton.Click += new System.EventHandler(this.MembershipsButton_Click);
             // 
             // UsersButton
             // 
-            this.UsersButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.UsersButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.UsersButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UsersButton.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UsersButton.ForeColor = System.Drawing.Color.White;
             this.UsersButton.Location = new System.Drawing.Point(600, 287);
             this.UsersButton.Name = "UsersButton";
             this.UsersButton.Size = new System.Drawing.Size(201, 107);
             this.UsersButton.TabIndex = 6;
             this.UsersButton.Text = "Users";
-            this.UsersButton.UseVisualStyleBackColor = true;
+            this.UsersButton.UseVisualStyleBackColor = false;
             this.UsersButton.Visible = false;
             this.UsersButton.Click += new System.EventHandler(this.UsersButton_Click);
             // 
@@ -119,13 +134,16 @@ partial class HomeForm {
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(393, 287);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(201, 107);
             this.button1.TabIndex = 5;
             this.button1.Text = "Backup/Restore Database";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.BackupRestoreDatabaseButton_Click);
             // 
             // HomeForm

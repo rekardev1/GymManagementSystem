@@ -51,12 +51,15 @@ partial class PlanForm {
             // 
             // UpdateButton
             // 
+            this.UpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateButton.ForeColor = System.Drawing.Color.White;
             this.UpdateButton.Location = new System.Drawing.Point(246, 160);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(159, 48);
             this.UpdateButton.TabIndex = 6;
             this.UpdateButton.Text = "Update";
-            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.UseVisualStyleBackColor = false;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // StartTimePicker
@@ -97,12 +100,15 @@ partial class PlanForm {
             // 
             // DeleteButton
             // 
+            this.DeleteButton.BackColor = System.Drawing.Color.Red;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.ForeColor = System.Drawing.Color.White;
             this.DeleteButton.Location = new System.Drawing.Point(411, 160);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(159, 48);
             this.DeleteButton.TabIndex = 7;
             this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // label2
@@ -201,12 +207,15 @@ partial class PlanForm {
             // 
             // AddButton
             // 
+            this.AddButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.ForeColor = System.Drawing.Color.White;
             this.AddButton.Location = new System.Drawing.Point(81, 160);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(159, 48);
             this.AddButton.TabIndex = 5;
             this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.UseVisualStyleBackColor = false;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // label4
@@ -243,13 +252,16 @@ partial class PlanForm {
             // PrintButton
             // 
             this.PrintButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrintButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.PrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintButton.ForeColor = System.Drawing.Color.White;
             this.PrintButton.Location = new System.Drawing.Point(848, 514);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(159, 46);
             this.PrintButton.TabIndex = 9;
             this.PrintButton.TabStop = false;
             this.PrintButton.Text = "Print";
-            this.PrintButton.UseVisualStyleBackColor = true;
+            this.PrintButton.UseVisualStyleBackColor = false;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
             // PlanForm

@@ -82,32 +82,41 @@ partial class UserForm {
             // 
             // UpdateInfoButton
             // 
+            this.UpdateInfoButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.UpdateInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateInfoButton.ForeColor = System.Drawing.Color.White;
             this.UpdateInfoButton.Location = new System.Drawing.Point(246, 232);
             this.UpdateInfoButton.Name = "UpdateInfoButton";
             this.UpdateInfoButton.Size = new System.Drawing.Size(159, 48);
             this.UpdateInfoButton.TabIndex = 11;
             this.UpdateInfoButton.Text = "Update Info";
-            this.UpdateInfoButton.UseVisualStyleBackColor = true;
+            this.UpdateInfoButton.UseVisualStyleBackColor = false;
             this.UpdateInfoButton.Click += new System.EventHandler(this.UpdateInfoButton_Click);
             // 
             // DeleteButton
             // 
+            this.DeleteButton.BackColor = System.Drawing.Color.Red;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.ForeColor = System.Drawing.Color.White;
             this.DeleteButton.Location = new System.Drawing.Point(411, 232);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(159, 48);
             this.DeleteButton.TabIndex = 12;
             this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // AddUserButton
             // 
+            this.AddUserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.AddUserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddUserButton.ForeColor = System.Drawing.Color.White;
             this.AddUserButton.Location = new System.Drawing.Point(81, 232);
             this.AddUserButton.Name = "AddUserButton";
             this.AddUserButton.Size = new System.Drawing.Size(159, 48);
             this.AddUserButton.TabIndex = 10;
             this.AddUserButton.Text = "Add User";
-            this.AddUserButton.UseVisualStyleBackColor = true;
+            this.AddUserButton.UseVisualStyleBackColor = false;
             this.AddUserButton.Click += new System.EventHandler(this.AddUserButton_Click);
             // 
             // EmployeeLabel
@@ -233,12 +242,16 @@ partial class UserForm {
             // 
             // UpdatePasswordButton
             // 
-            this.UpdatePasswordButton.Location = new System.Drawing.Point(576, 171);
+            this.UpdatePasswordButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.UpdatePasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdatePasswordButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.UpdatePasswordButton.ForeColor = System.Drawing.Color.White;
+            this.UpdatePasswordButton.Location = new System.Drawing.Point(576, 164);
             this.UpdatePasswordButton.Name = "UpdatePasswordButton";
-            this.UpdatePasswordButton.Size = new System.Drawing.Size(159, 29);
+            this.UpdatePasswordButton.Size = new System.Drawing.Size(159, 40);
             this.UpdatePasswordButton.TabIndex = 8;
             this.UpdatePasswordButton.Text = "Update Password";
-            this.UpdatePasswordButton.UseVisualStyleBackColor = true;
+            this.UpdatePasswordButton.UseVisualStyleBackColor = false;
             this.UpdatePasswordButton.Click += new System.EventHandler(this.UpdatePasswordButton_Click);
             // 
             // label7

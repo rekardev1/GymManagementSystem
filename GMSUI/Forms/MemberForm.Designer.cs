@@ -63,12 +63,15 @@ partial class MemberForm {
             // 
             // AddButton
             // 
+            this.AddButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.ForeColor = System.Drawing.Color.White;
             this.AddButton.Location = new System.Drawing.Point(81, 231);
             this.AddButton.Name = "AddButton";
             this.AddButton.Size = new System.Drawing.Size(159, 46);
             this.AddButton.TabIndex = 8;
             this.AddButton.Text = "Add";
-            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.UseVisualStyleBackColor = false;
             this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // label1
@@ -222,22 +225,28 @@ partial class MemberForm {
             // 
             // DeleteButton
             // 
+            this.DeleteButton.BackColor = System.Drawing.Color.Red;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.ForeColor = System.Drawing.Color.White;
             this.DeleteButton.Location = new System.Drawing.Point(411, 231);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(159, 46);
             this.DeleteButton.TabIndex = 10;
             this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // UpdateButton
             // 
+            this.UpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateButton.ForeColor = System.Drawing.Color.White;
             this.UpdateButton.Location = new System.Drawing.Point(246, 231);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(159, 46);
             this.UpdateButton.TabIndex = 9;
             this.UpdateButton.Text = "Update";
-            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.UseVisualStyleBackColor = false;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // HomeButton
@@ -254,24 +263,30 @@ partial class MemberForm {
             // PrintButton
             // 
             this.PrintButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrintButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.PrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintButton.ForeColor = System.Drawing.Color.White;
             this.PrintButton.Location = new System.Drawing.Point(845, 514);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(159, 46);
             this.PrintButton.TabIndex = 13;
             this.PrintButton.TabStop = false;
             this.PrintButton.Text = "Print";
-            this.PrintButton.UseVisualStyleBackColor = true;
+            this.PrintButton.UseVisualStyleBackColor = false;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
             // AddMembershipButton
             // 
             this.AddMembershipButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddMembershipButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.AddMembershipButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddMembershipButton.ForeColor = System.Drawing.Color.White;
             this.AddMembershipButton.Location = new System.Drawing.Point(845, 231);
             this.AddMembershipButton.Name = "AddMembershipButton";
             this.AddMembershipButton.Size = new System.Drawing.Size(159, 46);
             this.AddMembershipButton.TabIndex = 11;
             this.AddMembershipButton.Text = "Add Membership";
-            this.AddMembershipButton.UseVisualStyleBackColor = true;
+            this.AddMembershipButton.UseVisualStyleBackColor = false;
             this.AddMembershipButton.Click += new System.EventHandler(this.AddMembershipButton_Click);
             // 
             // GenderComboBox

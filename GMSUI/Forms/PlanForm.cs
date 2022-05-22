@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -175,6 +176,12 @@ public partial class PlanForm : Form {
                 await _sqlConnector.DeletePlan(id);
 
                 await ResetForm();
+            }
+
+        }catch (SqlException ex) {
+
+            if (ex.Message.Contains("The DELETE statement conflicted with the REFERENCE constraint \"FK_Membership_Plan\"")) {
+                 MessageBox.Show("This plan is used in a membership, can not be deleted.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
         } catch (Exception ex) {

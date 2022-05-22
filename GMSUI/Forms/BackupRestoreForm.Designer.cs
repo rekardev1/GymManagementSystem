@@ -54,59 +54,65 @@ partial class BackupRestoreForm {
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 155);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(12, 176);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(143, 21);
+            this.label2.Size = new System.Drawing.Size(197, 30);
             this.label2.TabIndex = 1;
             this.label2.Text = "Backup Destination";
             // 
             // backupDestinationTextBox
             // 
-            this.backupDestinationTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.backupDestinationTextBox.Location = new System.Drawing.Point(12, 179);
+            this.backupDestinationTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.backupDestinationTextBox.Location = new System.Drawing.Point(12, 209);
             this.backupDestinationTextBox.Name = "backupDestinationTextBox";
-            this.backupDestinationTextBox.Size = new System.Drawing.Size(229, 29);
+            this.backupDestinationTextBox.Size = new System.Drawing.Size(229, 32);
             this.backupDestinationTextBox.TabIndex = 3;
             this.backupDestinationTextBox.TabStop = false;
             // 
             // backupBrowseButton
             // 
-            this.backupBrowseButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.backupBrowseButton.Location = new System.Drawing.Point(247, 179);
+            this.backupBrowseButton.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.backupBrowseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backupBrowseButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.backupBrowseButton.ForeColor = System.Drawing.Color.White;
+            this.backupBrowseButton.Location = new System.Drawing.Point(247, 208);
             this.backupBrowseButton.Name = "backupBrowseButton";
-            this.backupBrowseButton.Size = new System.Drawing.Size(81, 29);
+            this.backupBrowseButton.Size = new System.Drawing.Size(123, 36);
             this.backupBrowseButton.TabIndex = 4;
             this.backupBrowseButton.Text = "Browse";
-            this.backupBrowseButton.UseVisualStyleBackColor = true;
+            this.backupBrowseButton.UseVisualStyleBackColor = false;
             this.backupBrowseButton.Click += new System.EventHandler(this.backupBrowseButton_Click);
             // 
             // backupButton
             // 
-            this.backupButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.backupButton.Location = new System.Drawing.Point(12, 230);
+            this.backupButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.backupButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backupButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.backupButton.ForeColor = System.Drawing.Color.White;
+            this.backupButton.Location = new System.Drawing.Point(12, 257);
             this.backupButton.Name = "backupButton";
-            this.backupButton.Size = new System.Drawing.Size(123, 29);
+            this.backupButton.Size = new System.Drawing.Size(123, 36);
             this.backupButton.TabIndex = 5;
-            this.backupButton.Text = "Backup Now";
-            this.backupButton.UseVisualStyleBackColor = true;
+            this.backupButton.Text = "Backup";
+            this.backupButton.UseVisualStyleBackColor = false;
             this.backupButton.Click += new System.EventHandler(this.backupButton_Click);
             // 
             // backupFileNameTextBox
             // 
-            this.backupFileNameTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.backupFileNameTextBox.Location = new System.Drawing.Point(12, 110);
+            this.backupFileNameTextBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.backupFileNameTextBox.Location = new System.Drawing.Point(12, 119);
             this.backupFileNameTextBox.Name = "backupFileNameTextBox";
-            this.backupFileNameTextBox.Size = new System.Drawing.Size(229, 29);
+            this.backupFileNameTextBox.Size = new System.Drawing.Size(229, 33);
             this.backupFileNameTextBox.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(12, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 21);
+            this.label3.Size = new System.Drawing.Size(147, 30);
             this.label3.TabIndex = 6;
             this.label3.Text = "Backup Name";
             // 
@@ -125,7 +131,7 @@ partial class BackupRestoreForm {
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(12, 316);
+            this.label4.Location = new System.Drawing.Point(12, 325);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(212, 32);
             this.label4.TabIndex = 19;
@@ -133,52 +139,59 @@ partial class BackupRestoreForm {
             // 
             // restoreBrowseButton
             // 
-            this.restoreBrowseButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.restoreBrowseButton.Location = new System.Drawing.Point(247, 394);
+            this.restoreBrowseButton.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.restoreBrowseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.restoreBrowseButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.restoreBrowseButton.ForeColor = System.Drawing.Color.White;
+            this.restoreBrowseButton.Location = new System.Drawing.Point(247, 402);
             this.restoreBrowseButton.Name = "restoreBrowseButton";
-            this.restoreBrowseButton.Size = new System.Drawing.Size(81, 29);
+            this.restoreBrowseButton.Size = new System.Drawing.Size(123, 35);
             this.restoreBrowseButton.TabIndex = 7;
             this.restoreBrowseButton.Text = "Browse";
-            this.restoreBrowseButton.UseVisualStyleBackColor = true;
+            this.restoreBrowseButton.UseVisualStyleBackColor = false;
             this.restoreBrowseButton.Click += new System.EventHandler(this.restoreBrowseButton_Click);
             // 
             // restoreFilePathTextBox
             // 
-            this.restoreFilePathTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.restoreFilePathTextBox.Location = new System.Drawing.Point(12, 394);
+            this.restoreFilePathTextBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.restoreFilePathTextBox.Location = new System.Drawing.Point(12, 403);
             this.restoreFilePathTextBox.Name = "restoreFilePathTextBox";
-            this.restoreFilePathTextBox.Size = new System.Drawing.Size(229, 29);
+            this.restoreFilePathTextBox.Size = new System.Drawing.Size(229, 32);
             this.restoreFilePathTextBox.TabIndex = 6;
             this.restoreFilePathTextBox.TabStop = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.Location = new System.Drawing.Point(12, 370);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 21);
+            this.label5.Size = new System.Drawing.Size(118, 30);
             this.label5.TabIndex = 20;
             this.label5.Text = "Backup file";
             // 
             // restoreButton
             // 
-            this.restoreButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.restoreButton.Location = new System.Drawing.Point(12, 447);
+            this.restoreButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.restoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.restoreButton.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.restoreButton.ForeColor = System.Drawing.Color.White;
+            this.restoreButton.Location = new System.Drawing.Point(12, 451);
             this.restoreButton.Name = "restoreButton";
-            this.restoreButton.Size = new System.Drawing.Size(123, 29);
+            this.restoreButton.Size = new System.Drawing.Size(123, 36);
             this.restoreButton.TabIndex = 8;
             this.restoreButton.Text = "Restore";
-            this.restoreButton.UseVisualStyleBackColor = true;
+            this.restoreButton.UseVisualStyleBackColor = false;
             this.restoreButton.Click += new System.EventHandler(this.restoreButton_Click);
             // 
             // AppendDateTimeCheckBox
             // 
             this.AppendDateTimeCheckBox.AutoSize = true;
-            this.AppendDateTimeCheckBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AppendDateTimeCheckBox.Location = new System.Drawing.Point(247, 114);
+            this.AppendDateTimeCheckBox.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AppendDateTimeCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.AppendDateTimeCheckBox.Location = new System.Drawing.Point(247, 121);
             this.AppendDateTimeCheckBox.Name = "AppendDateTimeCheckBox";
-            this.AppendDateTimeCheckBox.Size = new System.Drawing.Size(153, 25);
+            this.AppendDateTimeCheckBox.Size = new System.Drawing.Size(182, 29);
             this.AppendDateTimeCheckBox.TabIndex = 2;
             this.AppendDateTimeCheckBox.Text = "Append DateTime";
             this.AppendDateTimeCheckBox.UseVisualStyleBackColor = true;

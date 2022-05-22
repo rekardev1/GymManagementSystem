@@ -152,32 +152,41 @@
             // 
             // UpdateButton
             // 
+            this.UpdateButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateButton.ForeColor = System.Drawing.Color.White;
             this.UpdateButton.Location = new System.Drawing.Point(246, 237);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(159, 48);
             this.UpdateButton.TabIndex = 8;
             this.UpdateButton.Text = "Update";
-            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.UseVisualStyleBackColor = false;
             this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
             // 
             // DeleteButton
             // 
+            this.DeleteButton.BackColor = System.Drawing.Color.Red;
+            this.DeleteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteButton.ForeColor = System.Drawing.Color.White;
             this.DeleteButton.Location = new System.Drawing.Point(414, 237);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(159, 48);
             this.DeleteButton.TabIndex = 9;
             this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.UseVisualStyleBackColor = false;
             this.DeleteButton.Click += new System.EventHandler(this.DeleteButton_Click);
             // 
             // AddEmployeeButton
             // 
+            this.AddEmployeeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.AddEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddEmployeeButton.ForeColor = System.Drawing.Color.White;
             this.AddEmployeeButton.Location = new System.Drawing.Point(81, 237);
             this.AddEmployeeButton.Name = "AddEmployeeButton";
             this.AddEmployeeButton.Size = new System.Drawing.Size(159, 48);
             this.AddEmployeeButton.TabIndex = 7;
-            this.AddEmployeeButton.Text = "Add Employee";
-            this.AddEmployeeButton.UseVisualStyleBackColor = true;
+            this.AddEmployeeButton.Text = "Add";
+            this.AddEmployeeButton.UseVisualStyleBackColor = false;
             this.AddEmployeeButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // PhoneNumber2TextBox
@@ -297,13 +306,16 @@
             // PrintButton
             // 
             this.PrintButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrintButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.PrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintButton.ForeColor = System.Drawing.Color.White;
             this.PrintButton.Location = new System.Drawing.Point(864, 616);
             this.PrintButton.Name = "PrintButton";
             this.PrintButton.Size = new System.Drawing.Size(159, 48);
             this.PrintButton.TabIndex = 12;
             this.PrintButton.TabStop = false;
             this.PrintButton.Text = "Print";
-            this.PrintButton.UseVisualStyleBackColor = true;
+            this.PrintButton.UseVisualStyleBackColor = false;
             this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
             // 
             // AllRadioButton
