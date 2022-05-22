@@ -1,4 +1,5 @@
-﻿using GMSDataAccess.DataAccess;
+﻿using DGVPrinterHelper;
+using GMSDataAccess.DataAccess;
 using GMSDataAccess.Model;
 using GMSUI.Helper;
 using System;
@@ -16,7 +17,7 @@ public partial class UserForm : Form {
 
     private readonly ShellForm _shell;
     private SqlConnector _sqlConnector = new SqlConnector();
-    private BindingList<UserModel> _Users;
+    private List<UserModel> _users;
     private DataGridViewRow _selectedRow;
 
     public UserForm(ShellForm shell) {
@@ -36,11 +37,10 @@ public partial class UserForm : Form {
 
     internal async Task LoadUsers() {
 
-        var u = await _sqlConnector.GetUsers();
+        
+        _users = await _sqlConnector.GetUsers();
 
-        _Users = new BindingList<UserModel>(u);
-
-        UsersDataGridView.DataSource = _Users;
+        UsersDataGridView.DataSource = _users;
         UsersDataGridView.ClearSelection();
 
         RoleLevelComboBox.SelectedIndex = 0;
@@ -233,5 +233,31 @@ public partial class UserForm : Form {
 
     private void HomeButton_Click(object sender, EventArgs e) {
         _shell.OpenHomeForm();
+    }
+
+    private void PrintButton_Click(object sender, EventArgs e) {
+
+        DGVPrinter printer = new DGVPrinter();
+        printer.Title = "Users Report";
+        printer.SubTitle = $"{DateTime.Now}";
+        printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+        printer.PageNumbers = true;
+        printer.PageNumberInHeader = false;
+        printer.PorportionalColumns = true;
+        printer.HeaderCellAlignment = StringAlignment.Near;
+        printer.Footer = $"Total Users: {_users.Count} | Total Salary: {TotalSalary(_users)}";
+        printer.FooterSpacing = 15;
+
+        UsersDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+
+        printer.PrintDataGridView(UsersDataGridView);
+
+        UsersDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+    }
+    private int TotalSalary(List<UserModel> users) {
+
+        return users.Sum(x => x.Salary);
+
     }
 }

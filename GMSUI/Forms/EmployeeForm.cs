@@ -231,7 +231,7 @@ namespace GMSUI.Forms {
             printer.PageNumberInHeader = false;
             printer.PorportionalColumns = true;
             printer.HeaderCellAlignment = StringAlignment.Near;
-            printer.Footer = $"Total Employees: {_employees.Count} | Total salary: {TotalSalary(_employees)}";
+            printer.Footer = $"Total Employees: {_employees.Count} | Total Salary: {TotalSalary(_employees)}";
             printer.FooterSpacing = 15;
 
             EmployeesDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;

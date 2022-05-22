@@ -47,6 +47,7 @@ partial class UserForm {
             this.RoleLevelComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.HomeButton = new System.Windows.Forms.Button();
+            this.PrintButton = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.UsersDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +60,7 @@ partial class UserForm {
             this.panel2.Controls.Add(this.UsersDataGridView);
             this.panel2.Location = new System.Drawing.Point(12, 306);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(995, 254);
+            this.panel2.Size = new System.Drawing.Size(995, 199);
             this.panel2.TabIndex = 33;
             // 
             // UsersDataGridView
@@ -75,7 +76,7 @@ partial class UserForm {
             this.UsersDataGridView.ReadOnly = true;
             this.UsersDataGridView.RowTemplate.Height = 25;
             this.UsersDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.UsersDataGridView.Size = new System.Drawing.Size(995, 254);
+            this.UsersDataGridView.Size = new System.Drawing.Size(995, 199);
             this.UsersDataGridView.TabIndex = 13;
             this.UsersDataGridView.TabStop = false;
             this.UsersDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsersDataGridView_CellClick);
@@ -298,11 +299,27 @@ partial class UserForm {
             this.HomeButton.UseVisualStyleBackColor = true;
             this.HomeButton.Click += new System.EventHandler(this.HomeButton_Click);
             // 
+            // PrintButton
+            // 
+            this.PrintButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.PrintButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.PrintButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.PrintButton.ForeColor = System.Drawing.Color.White;
+            this.PrintButton.Location = new System.Drawing.Point(848, 512);
+            this.PrintButton.Name = "PrintButton";
+            this.PrintButton.Size = new System.Drawing.Size(159, 48);
+            this.PrintButton.TabIndex = 40;
+            this.PrintButton.TabStop = false;
+            this.PrintButton.Text = "Print";
+            this.PrintButton.UseVisualStyleBackColor = false;
+            this.PrintButton.Click += new System.EventHandler(this.PrintButton_Click);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 572);
+            this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.SalaryTextBox);
@@ -360,4 +377,5 @@ partial class UserForm {
     private ComboBox RoleLevelComboBox;
     private Label label8;
     private Button HomeButton;
+    private Button PrintButton;
 }
