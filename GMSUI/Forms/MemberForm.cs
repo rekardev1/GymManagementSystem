@@ -177,7 +177,7 @@ public partial class MemberForm : Form {
 
         try {
 
-            var result = MessageBox.Show("Are you sure to delete this memeber?", "Delteing Member", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            var result = MessageBox.Show("Are you sure to delete this memeber?", "Deleteing Member", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes) {
 

@@ -154,7 +154,7 @@ namespace GMSUI.Forms {
 
             try {
 
-                var result = MessageBox.Show("Are you sure to delete this employee?", "Delteing Employee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                var result = MessageBox.Show("Are you sure to delete this employee?", "Deleteing Employee", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 if (result == DialogResult.Yes) {
 

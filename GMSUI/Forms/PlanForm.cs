@@ -169,7 +169,7 @@ public partial class PlanForm : Form {
 
         try {
 
-            var result = MessageBox.Show("Are you sure to delete this plan?", "Delteing Plan", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            var result = MessageBox.Show("Are you sure to delete this plan?", "Deleteing Plan", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (result == DialogResult.Yes) {
 
