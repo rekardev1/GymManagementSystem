@@ -40,7 +40,21 @@ public partial class MemberForm : Form {
 
         _members = await _sqlConnector.GetMembers();
 
-        MembersDataGridView.DataSource = _members;
+        //MembersDataGridView.DataSource = _members;
+
+        foreach (var m in _members) {
+            MembersDataGridView.Rows.Add(
+                m.Id,
+                m.FirstName,
+                m.LastName,
+                m.BirthDate,
+                m.Gender,
+                m.Address,
+                m.PhoneNumber1,
+                m.PhoneNumber2
+                );
+        }
+
         MembersDataGridView.ClearSelection();
 
         GenderComboBox.SelectedIndex = 0;

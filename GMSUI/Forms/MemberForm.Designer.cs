@@ -24,6 +24,7 @@ partial class MemberForm {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,6 +48,14 @@ partial class MemberForm {
             this.PrintButton = new System.Windows.Forms.Button();
             this.AddMembershipButton = new System.Windows.Forms.Button();
             this.GenderComboBox = new System.Windows.Forms.ComboBox();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BirthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneNumber2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembersDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -211,6 +220,15 @@ partial class MemberForm {
             this.MembersDataGridView.AllowUserToDeleteRows = false;
             this.MembersDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.MembersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MembersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.FirstName,
+            this.LastName,
+            this.BirthDate,
+            this.Gender,
+            this.Address,
+            this.PhoneNumber1,
+            this.PhoneNumber2});
             this.MembersDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MembersDataGridView.Location = new System.Drawing.Point(0, 0);
             this.MembersDataGridView.MultiSelect = false;
@@ -302,6 +320,56 @@ partial class MemberForm {
             this.GenderComboBox.Size = new System.Drawing.Size(159, 29);
             this.GenderComboBox.TabIndex = 4;
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // FirstName
+            // 
+            this.FirstName.HeaderText = "First Name";
+            this.FirstName.Name = "FirstName";
+            this.FirstName.ReadOnly = true;
+            // 
+            // LastName
+            // 
+            this.LastName.HeaderText = "Last Name";
+            this.LastName.Name = "LastName";
+            this.LastName.ReadOnly = true;
+            // 
+            // BirthDate
+            // 
+            dataGridViewCellStyle1.Format = "d";
+            this.BirthDate.DefaultCellStyle = dataGridViewCellStyle1;
+            this.BirthDate.HeaderText = "Birth Date";
+            this.BirthDate.Name = "BirthDate";
+            this.BirthDate.ReadOnly = true;
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
+            this.Gender.ReadOnly = true;
+            // 
+            // Address
+            // 
+            this.Address.HeaderText = "Address";
+            this.Address.Name = "Address";
+            this.Address.ReadOnly = true;
+            // 
+            // PhoneNumber1
+            // 
+            this.PhoneNumber1.HeaderText = "Phone Number 1";
+            this.PhoneNumber1.Name = "PhoneNumber1";
+            this.PhoneNumber1.ReadOnly = true;
+            // 
+            // PhoneNumber2
+            // 
+            this.PhoneNumber2.HeaderText = "Phone Number 2";
+            this.PhoneNumber2.Name = "PhoneNumber2";
+            this.PhoneNumber2.ReadOnly = true;
+            // 
             // MemberForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -364,4 +432,12 @@ partial class MemberForm {
     private Button PrintButton;
     private Button AddMembershipButton;
     private ComboBox GenderComboBox;
+    private DataGridViewTextBoxColumn Id;
+    private DataGridViewTextBoxColumn FirstName;
+    private DataGridViewTextBoxColumn LastName;
+    private DataGridViewTextBoxColumn BirthDate;
+    private DataGridViewTextBoxColumn Gender;
+    private DataGridViewTextBoxColumn Address;
+    private DataGridViewTextBoxColumn PhoneNumber1;
+    private DataGridViewTextBoxColumn PhoneNumber2;
 }
