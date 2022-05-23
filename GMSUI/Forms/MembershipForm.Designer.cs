@@ -370,9 +370,9 @@ partial class MembershipForm {
             this.ExpiredOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ExpiredOnlyRadioButton.Location = new System.Drawing.Point(887, 301);
             this.ExpiredOnlyRadioButton.Name = "ExpiredOnlyRadioButton";
-            this.ExpiredOnlyRadioButton.Size = new System.Drawing.Size(116, 25);
+            this.ExpiredOnlyRadioButton.Size = new System.Drawing.Size(113, 25);
             this.ExpiredOnlyRadioButton.TabIndex = 10;
-            this.ExpiredOnlyRadioButton.Text = "Expired Only";
+            this.ExpiredOnlyRadioButton.Text = "Expired only";
             this.ExpiredOnlyRadioButton.UseVisualStyleBackColor = true;
             this.ExpiredOnlyRadioButton.CheckedChanged += new System.EventHandler(this.StaffOnlyRadioButton_CheckedChanged);
             // 
@@ -383,9 +383,9 @@ partial class MembershipForm {
             this.ActiveOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.ActiveOnlyRadioButton.Location = new System.Drawing.Point(887, 270);
             this.ActiveOnlyRadioButton.Name = "ActiveOnlyRadioButton";
-            this.ActiveOnlyRadioButton.Size = new System.Drawing.Size(107, 25);
+            this.ActiveOnlyRadioButton.Size = new System.Drawing.Size(111, 25);
             this.ActiveOnlyRadioButton.TabIndex = 9;
-            this.ActiveOnlyRadioButton.Text = "Active Only";
+            this.ActiveOnlyRadioButton.Text = "Actives only";
             this.ActiveOnlyRadioButton.UseVisualStyleBackColor = true;
             this.ActiveOnlyRadioButton.CheckedChanged += new System.EventHandler(this.ActiveOnlyRadioButton_CheckedChanged);
             // 

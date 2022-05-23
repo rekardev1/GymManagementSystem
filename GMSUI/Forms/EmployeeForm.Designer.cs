@@ -340,9 +340,9 @@
             this.TrainerOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TrainerOnlyRadioButton.Location = new System.Drawing.Point(898, 254);
             this.TrainerOnlyRadioButton.Name = "TrainerOnlyRadioButton";
-            this.TrainerOnlyRadioButton.Size = new System.Drawing.Size(113, 25);
+            this.TrainerOnlyRadioButton.Size = new System.Drawing.Size(117, 25);
             this.TrainerOnlyRadioButton.TabIndex = 11;
-            this.TrainerOnlyRadioButton.Text = "Trainer Only";
+            this.TrainerOnlyRadioButton.Text = "Trainers only";
             this.TrainerOnlyRadioButton.UseVisualStyleBackColor = true;
             this.TrainerOnlyRadioButton.CheckedChanged += new System.EventHandler(this.TrainerOnlyRadioButton_CheckedChanged);
             // 
@@ -353,9 +353,9 @@
             this.StaffOnlyRadioButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.StaffOnlyRadioButton.Location = new System.Drawing.Point(898, 285);
             this.StaffOnlyRadioButton.Name = "StaffOnlyRadioButton";
-            this.StaffOnlyRadioButton.Size = new System.Drawing.Size(96, 25);
+            this.StaffOnlyRadioButton.Size = new System.Drawing.Size(100, 25);
             this.StaffOnlyRadioButton.TabIndex = 12;
-            this.StaffOnlyRadioButton.Text = "Staff Only";
+            this.StaffOnlyRadioButton.Text = "Staffs only";
             this.StaffOnlyRadioButton.UseVisualStyleBackColor = true;
             this.StaffOnlyRadioButton.CheckedChanged += new System.EventHandler(this.StaffOnlyRadioButton_CheckedChanged);
             // 
