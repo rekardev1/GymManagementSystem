@@ -38,8 +38,6 @@ partial class UserForm {
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.AddressTextBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.SalaryTextBox = new System.Windows.Forms.TextBox();
             this.PasswordTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.UpdatePasswordButton = new System.Windows.Forms.Button();
@@ -204,25 +202,6 @@ partial class UserForm {
             this.AddressTextBox.Size = new System.Drawing.Size(159, 29);
             this.AddressTextBox.TabIndex = 3;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(576, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 21);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Salary";
-            // 
-            // SalaryTextBox
-            // 
-            this.SalaryTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.SalaryTextBox.Location = new System.Drawing.Point(576, 97);
-            this.SalaryTextBox.Name = "SalaryTextBox";
-            this.SalaryTextBox.Size = new System.Drawing.Size(159, 29);
-            this.SalaryTextBox.TabIndex = 4;
-            this.SalaryTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.SalaryTextBox_KeyPress);
-            // 
             // PasswordTextBox
             // 
             this.PasswordTextBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -322,10 +301,8 @@ partial class UserForm {
             this.Controls.Add(this.PrintButton);
             this.Controls.Add(this.HomeButton);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.SalaryTextBox);
             this.Controls.Add(this.RoleLevelComboBox);
             this.Controls.Add(this.EmployeeLabel);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.PhoneNumber2TextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.AddUserButton);
@@ -367,8 +344,6 @@ partial class UserForm {
     private Label label2;
     private Label label5;
     private TextBox AddressTextBox;
-    private Label label3;
-    private TextBox SalaryTextBox;
     private TextBox PasswordTextBox;
     private Label label4;
     private DataGridView UsersDataGridView;

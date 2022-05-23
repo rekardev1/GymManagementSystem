@@ -2,7 +2,6 @@
 	@Id int,
 	@Name nvarchar(250),
 	@Address nvarchar(250),
-	@Salary money,
 	@PhoneNumber1 nvarchar(11),
 	@PhoneNumber2 nvarchar(11),
 	@Role nvarchar(250)
@@ -14,7 +13,6 @@ begin
 
 	set [Name] = @Name, 
 		[Address] = @Address,
-		Salary = @Salary, 
 		PhoneNumber1 = @PhoneNumber1,
 		PhoneNumber2 = @PhoneNumber2,
 		[Role] = @Role

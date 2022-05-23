@@ -56,7 +56,6 @@ public partial class UserForm : Form {
             model.Name = NameTextBox.Text;
             model.Role = RoleLevelComboBox.SelectedItem.ToString();
             model.Address = AddressTextBox.Text;
-            model.Salary = int.Parse(SalaryTextBox.Text);
             model.PhoneNumber1 = PhoneNumber1TextBox.Text;
             model.PhoneNumber2 = PhoneNumber2TextBox.Text;
 
@@ -81,9 +80,6 @@ public partial class UserForm : Form {
             output = false;
 
         } else if (string.IsNullOrEmpty(AddressTextBox.Text)) {
-            output = false;
-
-        } else if (string.IsNullOrEmpty(SalaryTextBox.Text)) {
             output = false;
 
         } else if (string.IsNullOrEmpty(PhoneNumber1TextBox.Text)) {
@@ -112,7 +108,6 @@ public partial class UserForm : Form {
         model.Name = NameTextBox.Text;
         model.Role = RoleLevelComboBox.Text;
         model.Address = AddressTextBox.Text;
-        model.Salary = int.Parse(SalaryTextBox.Text);
         model.PhoneNumber1 = PhoneNumber1TextBox.Text;
         model.PhoneNumber2 = PhoneNumber2TextBox.Text;
 
@@ -190,7 +185,6 @@ public partial class UserForm : Form {
 
         NameTextBox.Text = "";
         AddressTextBox.Text = "";
-        SalaryTextBox.Text = "";
         PhoneNumber1TextBox.Text = "";
         PhoneNumber2TextBox.Text = "";
         PasswordTextBox.Text = "";
@@ -223,9 +217,8 @@ public partial class UserForm : Form {
         NameTextBox.Text = _selectedRow.Cells[1].Value.ToString();
         RoleLevelComboBox.Text = _selectedRow.Cells[2].Value.ToString();
         AddressTextBox.Text = _selectedRow.Cells[3].Value.ToString();
-        SalaryTextBox.Text = _selectedRow.Cells[4].Value.ToString();
-        PhoneNumber1TextBox.Text = _selectedRow.Cells[5].Value.ToString();
-        PhoneNumber2TextBox.Text = _selectedRow.Cells[6].Value.ToString();
+        PhoneNumber1TextBox.Text = _selectedRow.Cells[4].Value.ToString();
+        PhoneNumber2TextBox.Text = _selectedRow.Cells[5].Value.ToString();
 
         
 
@@ -245,7 +238,7 @@ public partial class UserForm : Form {
         printer.PageNumberInHeader = false;
         printer.PorportionalColumns = true;
         printer.HeaderCellAlignment = StringAlignment.Near;
-        printer.Footer = $"Total Users: {_users.Count} | Total Salary: {TotalSalary(_users)}";
+        printer.Footer = $"Total Users: {_users.Count}";
         printer.FooterSpacing = 15;
 
         UsersDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
@@ -255,9 +248,5 @@ public partial class UserForm : Form {
         UsersDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
     }
-    private int TotalSalary(List<UserModel> users) {
-
-        return users.Sum(x => x.Salary);
-
-    }
+    
 }

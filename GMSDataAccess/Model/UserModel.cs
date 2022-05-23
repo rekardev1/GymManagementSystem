@@ -10,7 +10,6 @@ public  class UserModel {
     public string Name { get; set; }
     public string Role { get; set; }
     public string Address { get; set; }
-    public int Salary { get; set; }
     public string PhoneNumber1 { get; set; }
     public string PhoneNumber2 { get; set; }
     

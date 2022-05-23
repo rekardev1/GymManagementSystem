@@ -215,7 +215,6 @@ public class SqlConnector {
                 new {
                     Name = model.Name,
                     Address = model.Address,
-                    Salary = model.Salary,
                     PhoneNumber1 = model.PhoneNumber1,
                     PhoneNumber2 = model.PhoneNumber2,
                     Password = password,
