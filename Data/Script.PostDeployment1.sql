@@ -2,7 +2,7 @@
 begin
 
     insert into dbo.[User]([Name], [Address], PhoneNumber1, PhoneNumber2, [Password], [Role])
-    values ('Admin', 'NoWhere', '', '', 12345, 'Admin')
+    values ('Admin', 'NoWhere', '0', '0', 12345, 'Admin')
 
 end
 

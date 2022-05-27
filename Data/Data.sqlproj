@@ -101,9 +101,6 @@
     <Build Include="StoredProcedures\spMembership_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Data.publish.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <RefactorLog Include="Data.refactorlog" />
   </ItemGroup>
   <ItemGroup>
