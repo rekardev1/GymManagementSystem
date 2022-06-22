@@ -17,4 +17,6 @@ public class MembershipModel {
     public bool IsExpired { get; set; }
     public int UserId { get; set; }
     public string UserName { get; set; }
+    public bool AutoRenew { get; set; }
+    public DateTime LastRenewDate { get; set; } = new DateTime(2000, 1, 1);
 }

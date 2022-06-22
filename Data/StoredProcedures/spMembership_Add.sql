@@ -4,12 +4,14 @@
 	@PlanId int,
 	@StartingDate datetime2,
 	@ExpirationDate datetime2,
-	@UserId int
+	@UserId int,
+	@AutoRenew bit
+
 
 as 
 begin
-	insert into Membership(MemberId, PlanId, StartingDate, ExpirationDate, UserId)
-	values (@MemberId, @PlanId, @StartingDate, @ExpirationDate, @UserId)
+	insert into Membership(MemberId, PlanId, StartingDate, ExpirationDate, UserId, AutoRenew)
+	values (@MemberId, @PlanId, @StartingDate, @ExpirationDate, @UserId, @AutoRenew)
 
 	SET @Id = SCOPE_IDENTITY()
 end

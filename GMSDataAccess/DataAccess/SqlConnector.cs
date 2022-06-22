@@ -177,6 +177,7 @@ public class SqlConnector {
             p.Add("StartingDate", model.StartingDate);
             p.Add("ExpirationDate", model.ExpirationDate);
             p.Add("UserId", model.UserId);
+            p.Add("AutoRenew", model.AutoRenew);
 
             await connection.ExecuteAsync("spMembership_Add", p, commandType: CommandType.StoredProcedure);
 
@@ -235,7 +236,8 @@ public class SqlConnector {
                     Id = model.Id,
                     PlanId = model.PlanId,
                     StartingDate = model.StartingDate,
-                    ExpirationDate = model.ExpirationDate
+                    ExpirationDate = model.ExpirationDate,
+                    AutoRenew = model.AutoRenew,
                 }
                 , commandType: CommandType.StoredProcedure);
 

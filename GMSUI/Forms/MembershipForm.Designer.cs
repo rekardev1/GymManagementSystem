@@ -27,6 +27,7 @@ partial class MembershipForm {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MemberNameTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.StartingDatePicker = new System.Windows.Forms.DateTimePicker();
@@ -51,6 +52,8 @@ partial class MembershipForm {
             this.StartingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ExpirationDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IsExpired = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AutoRenew = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LastRenewDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddButton = new System.Windows.Forms.Button();
             this.HomeButton = new System.Windows.Forms.Button();
@@ -58,6 +61,7 @@ partial class MembershipForm {
             this.ExpiredOnlyRadioButton = new System.Windows.Forms.RadioButton();
             this.ActiveOnlyRadioButton = new System.Windows.Forms.RadioButton();
             this.AllRadioButton = new System.Windows.Forms.RadioButton();
+            this.AutoRenewCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MembershipsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -216,6 +220,8 @@ partial class MembershipForm {
             this.StartingDate,
             this.ExpirationDate,
             this.IsExpired,
+            this.AutoRenew,
+            this.LastRenewDate,
             this.UserId});
             this.MembershipsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.MembershipsDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -291,6 +297,20 @@ partial class MembershipForm {
             this.IsExpired.HeaderText = "Is Expired";
             this.IsExpired.Name = "IsExpired";
             this.IsExpired.ReadOnly = true;
+            // 
+            // AutoRenew
+            // 
+            this.AutoRenew.HeaderText = "Auto Renew";
+            this.AutoRenew.Name = "AutoRenew";
+            this.AutoRenew.ReadOnly = true;
+            // 
+            // LastRenewDate
+            // 
+            dataGridViewCellStyle4.Format = "d";
+            this.LastRenewDate.DefaultCellStyle = dataGridViewCellStyle4;
+            this.LastRenewDate.HeaderText = "Last Renew Date";
+            this.LastRenewDate.Name = "LastRenewDate";
+            this.LastRenewDate.ReadOnly = true;
             // 
             // UserId
             // 
@@ -372,11 +392,24 @@ partial class MembershipForm {
             this.AllRadioButton.UseVisualStyleBackColor = true;
             this.AllRadioButton.CheckedChanged += new System.EventHandler(this.AllRadioButton_CheckedChanged);
             // 
+            // AutoRenewCheckBox
+            // 
+            this.AutoRenewCheckBox.AutoSize = true;
+            this.AutoRenewCheckBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AutoRenewCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.AutoRenewCheckBox.Location = new System.Drawing.Point(746, 201);
+            this.AutoRenewCheckBox.Name = "AutoRenewCheckBox";
+            this.AutoRenewCheckBox.Size = new System.Drawing.Size(214, 32);
+            this.AutoRenewCheckBox.TabIndex = 86;
+            this.AutoRenewCheckBox.Text = "Auto Renew Monthly";
+            this.AutoRenewCheckBox.UseVisualStyleBackColor = true;
+            // 
             // MembershipForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1019, 572);
+            this.Controls.Add(this.AutoRenewCheckBox);
             this.Controls.Add(this.ExpiredOnlyRadioButton);
             this.Controls.Add(this.ActiveOnlyRadioButton);
             this.Controls.Add(this.AllRadioButton);
@@ -426,6 +459,9 @@ partial class MembershipForm {
     private TextBox MemberNameTextBox;
     private Button HomeButton;
     private Button PrintButton;
+    private RadioButton ExpiredOnlyRadioButton;
+    private RadioButton ActiveOnlyRadioButton;
+    private RadioButton AllRadioButton;
     private DataGridViewTextBoxColumn Id;
     private DataGridViewTextBoxColumn MemberId;
     private DataGridViewTextBoxColumn MemberName;
@@ -435,8 +471,8 @@ partial class MembershipForm {
     private DataGridViewTextBoxColumn StartingDate;
     private DataGridViewTextBoxColumn ExpirationDate;
     private DataGridViewTextBoxColumn IsExpired;
+    private DataGridViewTextBoxColumn AutoRenew;
+    private DataGridViewTextBoxColumn LastRenewDate;
     private DataGridViewTextBoxColumn UserId;
-    private RadioButton ExpiredOnlyRadioButton;
-    private RadioButton ActiveOnlyRadioButton;
-    private RadioButton AllRadioButton;
+    private CheckBox AutoRenewCheckBox;
 }

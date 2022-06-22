@@ -87,7 +87,7 @@ public partial class AddMembershipForm : Form {
                 model.StartingDate = StartingDatePicker.Value;
                 model.ExpirationDate = ExpirationDatePicker.Value;
                 model.UserId = _shell.LoggedInUser.Id;
-
+                model.AutoRenew = AutoRenewCheckBox.Checked;
 
                 await _sqlConnector.AddMembership(model);
 

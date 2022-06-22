@@ -12,7 +12,9 @@ select
 		Membership.ExpirationDate,
 		Membership.IsExpired,
 		Membership.UserId,
-		[User].[Name] as 'UserName'
+		[User].[Name] as 'UserName',
+		Membership.AutoRenew,
+		Membership.LastRenewDate
 
 		from Membership
 		inner join Member on Member.Id = Membership.MemberId

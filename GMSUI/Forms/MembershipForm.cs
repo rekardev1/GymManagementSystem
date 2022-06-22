@@ -61,8 +61,14 @@ public partial class MembershipForm : Form {
                 membership.StartingDate,
                 membership.ExpirationDate,
                 membership.IsExpired ? "Yes" : "No",
+                membership.AutoRenew ? "Yes" : "No",
+                DateTime.Compare(membership.LastRenewDate, new DateTime(2000,1,1)) == 0 ? "" : membership.LastRenewDate,
                 membership.UserName);
+
+
         }
+
+
 
         MembershipsDataGridView.ClearSelection();
 
@@ -121,7 +127,8 @@ public partial class MembershipForm : Form {
 
         StartingDatePicker.Value = DateTime.Today;
         ExpirationDatePicker.Value = DateTime.Today.AddDays(30);
-
+        MemberNameTextBox.Text = "";
+        PlansComboBox.SelectedIndex = 0;
 
         _selectedRow = null;
 
@@ -160,6 +167,15 @@ public partial class MembershipForm : Form {
         StartingDatePicker.Value = (DateTime)_selectedRow.Cells[6].Value;
         ExpirationDatePicker.Value = (DateTime)_selectedRow.Cells[7].Value;
 
+
+        
+        string a = _selectedRow.Cells[9].Value.ToString();
+
+        if (a.Equals("Yes")) {
+            AutoRenewCheckBox.Checked = true;
+        } else {
+            AutoRenewCheckBox.Checked = false;
+        }
     }
 
     private bool ValidateForm() {
@@ -192,6 +208,7 @@ public partial class MembershipForm : Form {
 
         model.StartingDate = StartingDatePicker.Value;
         model.ExpirationDate = ExpirationDatePicker.Value;
+        model.AutoRenew = AutoRenewCheckBox.Checked;
 
         var trainers = TrainersCheckedListBox.CheckedItems;
 

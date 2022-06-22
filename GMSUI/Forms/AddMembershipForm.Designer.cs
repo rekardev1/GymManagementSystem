@@ -37,6 +37,7 @@ partial class AddMembershipForm {
             this.label10 = new System.Windows.Forms.Label();
             this.AddButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.AutoRenewCheckBox = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,6 +162,7 @@ partial class AddMembershipForm {
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.AutoRenewCheckBox);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.StartingDatePicker);
             this.panel2.Controls.Add(this.label3);
@@ -177,6 +179,18 @@ partial class AddMembershipForm {
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(696, 339);
             this.panel2.TabIndex = 71;
+            // 
+            // AutoRenewCheckBox
+            // 
+            this.AutoRenewCheckBox.AutoSize = true;
+            this.AutoRenewCheckBox.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AutoRenewCheckBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(157)))), ((int)(((byte)(88)))));
+            this.AutoRenewCheckBox.Location = new System.Drawing.Point(481, 200);
+            this.AutoRenewCheckBox.Name = "AutoRenewCheckBox";
+            this.AutoRenewCheckBox.Size = new System.Drawing.Size(214, 32);
+            this.AutoRenewCheckBox.TabIndex = 85;
+            this.AutoRenewCheckBox.Text = "Auto Renew Monthly";
+            this.AutoRenewCheckBox.UseVisualStyleBackColor = true;
             // 
             // AddMembershipForm
             // 
@@ -208,4 +222,5 @@ partial class AddMembershipForm {
     private Label label10;
     private Button AddButton;
     private Panel panel2;
+    private CheckBox AutoRenewCheckBox;
 }

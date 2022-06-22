@@ -7,6 +7,8 @@
     [ExpirationDate] DATETIME2 NOT NULL, 
     [IsExpired] BIT NOT NULL DEFAULT 0, 
     [UserId] INT NOT NULL, 
+    [AutoRenew] BIT NOT NULL DEFAULT 0, 
+    [LastRenewDate] DATETIME2 NULL DEFAULT null, 
     CONSTRAINT [FK_Membership_Member] FOREIGN KEY (MemberId) REFERENCES Member(Id),
     
     CONSTRAINT [FK_Membership_Plan] FOREIGN KEY (PlanId) REFERENCES [Plan](Id), 
