@@ -8,4 +8,4 @@ After cloned the project, take these steps to setup development environment:
 3. Set the GSMUI project as startup project.
 4. Run the project and use name 'Admin' and password '12345' as default user to log in to the program and start exploring it.
 
-If you have any issue or need help, you can reach me at rekarpc98@gmail.com 
+If you have any issue or need help, you can reach me at rekarpc98@gmail.com. 
