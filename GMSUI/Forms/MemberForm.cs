@@ -39,6 +39,7 @@ public partial class MemberForm : Form {
     private async Task LoadMembers() {
 
         _members = await _sqlConnector.GetMembers();
+        MembersDataGridView.Rows.Clear();
 
         //MembersDataGridView.DataSource = _members;
 

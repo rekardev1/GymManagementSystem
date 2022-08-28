@@ -12,7 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GMSUI.Forms;
-public partial class MembershipForm : Form {
+public partial class MembershipForm : Form
+{
 
     private SqlConnector _sqlConnector = new SqlConnector();
     private List<EmployeeModel> _trainers = new List<EmployeeModel>();
@@ -21,7 +22,8 @@ public partial class MembershipForm : Form {
     private DataGridViewRow _selectedRow;
     private readonly ShellForm _shell;
 
-    public MembershipForm(ShellForm shell) {
+    public MembershipForm(ShellForm shell)
+    {
         InitializeComponent();
 
         StartingDatePicker.Format = DateTimePickerFormat.Custom;
@@ -34,7 +36,8 @@ public partial class MembershipForm : Form {
         _shell = shell;
     }
 
-    override protected async void OnLoad(EventArgs e) {
+    override protected async void OnLoad(EventArgs e)
+    {
 
         await LoadTrainers();
 
@@ -43,14 +46,16 @@ public partial class MembershipForm : Form {
         await LoadMemberships("All");
     }
 
-    private async Task LoadMemberships(string fetchType) {
+    private async Task LoadMemberships(string fetchType)
+    {
 
         _memberships = await _sqlConnector.GetMemberships(fetchType);
 
         MembershipsDataGridView.Rows.Clear();
 
-        foreach (var membership in _memberships) {
-            
+        foreach (var membership in _memberships)
+        {
+
             MembershipsDataGridView.Rows.Add(
                 membership.Id,
                 membership.MemberId,
@@ -62,7 +67,7 @@ public partial class MembershipForm : Form {
                 membership.ExpirationDate,
                 membership.IsExpired ? "Yes" : "No",
                 membership.AutoRenew ? "Yes" : "No",
-                DateTime.Compare(membership.LastRenewDate, new DateTime(2000,1,1)) == 0 ? "" : membership.LastRenewDate,
+                DateTime.Compare(membership.LastRenewDate, new DateTime(2000, 1, 1)) == 0 ? "" : membership.LastRenewDate,
                 membership.UserName);
 
 
@@ -74,11 +79,13 @@ public partial class MembershipForm : Form {
 
     }
 
-    private string GetNames(List<EmployeeModel> model) {
+    private string GetNames(List<EmployeeModel> model)
+    {
 
         List<string> names = new List<string>();
 
-        foreach (var m in model) {
+        foreach (var m in model)
+        {
             names.Add(m.Name);
         }
 
@@ -89,7 +96,8 @@ public partial class MembershipForm : Form {
         return sb.ToString();
     }
 
-    private async Task LoadPlans() {
+    private async Task LoadPlans()
+    {
 
         _plans = await _sqlConnector.GetPlans();
         PlansComboBox.DataSource = _plans;
@@ -97,20 +105,23 @@ public partial class MembershipForm : Form {
 
     }
 
-    private async Task LoadTrainers() {
+    private async Task LoadTrainers()
+    {
 
         _trainers = await _sqlConnector.GetEmployees("Trainer");
 
         TrainersCheckedListBox.DisplayMember = "Name";
         TrainersCheckedListBox.Items.Clear();
 
-        foreach (var t in _trainers) {
+        foreach (var t in _trainers)
+        {
             TrainersCheckedListBox.Items.Add(t);
         }
 
     }
 
-    private async void AddButton_Click(object sender, EventArgs e) {
+    private async void AddButton_Click(object sender, EventArgs e)
+    {
 
         AddMembershipForm addMembershipForm = new AddMembershipForm(_shell);
         addMembershipForm.ShowDialog();
@@ -119,25 +130,32 @@ public partial class MembershipForm : Form {
 
     }
 
-    private async Task ResetForm() {
+    private async Task ResetForm()
+    {
 
-        for (int i = 0; i < TrainersCheckedListBox.Items.Count; i++) {
+        for (int i = 0; i < TrainersCheckedListBox.Items.Count; i++)
+        {
             TrainersCheckedListBox.SetItemChecked(i, false);
         }
 
         StartingDatePicker.Value = DateTime.Today;
         ExpirationDatePicker.Value = DateTime.Today.AddDays(30);
         MemberNameTextBox.Text = "";
-        PlansComboBox.SelectedIndex = 0;
+        if (PlansComboBox.Items.Count > 0)
+        {
+            PlansComboBox.SelectedIndex = 0;
+        }
 
         _selectedRow = null;
 
         await LoadMemberships(FetchType());
     }
 
-    private void MembershipsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e) {
+    private void MembershipsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+    {
 
-        if (e.RowIndex < 0) {
+        if (e.RowIndex < 0)
+        {
             return;
         }
 
@@ -145,21 +163,24 @@ public partial class MembershipForm : Form {
 
         PlansComboBox.Text = _selectedRow.Cells[2].Value.ToString();
 
-        MemberNameTextBox.Text= _selectedRow.Cells[2].Value.ToString();
+        MemberNameTextBox.Text = _selectedRow.Cells[2].Value.ToString();
 
         PlansComboBox.Text = _selectedRow.Cells[5].Value.ToString();
 
         string[] names = _selectedRow.Cells[3].Value.ToString().Split(',').Select(p => p.Trim()).Where(p => !string.IsNullOrWhiteSpace(p)).ToArray();
 
-        for (int i = 0; i < TrainersCheckedListBox.Items.Count; i++) {
+        for (int i = 0; i < TrainersCheckedListBox.Items.Count; i++)
+        {
             TrainersCheckedListBox.SetItemChecked(i, false);
         }
 
-        foreach (var n in names) {
+        foreach (var n in names)
+        {
 
             int index = TrainersCheckedListBox.Items.IndexOf(_trainers.FirstOrDefault(x => x.Name == n));
 
-            if (index != -1) {
+            if (index != -1)
+            {
                 TrainersCheckedListBox.SetItemChecked(index, true);
             }
         }
@@ -168,20 +189,25 @@ public partial class MembershipForm : Form {
         ExpirationDatePicker.Value = (DateTime)_selectedRow.Cells[7].Value;
 
 
-        
+
         string a = _selectedRow.Cells[9].Value.ToString();
 
-        if (a.Equals("Yes")) {
+        if (a.Equals("Yes"))
+        {
             AutoRenewCheckBox.Checked = true;
-        } else {
+        }
+        else
+        {
             AutoRenewCheckBox.Checked = false;
         }
     }
 
-    private bool ValidateForm() {
+    private bool ValidateForm()
+    {
         bool output = true;
 
-        if (string.IsNullOrEmpty(MemberNameTextBox.Text)) {
+        if (string.IsNullOrEmpty(MemberNameTextBox.Text))
+        {
             output = false;
 
         }
@@ -189,14 +215,17 @@ public partial class MembershipForm : Form {
         return output;
     }
 
-    private async void UpdateButton_Click(object sender, EventArgs e) {
+    private async void UpdateButton_Click(object sender, EventArgs e)
+    {
 
-        if (_selectedRow == null) {
+        if (_selectedRow == null)
+        {
             MessageBox.Show("Please Select a row!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
 
-        if (!ValidateForm()) {
+        if (!ValidateForm())
+        {
             MessageBox.Show("Please enter all required information!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
@@ -212,31 +241,38 @@ public partial class MembershipForm : Form {
 
         var trainers = TrainersCheckedListBox.CheckedItems;
 
-        foreach (var t in trainers) {
+        foreach (var t in trainers)
+        {
             model.Trainers.Add((EmployeeModel)t);
         }
 
 
 
-        try {
+        try
+        {
             await _sqlConnector.UpdateMembership(model);
 
-        } catch (Exception ex) {
+        }
+        catch (Exception ex)
+        {
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         await ResetForm();
     }
 
-    private void TrainersCheckedListBox_Leave(object sender, EventArgs e) {
+    private void TrainersCheckedListBox_Leave(object sender, EventArgs e)
+    {
         TrainersCheckedListBox.ClearSelected();
     }
 
-    private void HomeButton_Click(object sender, EventArgs e) {
+    private void HomeButton_Click(object sender, EventArgs e)
+    {
         _shell.OpenHomeForm();
     }
 
-    private void PrintButton_Click(object sender, EventArgs e) {
+    private void PrintButton_Click(object sender, EventArgs e)
+    {
 
         DGVPrinter printer = new DGVPrinter();
         printer.Title = "Memberships Report";
@@ -248,7 +284,8 @@ public partial class MembershipForm : Form {
         printer.HeaderCellAlignment = StringAlignment.Near;
         printer.Footer = $"Total MemberShips: {_memberships.Count}";
 
-        if (!ExpiredOnlyRadioButton.Checked) {
+        if (!ExpiredOnlyRadioButton.Checked)
+        {
             printer.Footer += $" | Total Income: {TotalIncome(_memberships)}";
         }
         printer.FooterSpacing = 15;
@@ -260,11 +297,13 @@ public partial class MembershipForm : Form {
         MembershipsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
     }
 
-    private int TotalIncome(List<MembershipModel> memberships) {
+    private int TotalIncome(List<MembershipModel> memberships)
+    {
 
         int total = 0;
 
-        foreach (var m in memberships.Where(x => x.IsExpired == false)) {
+        foreach (var m in memberships.Where(x => x.IsExpired == false))
+        {
 
             total += _plans.Where(x => x.Name == m.PlanName).First().Fee;
         }
@@ -272,30 +311,41 @@ public partial class MembershipForm : Form {
         return total;
     }
 
-    private async void AllRadioButton_CheckedChanged(object sender, EventArgs e) {
+    private async void AllRadioButton_CheckedChanged(object sender, EventArgs e)
+    {
         await LoadMemberships(FetchType());
     }
 
-    private async void ActiveOnlyRadioButton_CheckedChanged(object sender, EventArgs e) {
+    private async void ActiveOnlyRadioButton_CheckedChanged(object sender, EventArgs e)
+    {
         await LoadMemberships(FetchType());
     }
 
-    private async void StaffOnlyRadioButton_CheckedChanged(object sender, EventArgs e) {
+    private async void StaffOnlyRadioButton_CheckedChanged(object sender, EventArgs e)
+    {
         await LoadMemberships(FetchType());
     }
 
-    private string FetchType() {
-        if (AllRadioButton.Checked) {
+    private string FetchType()
+    {
+        if (AllRadioButton.Checked)
+        {
             return "All";
-        } else if (ActiveOnlyRadioButton.Checked) {
+        }
+        else if (ActiveOnlyRadioButton.Checked)
+        {
             return "Active";
-        } else {
+        }
+        else
+        {
             return "Expired";
         }
     }
 
-    private async void DeleteButton_Click(object sender, EventArgs e) {
-        if (_selectedRow == null) {
+    private async void DeleteButton_Click(object sender, EventArgs e)
+    {
+        if (_selectedRow == null)
+        {
             MessageBox.Show("Please Select a row!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return;
         }
@@ -304,18 +354,22 @@ public partial class MembershipForm : Form {
 
         model.Id = int.Parse(_selectedRow.Cells[0].Value.ToString());
 
-        try {
+        try
+        {
 
             var result = MessageBox.Show("Are you sure to delete this membership?", "Deleteing Membbership", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            if (result == DialogResult.Yes) {
+            if (result == DialogResult.Yes)
+            {
 
                 await _sqlConnector.DeleteMembership(model.Id);
 
                 await ResetForm();
             }
-            
-        } catch (Exception ex) {
+
+        }
+        catch (Exception ex)
+        {
             MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
